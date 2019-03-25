@@ -134,9 +134,9 @@ def count_nested_pairs_memoized(n):
 
 
 
-deg = 17
-#pairs = nested_pairs(deg)
-#for pair in pairs:
-#    print(pair)
+deg = 6
+pairs = nested_pairs(deg)
+for pair in pairs:
+    print(pair)
 print("Total pairs: " + str(count_nested_pairs(deg)))
 

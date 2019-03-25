@@ -132,7 +132,7 @@ def count_nested_pairs_memoized(n):
             return result
 
 # -----------------------------------------------------------------------------
-import time # For timing purposes, please do not fail us because of this import :)
+import time
 def test(n, generate):
     print("Nested pairs degree #" + str(n) + "\n")
 
@@ -155,4 +155,4 @@ def test(n, generate):
     #Info (Somewhat stable time saving starts at: n = 6)
     print("\nMemoization saved %" + str((1-(memo_time/comb_time))*100) + " execution time")
 
-test(14, False)
+test(6, False)

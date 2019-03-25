@@ -82,10 +82,6 @@ if __name__ == "__main__":
         print("Invalid arguments. Usage: 'python p5.py ccg.train.json' (or your preferred dataset)")
 
     # Checks each graph.
-    counter = 0
     for key, value in data.items():
         if cyclic(value):
-            counter += 1
             print(key)
-
-    print("Cyclics found: ", counter)
