@@ -1,0 +1,31 @@
+{% extends "template.html" %}
+{% block body %}
+	<section id="languages">
+		<h1>Techniques</h1>
+		{% for tech, projects in technique_projects.items() %}
+		<div class="t_dropdown">
+			<div class="techniqueBox t_dropbtn">
+				<h3>{{ tech }}</h3>
+
+				<div class="techniqueBoxImg">
+					<img src="../static/img/{{ tech|lower }}.png" alt="Image not found">
+				</div>
+
+
+
+				<!--Dropdown of all projects-->
+				<div class="t_dropdown-content">
+					Projekt:
+					<br>
+					{% for project in projects %}
+						<a href="{{ url_for('project', id=project['project_id']) }}">
+							• {{ project['project_name'] }} -- {{ project['description'] }} -- {{ project['end_date'] }}
+						</a>
+						<br>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+		{% endfor %}
+	</section>
+{% endblock %}

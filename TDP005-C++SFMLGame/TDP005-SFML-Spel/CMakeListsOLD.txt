@@ -1,0 +1,29 @@
+project(game)
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14 -g")
+
+set(SOURCE_FILES
+	main.cc
+	mixin.cc
+	mixin.h
+	world.cc
+	world.h
+	player.h
+	player.cc
+	tools.h
+	tools.cc
+	enemy.h
+	enemy.cc
+	bullet.h
+	bullet.cc
+	wall.h
+	wall.cc
+	powerup.h
+	powerup.cc
+	gui.cc
+	gui.h
+	spawner.h
+	spawner.cc)
+
+add_executable(game ${SOURCE_FILES})
+target_link_libraries(game sfml-system sfml-window sfml-graphics)

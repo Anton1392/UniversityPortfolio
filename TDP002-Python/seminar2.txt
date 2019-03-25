@@ -1,0 +1,41 @@
+-----------
+Target: x + 3 * -y
+-----------
+ a_expr
+a_expr "+" m_expr
+m_expr "+" m_expr
+u_expr "+" m_expr "*" u_expr
+u_expr "+" u_expr "*" u_expr
+power "+" power "*" "-" u_expr
+power "+" power "*" "-" power
+primary "+" primary "*" "-" primary
+atom "+" atom "*" "-" atom
+identifier "+" literal "*" "-" identifier
+identifier "+" integer "*" "-" identifier
+identifier "+" decimalinteger "*" "-" identifier
+identifier "+" nonzerodigit "*" "-" identifier
+identifier "+" 3 "*" "-" identifier
+xid_start "+" 3 "*" "-" xid_start 
+id_start "+" 3 "*" "-" id_start
+x + 3 * -y
+
+-----------
+Target: x + 3 * -y
+-----------
+a_expr
+a_expr "+" m_expr
+m_expr "+" m_expr
+u_expr "+" m_expr "*" u_expr
+u_expr "+" u_expr "*" u_expr
+power "+" power "*" "-" u_expr
+power "+" power "*" "-" power
+primary "+" primary "*" "-" primary
+atom "+" atom "*" "-" atom
+identifier "+" literal "*" "-" identifier
+identifier "+" integer "*" "-" identifier
+identifier "+" decimalinteger "*" "-" identifier
+identifier "+" nonzerodigit "*" "-" identifier
+identifier "+" 3 "*" "-" identifier
+xid_start "+" 3 "*" "-" xid_start 
+id_start "+" 3 "*" "-" id_start
+x + 3 * -y

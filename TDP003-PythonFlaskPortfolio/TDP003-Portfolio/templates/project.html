@@ -1,0 +1,26 @@
+{% extends "template.html" %}
+{% block body %}
+
+<div class="projectBox">
+	<h1>{{ proj["project_name"] }}</h1>
+	<hr>
+	<h3><i><a href="{{ proj['external_link'] }}">{{ proj['external_link'] }}</a></i></h3>
+	<img src="{{proj['image']}}" alt="Ingen bild hittades.">
+	<p>
+	Start date: {{ proj['start_date'] }}<br>
+	End date: {{ proj['end_date'] }}<br>
+	Course ID: {{ proj['course_id'] }}<br>
+	Course name: {{ proj['course_name'] }}<br>
+		Techniques used:
+		<ul>
+			{% for tech in proj['techniques_used']%}		
+			<li>
+				{{tech}}
+			</li>
+			{%endfor%}
+		</ul>
+		{{ proj['long_description'] }}
+	</p>
+</div>
+
+{% endblock %}

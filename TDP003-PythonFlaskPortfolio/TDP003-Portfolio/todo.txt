@@ -1,0 +1,39 @@
+
+
+
+--- TO DO ---
+
+
+
+(Optional) Fixa att tekniker sparas vid sökning
+
+(Semi-Optional) Fixa footer (just nu udda placering)
+
+Ej sj�lvf�rklarande kodavsnitt ska �ven kommenteras
+l�pande i koden.
+
+3.8 Systemdokumentation ska ing�. En README-fil ska beskriva hur systemet
+�r paketerat och peka ut �vrig dokumentation. Tydliga installationsinstruktioner
+ska ing�, antingen som en del av README-filen eller i
+valfri annan fil utpekad av README-filen.
+2013-08-26 2014-09-08
+
+3.9 En anv�ndarmanual ska ing� i systemdokumentationen. 2014-09-08
+
+3.10 Testerna ska dokumenteras och skall ing� i systemdokumentationen. 2014-09-08
+
+
+
+--- DONE ---
+
+
+
+S�ksida som visar en lista �ver projekt med kort information om varje
+projekt och som g�r det m�jligt att sortera dessa, samt s�ka bland dem
+genom ett formul�r p� sidan
+
+Datum + kursinfo + tekniker p� projektsidan
+
+F�r varje projekt ska en liten bild visas p� s�ksidan och en stor p�
+projektsidan. Det beh�ver inte vara samma bild. Bildtext f�r varje bild
+skall finnas.

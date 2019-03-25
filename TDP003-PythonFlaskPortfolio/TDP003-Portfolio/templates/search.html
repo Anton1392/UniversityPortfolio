@@ -1,0 +1,114 @@
+{% extends "template.html" %}
+{% block body %}
+<div id="searchDiv">
+		<form method="post">
+			<input type="text" name="text_search" id="searchBox" placeholder=">" autofocus autocomplete="off">
+			<input type="submit" name="btn_search" id="searchButton" value="&#x1f50d;">
+
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+			<script>
+				// Function to convert boolean strings to true boolean
+				ifstring = function(str) {
+					if (str.toLowerCase() == "true"){return true;}
+					if (str.toLowerCase() == "false"){return false;}
+					return null;
+				}
+
+				// Run on page load
+				window.onload = function() {
+						// If sessionStorage of search is empty do nothing else restore values
+						if (sessionStorage.getItem('search') === null) {
+							return;
+						}
+
+						// If values are not blank, restore them..
+						var search = sessionStorage.getItem('search');
+						if (search !== null) {$('#searchBox').val(search);}
+
+						var box_course_name = sessionStorage.getItem('box_course_name');
+						if (box_course_name !== null) {document.getElementById("box_course_name").checked = ifstring(box_course_name)}
+
+						var box_project_name = sessionStorage.getItem('box_project_name');
+						if (box_project_name !== null) {document.getElementById("box_project_name").checked = ifstring(box_project_name)}
+
+						var box_course_id = sessionStorage.getItem('box_course_id');
+						if (box_course_id !== null) {document.getElementById("box_course_id").checked = ifstring(box_course_id)}
+
+						var sort_by = sessionStorage.getItem('sort_by');
+						if (sort_by !== null) {document.getElementById("sort_by").value = sort_by}
+
+						var sort_order = sessionStorage.getItem('sort_order');
+						if (sort_order !== null) {document.getElementById("sort_order").value = sort_order}
+				}
+
+				// Before refreshing the page, save values to sessionStorage
+				window.onbeforeunload = function() {
+					sessionStorage.setItem("search", $("#searchBox").val());
+					sessionStorage.setItem("box_course_name", document.getElementById('box_course_name').checked);
+					sessionStorage.setItem("box_project_name", document.getElementById('box_project_name').checked);
+					sessionStorage.setItem("box_course_id", document.getElementById('box_course_id').checked);
+
+					var e = document.getElementById("sort_by");
+					sessionStorage.setItem("sort_by", e.options[e.selectedIndex].text);
+
+					var e = document.getElementById("sort_order");
+					sessionStorage.setItem("sort_order", e.options[e.selectedIndex].text);
+
+					// SessionStorage for techniques missing
+				}
+			</script>
+
+
+			<div class="dropdown">
+				<button class="dropbtn">Advanced search</button>
+				<div class="dropdown-content">
+					<span class="adv_search_title">Search in fields:</span><br>
+					<label><input type="checkbox" id="box_project_name" name="chck_proj_name" value="project_name">Project name</label>
+					<label><input type="checkbox" id="box_course_name" name="chck_course_name" value="course_name">Course name</label>
+					<label><input type="checkbox" id="box_course_id" name="chck_course_id" value="course_id">Course ID</label>
+
+					<hr>
+
+					<span class="adv_search_title">Sort by:</span>
+					<select name="sort_by" id="sort_by">
+						<option>Name</option>
+						<option>End date</option>
+					</select>
+
+					<hr style="color:red;">
+
+					<span class="adv_search_title">Sort order:</span>
+					<select name="sort_order" id="sort_order">
+						<option>Ascending</option>
+						<option>Descending</option>
+					</select>
+
+					<hr>
+
+					<!--Generates technique boxes-->
+					<span class="adv_search_title">Techniques:</span><br>
+					{% for tech in techniques%}
+						<label><input type="checkbox" name="check_tech_{{ tech }}" value="{{ tech }}">{{ tech }}</label>
+					{% endfor %}
+
+				</div>
+			</div>
+		</form>
+
+		<!--Add a list item for every item the data.py recieved.-->
+		<ul>
+			{% for proj in results %}
+			<li class="searchResult">
+				<a href="{{ url_for('project', id=proj['project_id']) }}">
+					<div class="searchName">{{ proj['project_name'] }}</div>
+					<div class="searchDate">{{ proj['start_date'] }}</div>
+				</a>
+				<div class="searchInfo">
+					<p class="searchDesc">{{ proj['description'] }}</p>
+					<img class="searchPic" src="{{ proj['image'] }}" alt="[Image not found: {{ proj['image'] }}]">
+				</div>
+			</li>
+			{% endfor %}
+		</ul>
+</div>
+{% endblock %}

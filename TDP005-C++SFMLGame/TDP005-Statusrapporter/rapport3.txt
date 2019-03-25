@@ -1,0 +1,93 @@
+Statusrapport 3 (v.50)
+Anton Sköld (antsk320)
+William Utbult (wilut499)
+
+Uppnådda krav: 
+Inga hela krav just nu. Endast förberedelse för de resterande kraven.
+
+Ändrade krav:
+[ ] 1.3.2.2 :  vid kollision mellan spelare och hinder skall hinderobjektet tas bort och skada appliceras på spelaren. (ett liv tas bort).
+Detta krav är något felaktigt. Hinderobjektet ska ej tas bort vid kollision. Detta är bättre för spelupplevelsen.
+
+[ ] 1.4.2 :  Vid kollision av spelare & power-up appliceras en slumpmässig effekt.
+Något inkorrekt. Ett powerup-objekt ska visa vilken typ av powerup den är. Vilken powerup som "spawnar" är dock slumpmässig.
+
+Återkoppling:
+Främsta fokusen var spelets grundfunktioner och att få de fungerande. Under veckan så har vi fixat "spawner"-objekten så att de fungerar väl på ett intervall, men det går ej snabbare och snabbare ännu.
+
+Denna vecka har vi fokuserat mest på kodgranskning, och kompilering på skolans system. Av dessa anledningar, plus att vi arbetade jättemycket förra veckan, så har vi inte fått alltför mycket gjort.
+
+Planering:
+Få spelet att gå snabbare och snabbare med tid.
+Hantera spelarens score, bör vara enkelt. score += delta_time * 100, alltså 100 score/sekund.
+Score bör även visas på GUIn. Vi har gjort en slags GUI-hanterar-klass, så detta bör vara skapligt enkelt med ett Text-objekt.
+Efter detta bör spelet balanseras lite så att det ser lite spännande ut inför redovisningen på torsdag.
+
+Krav
+[✔] 1.1 :  Spelet skall vara tvådimensionellt med synperspektivet ovanifrån.
+
+[✔] 1.2 :  Det skall finnas en spelare.
+
+[✔] 1.2.2 :  Man skall kunna styra spelaren med WASD.
+
+[✔] 1.2.1 :  Man skall kunna sikta och skjuta (från spelaren) med muspekaren.
+
+[✔] 1.2.3 : Spelaren skall ha liv.
+
+[✔] 1.10 :  När livsmängden når 0 skall spelet avslutas.
+
+[✔] 1.3.2 : Det skall finnas hinder.
+
+[✔] 1.3.2.1 :  Hinder skall röra sig mot andra sidan av världen.
+
+[ ] 1.3.2.2 :  vid kollision mellan spelare och hinder skall hinderobjektet tas bort och skada appliceras på spelaren. (ett liv tas bort).
+
+[✔] 1.3.1 : Det skall finnas fiender
+
+[✔] 1.3.1.1 :  Fiender skall röra sig mot spelaren.
+
+[✔] 1.3.1.2 :  Vid kollision mellan spelare och fiende skall fiendeobjektet tas bort och skada appliceras på spelaren. (Ett liv tas bort).
+
+[✔] 1.5.1 :  Fiender skall dyka upp på ett tidsintervall.
+
+[✔] 1.5.2 :  Hinder skall dyka upp på ett tidsintervall.
+
+[ ] 1.6 :  Spelet skall bli svårare med längden enligt sektion 6. Regler
+
+[✔] 1.11 :  Spelaren skall få en period av odödlighet efter att ha tagit skada.
+
+[✔] 1.9 : Spelarens livsmängd skall synas i nedre delen av programfönstret.
+
+[✔] 1.4 : Det skall finnas upplockbara power-ups.
+
+[ ] 1.4.2 :  Vid kollision av spelare & power-up appliceras en slumpmässig effekt.
+
+[✔] 1.4.1 :  Vid kollision av spelare & power-up tas power-up ojektet bort.
+
+[ ] 1.7 :  Det skall finnas poängräkning baserat på tid.
+
+[✔] 1.8 :  Spelet skall vara konsekvent färgkodat enligt specifikationen för regler.
+
+[✔] 1.12 :  Spelet skall utspelas i en arena med begränsade dimensioner.
+
+[✔] 1.13 :  Spelaren skall inte kunna röra sig utanför arenan.
+
+[ ] 2.5 : Power-ups skall dyka upp på en unik timer. 
+
+[ ] 2.2.1 : Det skall finnas variation i typer av fiender. 
+
+[ ] 2.2.2 : Det skall finnas variation i typer av power-ups. 
+
+[✔] 2.6 : Power-ups skall vara kännetecknade av deras utseende. 
+
+[ ] 2.8 : Spelet skall ha någon form av ljudeffekter/musik. 
+
+[ ] 2.9 : Det skall finnas fina partikeleffekter på ställen där det ser fint ut, men inte för mycket så de blockerar viktig information. 
+
+[ ] 2.1 : Kontrollerna skall vara anpassningsbara. 
+
+[ ] 2.4 : Fiender och hinder skall, förutom att det kommer fler av dem, bli individuellt starkare med tid. 
+
+[ ] 2.7 : Fiender skall symbolisera hur många livspoäng de har kvar. 
+
+[ ] 2.3 : Spelarens high-score skall sparas. 

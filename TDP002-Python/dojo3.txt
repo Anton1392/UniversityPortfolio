@@ -1,0 +1,66 @@
+Två delar:
+* ADT
+* Interaktion via konsolen
+
+-----------------
+--adt.py--
+
+ADT: list[dict{"Title":"The Movie 2", "Genre":"Generic", "Reviews":dict{"Mr. Review":8,}}, dict{"Title":"The Movie 3", "Genre":"Generic", "Reviews":dict{"Mr. Review":6,}}]
+
+def search(movies = g_movies, field = "Title/Genre/Reviews", search_term):
+	search_results = []
+	for movie in movies:
+		if field == "Reviews":
+			for reviewer, rating in movie["Reviews"]:
+				if search_term in reviewer:
+					search_results.append(movie)
+		else:
+			if search_term in movie[field]:
+				search_results.append(movie)
+	return search_results
+	
+def average_rating(movie):
+	sum_rating = 0
+	review_count = 0
+	for reviewer, rating in movie["Reviews"]:
+		sum_rating = sum_rating + rating
+		review_count += 1
+	
+	return sum_rating/review_count	
+
+def display_movie(movie):
+	print("Title:", movie["Title"]
+	print("Genre:", movie["Genre"])
+	print("Average rating:", average_rating(movie)
+
+def find_reviewer(movies, reviewer):
+	reviewed_movies = []
+	for movie in movies:
+		if reviewer in movie["Reviews"].keys():
+			reviewed_movies.append({"Movie":movie, "Reviewer_Rating":movie["Reviews"][reviewer], "Average Rating":average_rating(movie)})
+
+	return reviewed_movies
+
+--------------
+--main.py--
+
+quit = False
+while (!quit):
+	if command == "search":
+		print("Search by 1. Title, 2. Genre, 3. Reviewer)
+		search_field = None
+			if input == 1:
+				search_field = "Title"
+			elif etc...
+
+		search_results = adt.search(field = search_field, search_term = search)
+	
+		print search_results in a pretty way
+	
+	elif command == "reviewer":
+		input reviewer
+		adt.find_reviewer(reviewer)
+		print results somehow
+	
+	elif command == "quit":
+		quit = True

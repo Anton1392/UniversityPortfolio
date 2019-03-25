@@ -1,0 +1,161 @@
+[
+	{
+		"project_id":1,
+		
+		"project_name":"Portfolio",
+		
+		"start_date":"2017-09-15",
+		
+		"end_date":"In progress..",
+		
+		"course_id":"TDP003",
+		
+		"course_name":"Projekt: Egna datormilj\u00f6n",
+
+		"course_points":6.0,
+		
+		"techniques_used": [
+		"Flask", "Jinja2", "Python", "HTML", "CSS", "JSON"
+		],
+		
+		"group_size":2,
+
+		"description":"Denna portfoliosida",
+		
+		"long_description":"Detta \u00e4r portfoliosidan som du nu \u00e4r inne p\u00e5.",
+		
+		"image":"../static/img/portfolio.png",
+
+		"image_small":"../static/img/portfolio.png",
+			
+		"external_link":"http://www.webbplats.com"
+	},
+
+	{
+		"project_id":3,
+		
+		"project_name":"Sample",
+		
+		"start_date":"YYYY-MM-DD",
+		
+		"end_date":"YYYY-MM-DD",
+		
+		"course_id":"XXXNNN",
+		
+		"course_name":"Sample course",
+
+		"course_points":0,
+		
+		"techniques_used": [
+		"Foo", "Bar"
+		],
+		
+		"group_size":2,
+
+		"description":"Lorem ipsum",
+		
+		"long_description":"L\u00f6ks\u00e5s ipsum h\u00e4nder smultron \u00e4r del r\u00e4v kom dock kom, d\u00e4r sj\u00e4lv kan h\u00e4nder hav annat s\u00f6ka \u00e4r tiden dag, s\u00e4llan stora dunge rot av regn annan har.",
+		
+		"image":"https://sampleimages.com/sample.jpg",
+			
+		"image_small":"https://i.imgur.com/6hqepTN.jpg",
+
+		"external_link":"http://www.sample.com/sampleproject"
+	},
+	
+	{
+		"project_id":2,
+		
+		"project_name":"Sample2",
+		
+		"start_date":"YYYY-MM-DD2",
+		
+		"end_date":"YYYY-MM-DD2",
+		
+		"course_id":"XXXNNN2",
+		
+		"course_name":"Sample course2",
+
+		"course_points":0,
+		
+		"techniques_used": [
+		"Foo2", "Bar2"
+		],
+		
+		"group_size":2,
+
+		"description":"Lorem ipsum2",
+		
+		"long_description":"2L\u00f6ks\u00e5s ipsum h\u00e4nder smultron \u00e4r del r\u00e4v kom dock kom, d\u00e4r sj\u00e4lv kan h\u00e4nder hav annat s\u00f6ka \u00e4r tiden dag, s\u00e4llan stora dunge rot av regn annan har.",
+		
+		"image":"https://sampleimages.com/sample.jpg2",
+
+		"image_small":"https://i.imgur.com/6hqepTN.jpg",
+			
+		"external_link":"http://www.sample.com/sampleproject2"
+	},
+	
+	{
+		"project_id":4,
+
+		"project_name":"Sample4",
+
+		"start_date":"YYYY-MM-DD4",
+
+		"end_date":"YYYY-MM-DD4",
+
+		"course_id":"XXXNNN4",
+
+		"course_name":"Sample course4",
+
+		"course_points":0,
+
+		"techniques_used": [
+		"Foo", "Bar2", "Python", "Jinja2", "Jinja2", "Flask", "C++"
+		],
+
+		"group_size":2,
+
+		"description":"Lorem ipsum4",
+
+		"long_description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sodales tempus sapien, eu sagittis erat porta eu. Sed lacus dui, porttitor eget tincidunt quis, fermentum at tellus. Mauris egestas erat eu turpis ultricies euismod. Praesent volutpat scelerisque viverra. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla ipsum dui, pretium eu rutrum quis, volutpat tincidunt velit. Nullam sit amet nulla in tortor malesuada laoreet a sit amet lorem. Nunc viverra turpis nec sodales consectetur. Praesent venenatis non lacus eget varius. Phasellus consequat nibh libero, vitae mattis tortor efficitur ac. Integer iaculis vehicula sodales. Cras malesuada sagittis ullamcorper. Nam et sollicitudin libero, vel semper augue. Quisque ut turpis vehicula, auctor dui sed, tempus lectus.Nunc mollis interdum dolor luctus mollis. Etiam ultrices massa odio, consequat pellentesque diam malesuada ut. Mauris vitae blandit erat. Integer porta porta justo, eu sollicitudin nulla eleifend et. Sed sagittis ex sagittis, dapibus orci quis, aliquet ex. Aliquam at sem eget orci malesuada bibendum. Sed eget arcu ut erat faucibus feugiat. Nulla pharetra purus leo, vitae dictum nisi vehicula quis. Maecenas nec risus ligula. Vestibulum ut libero a augue feugiat fermentum. Nam libero libero, fringilla eleifend dictum quis, elementum nec nunc. Sed vitae sagittis enim. Mauris congue mauris aliquet, posuere elit sed, tempor urna. Donec rhoncus interdum elit, vitae suscipit risus semper et.Vivamus non laoreet risus, mollis vehicula libero. Phasellus sed nibh vestibulum, commodo dolor quis, posuere odio. In varius neque et tempor rhoncus. Quisque ac urna varius, volutpat arcu ultricies, consequat metus. Nam ante arcu, sagittis sed consequat ac, mattis sit amet nibh. Vivamus vitae congue nibh, sed ultrices justo. Nam non placerat tortor, quis dictum dui. Nullam nec iaculis dui. Maecenas finibus lectus vel sapien molestie iaculis. Vivamus pulvinar lacus et venenatis pretium. Sed convallis sed purus quis porttitor. Donec at ante gravida leo congue dignissim. Etiam vitae elit id nibh imperdiet ullamcorper sit amet ut sapien. Donec suscipit metus sed varius faucibus.Donec posuere nulla sollicitudin justo dictum, sit amet bibendum lectus aliquet. Maecenas consequat rutrum dui vel vehicula. Quisque nec sollicitudin tellus. Nullam efficitur hendrerit dolor, at elementum velit feugiat eget. In placerat eleifend mollis. Praesent egestas dignissim eros, in pellentesque neque pretium a. Praesent auctor ex metus, ut hendrerit magna suscipit sit amet. Etiam vel volutpat sapien. Fusce quam sapien, lacinia ac neque ac, aliquam efficitur massa. Curabitur augue augue, fermentum et tortor sit amet, fringilla laoreet neque. Sed auctor mi enim, eget consequat metus gravida nec. Proin auctor, risus at rhoncus egestas, quam purus commodo lacus, nec fermentum ex enim in purus. Nam rhoncus sem id massa lacinia, ut porta felis pulvinar. In congue magna erat, id dictum nisi elementum posuere. Maecenas efficitur tellus sed neque tempor, nec bibendum mauris rutrum. Nulla blandit nunc eget nulla rhoncus, non pulvinar est posuere.Donec eget interdum orci. Vestibulum fermentum cursus ex quis sodales. Etiam blandit placerat massa quis suscipit. Curabitur mattis turpis eu varius eleifend. Pellentesque vulputate tortor magna, vel tincidunt risus iaculis pellentesque. Ut nisi ex, interdum ut elit vel, malesuada sagittis augue. Nulla facilisi. Suspendisse sit amet semper sem. Phasellus lacinia augue sit amet elit gravida, ut porta libero lacinia. Suspendisse potenti. Curabitur in tincidunt quam. Duis in dictum nunc, sed luctus magna. Vivamus non maximus turpis.",
+
+		"image":"https://i.imgur.com/6hqepTN.jpg",
+
+		"image_small":"https://i.imgur.com/6hqepTN.jpg",
+
+		"external_link":"http://www.sample.com/sampleproject4"
+	},
+
+	{
+		"project_id":5,
+
+		"project_name":"COOL",
+
+		"start_date":"YYYY-MM-DD4",
+
+		"end_date":"YYYY-MM-DD4",
+
+		"course_id":"XXXNNN4",
+
+		"course_name":"Sample course4",
+
+		"course_points":0,
+
+		"techniques_used": [
+		"Foo", "Bar2", "Python", "Jinja2", "Jinja2", "Flask", "C++"
+		],
+
+		"group_size":2,
+
+		"description":"Lorem ipsum4",
+
+		"long_description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sodales tempus sapien, eu sagittis erat porta eu. Sed lacus dui, porttitor eget tincidunt quis, fermentum at tellus. Mauris egestas erat eu turpis ultricies euismod. Praesent volutpat scelerisque viverra. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla ipsum dui, pretium eu rutrum quis, volutpat tincidunt velit. Nullam sit amet nulla in tortor malesuada laoreet a sit amet lorem. Nunc viverra turpis nec sodales consectetur. Praesent venenatis non lacus eget varius. Phasellus consequat nibh libero, vitae mattis tortor efficitur ac. Integer iaculis vehicula sodales. Cras malesuada sagittis ullamcorper. Nam et sollicitudin libero, vel semper augue. Quisque ut turpis vehicula, auctor dui sed, tempus lectus.Nunc mollis interdum dolor luctus mollis. Etiam ultrices massa odio, consequat pellentesque diam malesuada ut. Mauris vitae blandit erat. Integer porta porta justo, eu sollicitudin nulla eleifend et. Sed sagittis ex sagittis, dapibus orci quis, aliquet ex. Aliquam at sem eget orci malesuada bibendum. Sed eget arcu ut erat faucibus feugiat. Nulla pharetra purus leo, vitae dictum nisi vehicula quis. Maecenas nec risus ligula. Vestibulum ut libero a augue feugiat fermentum. Nam libero libero, fringilla eleifend dictum quis, elementum nec nunc. Sed vitae sagittis enim. Mauris congue mauris aliquet, posuere elit sed, tempor urna. Donec rhoncus interdum elit, vitae suscipit risus semper et.Vivamus non laoreet risus, mollis vehicula libero. Phasellus sed nibh vestibulum, commodo dolor quis, posuere odio. In varius neque et tempor rhoncus. Quisque ac urna varius, volutpat arcu ultricies, consequat metus. Nam ante arcu, sagittis sed consequat ac, mattis sit amet nibh. Vivamus vitae congue nibh, sed ultrices justo. Nam non placerat tortor, quis dictum dui. Nullam nec iaculis dui. Maecenas finibus lectus vel sapien molestie iaculis. Vivamus pulvinar lacus et venenatis pretium. Sed convallis sed purus quis porttitor. Donec at ante gravida leo congue dignissim. Etiam vitae elit id nibh imperdiet ullamcorper sit amet ut sapien. Donec suscipit metus sed varius faucibus.Donec posuere nulla sollicitudin justo dictum, sit amet bibendum lectus aliquet. Maecenas consequat rutrum dui vel vehicula. Quisque nec sollicitudin tellus. Nullam efficitur hendrerit dolor, at elementum velit feugiat eget. In placerat eleifend mollis. Praesent egestas dignissim eros, in pellentesque neque pretium a. Praesent auctor ex metus, ut hendrerit magna suscipit sit amet. Etiam vel volutpat sapien. Fusce quam sapien, lacinia ac neque ac, aliquam efficitur massa. Curabitur augue augue, fermentum et tortor sit amet, fringilla laoreet neque. Sed auctor mi enim, eget consequat metus gravida nec. Proin auctor, risus at rhoncus egestas, quam purus commodo lacus, nec fermentum ex enim in purus. Nam rhoncus sem id massa lacinia, ut porta felis pulvinar. In congue magna erat, id dictum nisi elementum posuere. Maecenas efficitur tellus sed neque tempor, nec bibendum mauris rutrum. Nulla blandit nunc eget nulla rhoncus, non pulvinar est posuere.Donec eget interdum orci. Vestibulum fermentum cursus ex quis sodales. Etiam blandit placerat massa quis suscipit. Curabitur mattis turpis eu varius eleifend. Pellentesque vulputate tortor magna, vel tincidunt risus iaculis pellentesque. Ut nisi ex, interdum ut elit vel, malesuada sagittis augue. Nulla facilisi. Suspendisse sit amet semper sem. Phasellus lacinia augue sit amet elit gravida, ut porta libero lacinia. Suspendisse potenti. Curabitur in tincidunt quam. Duis in dictum nunc, sed luctus magna. Vivamus non maximus turpis.",
+
+		"image":"https://i.imgur.com/6hqepTN.jpg",
+
+		"image_small":"https://i.imgur.com/6hqepTN.jpg",
+
+		"external_link":"http://www.sample.com/sampleproject4"
+	}
+]

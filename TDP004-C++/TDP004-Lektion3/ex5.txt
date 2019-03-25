@@ -1,0 +1,30 @@
+class Menu_Item
+{
+	public:
+		Menu_Item(string const& t) : title(t) {}
+		virtual void execute() = 0;
+		virtual ~Menu_Item(){ /* Delete self somehow */ }
+	private:
+		string title;
+};
+
+class Menu : public Menu_Item
+{
+	public:
+		Menu(string const& t) : Menu_Item(t) {}
+		~Menu() { /* delete all items in list */ }
+		void add_menu_item(Menu_Item* i) { item_list.push_back(i); }
+		void execute() { /* user chose one menu item and execute i */ }
+	private:
+		vector<Menu_Item*> item_list;
+};
+
+EXEMPEL PÅ DÅLIGT BETEENDE:
+Menu_Item *m = new Menu();
+// använd m
+delete m; // Här är problemet.
+
+Vi försöker deleta ett Menu-objekt med en pekare på ett Menu_Item-objekt. Menu-objektets innehåll är annorlunda från Menu_Item-objektet, så destruktorn i Menu kommer inte kallas, vilket resulterar i minnesläckor.
+
+Om man gör en virtual destruktor så tvingas destruktorn för underklassen att användas istället för basklassen.
+

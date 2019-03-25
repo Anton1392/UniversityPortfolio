@@ -1,0 +1,83 @@
+En kort beskrivning av vilka krav som arbetats med under veckan, och status på dessa krav.
+Återkoppla mot förra veckans planering.
+Översiktlig planering av vilka krav ni kommer att arbeta med under veckan, samt vad ni har för mål under veckan.
+Detta innebär i princip att ni säger "vi tänker hinna klart med de X första kraven i vår backlog".
+
+Log1 (v.48):
+
+    Uppnådda krav: 
+    [1.1] - Man kan skapa ett 2-dimensionellt SFML-fönster, och skapa Renderable-objekt som kan renderas i detta fönster.
+
+    Planering:
+    [1.2.X] - Målet är att skapa en World-klass enligt designspecifikationen vilket har hand om alla andra objekt i spelet. Spelaren (och alla andra objekt) skalla efter detta kunna renderas automatiskt.
+    I övrigt så arbetar vi på så mycket vi kan enligt prioritetsordningen. Det är störst fokus denna vecka på att få spelaren och grundläggande fiender + hinder fungerande ( [1.3.X] ).
+
+Backlog:
+Krav
+[✔] 1.1 :  Spelet skall vara tvådimensionellt med synperspektivet ovanifrån.
+
+[ ] 1.2 :  Det skall finnas en spelare.
+
+[ ] 1.2.2 :  Man skall kunna styra spelaren med WASD.
+
+[ ] 1.2.1 :  Man skall kunna sikta och skjuta (från spelaren) med muspekaren.
+
+[ ] 1.2.3 : Spelaren skall ha liv.
+
+[ ] 1.10 :  När livsmängden når 0 skall spelet avslutas.
+
+[ ] 1.3.2 : Det skall finnas hinder.
+
+[ ] 1.3.2.1 :  Hinder skall röra sig mot andra sidan av världen.
+
+[ ] 1.3.2.2 :  Vid kollision mellan spelare och hinder skall hinderobjektet tas bort och skada appliceras på spelaren. (Ett liv tas bort).
+
+[ ] 1.3.1 : Det skall finnas fiender
+
+[ ] 1.3.1.1 :  Fiender skall röra sig mot spelaren.
+
+[ ] 1.3.1.2 :  Vid kollision mellan spelare och fiende skall fiendeobjektet tas bort och skada appliceras på spelaren. (Ett liv tas bort).
+
+[ ] 1.5.1 :  Fiender skall dyka upp på ett tidsintervall.
+
+[ ] 1.5.2 :  Hinder skall dyka upp på ett tidsintervall.
+
+[ ] 1.6 :  Spelet skall bli svårare med längden enligt sektion 6. Regler
+
+[ ] 1.11 :  Spelaren skall få en period av odödlighet efter att ha tagit skada.
+
+[ ] 1.9 : Spelarens livsmängd skall synas i nedre delen av programfönstret.
+
+[ ] 1.4 : Det skall finnas upplockbara power-ups.
+
+[ ] 1.4.2 :  Vid kollision av spelare \& power-up appliceras en slumpmässig effekt.
+
+[ ] 1.4.1 :  Vid kollision av spelare \& power-up tas power-up ojektet bort.
+
+[ ] 1.7 :  Det skall finnas poängräkning baserat på tid.
+
+[ ] 1.8 :  Spelet skall vara konsekvent färgkodat enligt specifikationen för regler.
+
+[ ] 1.12 :  Spelet skall utspelas i en arena med begränsade dimensioner.
+
+[ ] 1.13 :  Spelaren skall inte kunna röra sig utanför arenan.
+
+[ ] 2.5 : Power-ups skall dyka upp på en unik timer. 
+
+[ ] 2.2.1 : Det skall finnas variation i typer av fiender. 
+
+[ ] 2.2.2 : Det skall finnas variation i typer av power-ups. 
+
+[ ] 2.6 : Power-ups skall vara kännetecknade av deras utseende. 
+
+[ ] 2.8 : Spelet skall ha någon form av ljudeffekter/musik. 
+
+[ ] 2.9 : Det skall finnas fina partikeleffekter på ställen där det ser fint ut, men inte för mycket så de blockerar viktig information. 
+
+[ ] 2.1 : Kontrollerna skall vara anpassningsbara. 
+
+[ ] 2.4 : Fiender och hinder skall, förutom att det kommer fler av dem, bli individuellt starkare med tid. 
+
+[ ] 2.7 : Fiender skall symbolisera hur många livspoäng de har kvar. 
+
+[ ] 2.3 : Spelarens high-score skall sparas. 

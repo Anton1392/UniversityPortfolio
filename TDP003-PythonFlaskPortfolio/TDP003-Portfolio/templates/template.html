@@ -1,0 +1,40 @@
+<!doctype html>
+<head>
+  <title>Portfolio</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="/static/style/style.css">
+  <!--
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="author" content="">
+  -->
+</head>
+
+<body>
+  <header>
+    <h1>Portfolio - Anton Sköld & William Utbult</h1>
+		<nav>
+			<ul>
+				<li><a href="{{ url_for('index') }}">Home</a></li>
+				<li><a href="{{ url_for('search') }}">Search</a></li>
+				<li><a href="{{ url_for('techniques') }}">Techniques</a></li>
+			</ul>
+		</nav>
+  </header>
+
+<main>
+  {% block body %}
+  {% endblock %}
+</main>
+
+<footer>
+    <p>
+      Copyright &copy;
+      <script type="text/javascript">
+        var d = new Date()
+        document.write(d.getFullYear())
+    </script>
+    <br />Anton Sköld &amp; William Utbult
+    </p>
+</footer>
+</body>

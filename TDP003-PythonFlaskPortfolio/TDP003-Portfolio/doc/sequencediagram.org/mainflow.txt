@@ -1,0 +1,12 @@
+title Huvudflödet
+
+participant Användare:
+participant main.py (Webb-server):
+participant data.py (Datalagret):
+participant data.json (Databas):
+
+Användare->main.py (Webb-server):Begär en webbsida
+main.py (Webb-server)-->data.py (Datalagret):Hämtar data om\nwebbsidan kräver det.
+data.py (Datalagret)->data.json (Databas):Laddar in data
+main.py (Webb-server)<-data.py (Datalagret):Returnerar filtrerad data
+Användare<-main.py (Webb-server):Returnerar webbsidan

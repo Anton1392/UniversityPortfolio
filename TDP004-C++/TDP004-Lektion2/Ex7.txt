@@ -1,0 +1,56 @@
+#include <iostream>
+
+using namespace std;
+
+struct Element
+{
+	int data;
+	Element * next;
+	Element(Element * next, int data)
+		: data{data}, next{next}
+	{
+	}
+};
+
+int main()
+{
+	Element * first = new Element(nullptr, 5);
+	first->next = new Element(nullptr, 8);
+	first->next->next = new Element(nullptr, 9);
+
+	return 0;
+}
+----------------------------------------------------
+----------------------------------------------------
+----------------------------------------------------
+
+      +-----+    +---+---+    +---+---+    +---+---+    
+first |  o------>| 5 | o----->| 8 | o----->| 9 | 0 |
+      +-----+    +---+---+    +---+---+    +---+---+    
+        (*)      (Element)    (Element)    (Element)
+
+Utgå från den förenklade figuren i uppgift (4) och följande funktion:
+
+void insert(Element* e, int i)
+{
+  e = new Element(e->next, i);
+}
+
+Förklara vad som händer när följande kod kör och hur det ser ut efteråt:
+insert(first, 2);
+
+Inne i funktionen skapas en lokal kopia av first, eftersom funktionen är pass-by-value och inte reference. Sedan skapas ett nytt element i minnet med 2 som värde, och som pekar på det first/e pekade på.
+
+Efter funktionen så försvinner e och vi tappar bort det nya elementet. first kan inte hitta det nya elementet heller, så vi har en minnesläcka.
+
+Slutresultat:
+      +-----+    +---+---+    +---+---+    +---+---+    
+first |  o------>| 5 | o----->| 8 | o----->| 9 | 0 |
+      +-----+  | +---+---+    +---+---+    +---+---+    
+        (*)    | (Element)    (Element)    (Element)
+			   -------------
+						   |
+      +-----+    +---+---+ |   
+e     |  o----!->| 2 | o----
+      +-----+    +---+---+    
+        (*)      (Element)    

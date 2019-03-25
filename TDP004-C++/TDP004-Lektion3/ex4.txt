@@ -1,0 +1,42 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+class Binary_Operator
+{
+	public:
+		virtual double evaluate(double a, double b) const = 0;
+};
+
+class Multiply : public Binary_Operator
+{
+	public:
+		double evaluate(double a, double b) const override { return a * b; }  
+};
+
+class Add : public Binary_Operator
+{
+	public:
+		double evaluate(double a, double b) const override { return a + b; }  
+};
+
+int main()
+{
+	vector<Binary_Operator*> v{ &Multiply{}, &Add{} };
+
+	for ( Binary_Operator* o : v )
+	{
+		cout << o->evaluate(5.0, 3.0) << endl;
+	}
+
+	return 0;
+}
+
+1. Lägg till = 0 på slutet av evaluate i förälder-klassen, detta gör den till "pure virtual", 100% abstrakt, kan ej instansieras själv längre.
+
+2. Vektorns innehåll från Binary_Operator till Binary_Operator*. Lägg & före Add och Multiply inuti vektorn för att få addresser till de.
+
+3. Inuti for-loopen: Binary_Operator -> Binary_Operator*.
+
+4. o.evaluate -> o->evaluate eftersom vi nu har pekare.

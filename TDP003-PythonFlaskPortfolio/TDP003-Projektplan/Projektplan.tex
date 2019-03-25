@@ -1,0 +1,239 @@
+\documentclass{TDP003mall}
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{keyword}{RGB}{168,27,166}
+\definecolor{string}{RGB}{50,140,55}
+\definecolor{number}{RGB}{153,105,0}
+\definecolor{comment}{RGB}{160,161,167}
+
+
+\lstset{frame=tb,
+  language=Python,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{number},
+  keywordstyle=\color{keyword},
+  commentstyle=\color{comment},
+  stringstyle=\color{string},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+
+\newcommand{\version}{Version 1.1}
+\author{Anton Sköld, \href{mailto:antsk320@student.liu.se}{antsk320@student.liu.se}\\
+William Utbult, \href{mailto:wilut499@student.liu.se}{wilut499@student.liu.se}}
+\title{TDP003 - Projektplan}
+\date{2017-09-27}
+\rhead{Anton Sköld\\
+William Utbult}
+
+
+
+\begin{document}
+\projectpage
+\tableofcontents
+
+\section{Revisionshistorik}
+  \begin{table}[!h]
+    \begin{tabularx}{\linewidth}{|l|X|c|}
+    \hline
+    Ver. & Revisionsbeskrivning & Datum \\
+    \hline
+    1.0 & Revisionshistorik, Introduktion, Organisationsplan, Metodik, Produkt, Risker \& Tidsplan tillagda. & 2017-09-21\\
+    \hline
+    1.1 & Presentation förfinad. Milstolpar tillagda. Veckoplan utökad. & 2017-09-27\\
+    \hline
+    \end{tabularx}
+  \end{table}
+
+\section{Introduktion}
+  Som en del av kursen TDP003: Egna datormiljön (IP-programmet) har vi i uppdrag att skapa en webbaserad portfölj i Python.
+
+  Portföljen skall vara gjord för uppvisning av andra projekt som skapas här på IP-programmet.
+
+  Hemsidan består av länkar till projekt, inkluderande sökfunktioner över projekten, samt sortering efter använda tekniker (ramverk, språk...).
+
+  Databas över projekten ska finnas i JSON-format med tillgång via API.
+
+  Presentationen är oberoende av databasen (via API).
+
+  Portföljen ska vara anpassat för framtida arbetsgivare, samt intresserade, där de kan hitta information om projekt som ägaren har utvecklat.
+
+\section{Organisationsplan}
+  Anton Sköld - Utvecklare och Huvudansvarig
+
+  William Utbult - Utvecklare och Huvudansvarig
+
+  Filip Strömbäck - Reporter
+
+  Dylan Mäenpää - Handledare
+
+\section{Metodik}
+  Versionshantering med Git \& gemensam repo på IDAs GitLab [\url{https://gitlab.ida.liu.se/antsk320/TDP003-Portfolio}]
+
+  Utveckling utförs på portabla Linux-diskar privat eller gemensamt vid LiU labbsalar.
+
+  TeamViewer för parprogrammering på distans.
+
+  Trello för tekniska anteckningar \& planering.
+
+  Korrekturläsning sker efter hand. Utvecklarna granskar och testar varandras kod och notifierar förändringar till relevanta medarbetere.
+
+  Kodgranskning utförs av Dylan Mäenpää och/eller Filip Strömbäck, antingen redovisat i person eller via en Git-commit över e-post.
+
+
+\section{Produkt}
+  Servern kommer köra Python3 \& (Flask + Jinja2) för formatering och presentation i HTML5 \& CSS3.
+
+  Databasen i JSON-format ser ut som följande:
+  \begin{lstlisting}
+  [
+  	{
+  		"project_id": 1,
+
+  		"project_name": "Portfolio",
+
+  		"start_date": "2017-09-15",
+
+  		"end_date": "YYYY-MM-DD",
+
+  		"course_id": "TDP003",
+
+  		"course_name": "Projekt: Egna datormiljön",
+
+  		"techniques_used": ["HTML", "CSS", "Python"],
+
+  		"description": "Short description",
+
+  		"long_description": "Long description",
+
+  		"image": "https://url",
+
+  		"external_link": "https://url"
+  	},
+    {...}
+  ]
+  \end{lstlisting}
+
+\subsection{Verktyg}
+  \begin{itemize}
+    \item{Python3}
+    \begin{itemize}
+      \item{Flask}
+      \item{Jinja2}
+    \end{itemize}
+    \item{HTML5}
+    \begin{itemize}
+      \item{CSS3}
+    \end{itemize}
+    \item{JSON}
+    \item{OpenShift}
+    \item{Git}
+    \begin{itemize}
+      \item{GitLab (IDA)}
+    \end{itemize}
+    \item{Trello}
+  \end{itemize}
+
+\subsection{Krav}
+  Se systemspecifikationsdokumentet:\\
+  \url{http://www.ida.liu.se/~TDP003/current/projekt/dokument/systemspecifikation.pdf}
+
+
+
+\section{Risker}
+  \begin{tabular}{ l|l }
+    \hline
+    Risk & Åtgärd \\
+    \hline
+    \hline
+    Bortglömda deadlines & Håll ordentligt koll på schemat, arbeta långt före. \\
+    \hline
+	  Sjukdom & Arbeta hemifrån om möjligt, om inte, försök vara kontaktbar. \\
+    \hline
+	  Git-repon blir kaos & Ta hjälp av någon mer erfaren av Git, så snart som möjligt. \\
+    \hline
+	  Hårdvaruproblem & Ha backups, samt alternativa sätt att utveckla. \\
+    \hline
+  \end{tabular}
+
+\section{Tidsplan}
+  \begin{tabular}{ l|l }
+    \hline
+    Vecka & Beskrivning \\
+    \hline
+    \hline
+	   v.38 & Skapande av projektlplansutkast.\\ & Förbättring av den gemensamma installationsmanualen \\ & Arbete på datalagret.\\
+    \hline
+	   v.39 & Datalagret färdigställt/godkänt.\\ & Föreläsning om Flask och Jinja2.\\ & Projektplanen kompletteras. \\ & Påbörjande av presentationslagret\\
+    \hline
+	   v.40 & Fortsatt arbete på presentationslagret.\\ & Påbörjning av systemdokumentationen.\\
+    \hline
+	   v.41 & Tillgängliggöra Portfolio via OpenShift.\\ & Första versionen av systemdokumentationen skriven/inlämnad. \\
+    \hline
+	   v.42 & Systemdemonstration för andra grupper.\\ & Systemdokumentation korrigerad. \\ & Testdokumentation \& Reflektionsdokument skrivna/inlämnade.\\
+    \hline
+  \end{tabular}
+
+\subsection{Milstolpar}
+  Dessa datum är ungefärliga. Milstolparna får gärna nås innan dessa datum.
+
+\subsubsection{September}
+  \begin{tabular}{ l|l }
+    \hline
+    Planerad & Mål\\Klar\\
+    \hline
+    \hline
+    2017-09-27 Onsdag & Datalagret redo för redovisning. Fullt funktionellt \& klarar alla testfall.\\2017-09-20 Onsdag\\
+    \hline
+    2017-09-29 Fredag & Datalagret godkänt av assistent.\\2017-09-25 Måndag\\
+    \hline
+  \end{tabular}
+
+\subsubsection{Oktober}
+  \begin{tabular}{ l|l }
+    \hline
+    Planerad & Mål\\Klar\\
+    \hline
+    \hline
+    2017-10-02 Måndag &	HTML-mallarna färdiga och redo att användas med programlogik.\\-\\
+    \hline
+    2017-10-06 Måndag & Presentationslagret till största del färdigt. Fixa buggar\/polera funktioner.\\-\\
+    \hline
+    2017-10-10 Tisdag &	Portfolion fullt funktionell och redo för publicering via OpenShift.\\-\\
+    \hline
+    2017-10-10 Tisdag &	Systemdokumentationen till största del redo för inlämning.\\-\\
+    \hline
+    2017-10-12 Torsdag & Portfolion tillgänglig via OpenShift.\\-\\
+    \hline
+    2017-10-12 Torsdag &	Systemdokumentationen inlämnad.\\-\\
+    \hline
+  \end{tabular}
+\subsection{Deadlines}
+  Dessa deadlines kommer från kursen TDP003.
+\subsubsection{September}
+  2017-09-07 [Torsdag]:   Planeringsdokument inlämnat.
+
+  2017-09-14 [Torsdag]:   Lo-Fi prototyp \& grundläggande installationsmanual inlämnad.
+
+  2017-09-21 [Torsdag]:   Första utkast av projektplanen är inlämnat. Samt första versionen av den gemensamma installationsmanualen klar.
+
+  2017-09-28 [Torsdag]:   Bidraget med icke-trivial förbättring av den gemensamma installationsmanualen eller de gemensamma testerna via Git. Eventuella brister i den gemensamma installationsmanualen är korrigerade. Eventuella brister i projektplanen korrigerade och inlämnade.
+
+  2017-09-29  [Fredag]:   Datalagret godkänt av assistent.
+
+\subsubsection{Oktober}
+  2017-10-12  [Torsdag]:   Portfolion tillgänglig via OpenShift. Första versionen av systemdokumentationen inlämnad.
+
+  2017-10-17  [Tisdag]:   (prel.) Redovisning: Systemdemonstration för andra grupper, grund till testdokumentet.
+
+  2017-10-19 [Torsdag]:   Eventuella brister i systemdokumentationen korrigerade och inlämnade. Testdokumentation inlämnad. Individuellt reflektionsdokument inlämnat.
+
+\end{document}

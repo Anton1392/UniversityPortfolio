@@ -1,0 +1,26 @@
+Rita en figur som visar resultatet av följande kod:
+
+void insert(Element* e, int i) // Onödig rad??
+int* data[3];
+for (int i = 0; i < 3; ++i)
+{
+  data[i] = new int(i);
+}
+
+Tips: Deklarationer med pekare läses bäst baklänges. T.ex. kan "int* data[3]" läsas ut som "skapa ett fält med storlek 3 som heter 'data' och lagrar pekare till heltal".
+
+		+------------+
+		|	+-----+	 |  +-----+ 
+		|	|  o------->|  0  |
+		|	+-----+  |  +-----+
+		|	 (int*)  |   (int)
+		|	+-----+	 |  +-----+
+  data  |	|  o------->|  1  |
+		|	+-----+  |  +-----+
+		|	 (int*)  |   (int)
+		|	+-----+	 |  +-----+
+		|	|  o------->|  2  |
+		|	+-----+  |  +-----+
+		|	 (int*)  |   (int)
+		+------------+
+			(int*[])

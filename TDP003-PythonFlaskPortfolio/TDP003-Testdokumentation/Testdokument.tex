@@ -1,0 +1,212 @@
+\documentclass{TDP003mall}
+
+
+
+\newcommand{\version}{Version 1.1}
+\author{Anton Sköld, \url{antsk320@student.liu.se}\\
+  William Utbult, \url{wilut499@student.liu.se}}
+\title{TDP003 - Testdokument}
+\date{2017-10-19}
+\rhead{Anton Sköld\\
+William Utbult}
+
+
+
+\begin{document}
+\projectpage
+\tableofcontents
+
+\begin{center}
+Testlog\\
+  \begin{tabular}{ |l|l|r| }
+    \hline
+    Version & Resultat & Datum\\
+    \hline\hline
+    1.0 & 1.3 Testfall 2 ger Internal Server Error. Resten godkända & 2017-10-19\\\hline
+    1.1 & Samtliga testfall godkända & 2017-10-19\\\hline
+  \end{tabular}
+\end{center}
+
+\section{Krav för presentationslager}
+\subsection{Förstasida med bilder}
+“Förstasida med bilder”\\
+\textbf{Testfall 1}:\\
+Indata: Skriv in URLn till hemsidan. I lokalt fall 127.0.0.1:5000\\
+Förväntat resultat: En startsida med bilder.\\
+Resultat: En startsida med bilder.\\
+Godkänt: \textbf{Ja}
+
+\subsection{Söksida med tillräcklig information}
+“Söksida som visar en lista över projekt med kort information om varje projekt och som gör det möjligt att sortera dessa, samt söka bland dem genom ett formulär på sidan.”\\
+\textbf{Testfall 1}: \\
+Indata: Skriv in URLn till söksidan. I lokalt fall 127.0.0.1:5000/list\\
+Förväntat resultat: En söksida som behandlar en lista av projekt enligt kravet.\\
+Resultat: En söksida som behandlar en lista av projekt enligt kravet.\\
+Godkänt: \textbf{Ja}
+
+\subsection{Projektsida med projektinfo}
+“Projektsida som visar fullständig information om ett projekt. GET-variabel
+för att ange projekt-id: id URL: /project/id - där id är projektets
+nummer.”\\
+\textbf{Testfall 1}: \\
+Indata: Skriv in URLn till projektsidan. I lokalt fall 127.0.0.1:5000/project/1\\
+Förväntat resultat: En projektsidan som visar fullständig information om ett projekt.\\
+Resultat: En projektsidan som visar fullständig information om ett projekt.\\
+Godkänt: \textbf{Ja}
+
+\textbf{Testfall 2}:\\
+Indata: Skriv in URLn till projektsidan, men med felaktigt ID. I lokalt fall 127.0.0.1:5000/project/awd\\
+Förväntat resultat: En 404-sida.\\
+Resultat: En 404-sida.\\
+Godkänt: \textbf{Ja}
+
+
+\subsection{Tekniksida}
+“Tekniksida som visar information om alla projekt utifrån använda tekniker.
+URL: /techniques”\\
+\textbf{Testfall 1}:\\
+Indata: Skriv URLn till tekniksidan. I lokalt fall 127.0.0.1:5000/techniques.\\
+Förväntat resultat: En tekniksida som visar samtliga tekniker som används i projekten.\\
+Resultat: En tekniksida som visar samtliga tekniker som används i projekten.\\
+Godkänt: \textbf{Ja}
+
+
+\subsection{Projektbild på söksidan}
+“För varje projekt ska en liten bild visas på söksidan och en stor på projektsidan. Det behöver inte vara samma bild. Bildtext för varje bild skall finnas.”\\
+\textbf{Testfall 1}\\
+Indata: Skriv URLn till söksidan. I lokalt fall 127.0.0.1:5000/list\\
+Förväntat resultat: En liten bild till vardera projekt (om en giltig bildlänk finns för det projektet i databasen)\\
+Resultat: En liten bild till vardera projekt (om en giltig bildlänk finns för det projektet i databasen)\\
+Godkänt: \textbf{Ja}
+
+\textbf{Testfall 2}:\\
+Indata: Skriv URLn till projektsidan. I lokalt fall 127.0.0.1:5000/project/1\\
+Förväntat resultat: En stor bild till vardera projekt (om en giltig bildlänk finns för det projektet i databasen)\\
+Resultat: En stor bild till vardera projekt (om en giltig bildlänk finns för det projektet i databasen)\\
+Godkänt: \textbf{Ja}
+
+\subsection{Felmeddelanden}
+“Vid fel ska systemet skriva ut informativa meddelanden till användaren
+på en lämplig nivå för en slutanvändare. (Det vill säga, systemet ska
+fånga och omvandla felkoder och statuskoder till begripliga meddelanden.)”\\
+\textbf{Testfall 1}:\\
+Indata: Gå in på ogiltig sökväg. I lokalt fall 127.0.0.1:5000/ogiltigt\\
+Förväntat resultat: En sida med 404-information.\\
+Resultat: En sida med 404-information\\
+Godkänt: \textbf{Ja}
+
+
+\subsection{Icke-existerande projekt}
+“När en användare försöker visa ett projekt som inte finns, ska korrekt
+statuskod returneras (dvs. 404).”\\
+\textbf{Testfall 1}: \\
+Indata: Skriv in URLn till projektsidan, med ett ID som inte existerar. I lokalt fall 127.0.0.1:5000/project/9001\\
+Förväntat resultat: En sida med 404-information.\\
+Resultat: En sida med 404-information\\
+Godkänt: \textbf{Ja}
+
+
+\section{Krav för datalager}
+\subsection{Hanterad information.}
+“Systemet ska kunna hantera följande information om ett projekt: projektnamn, projekt-id-nummer, startdatum, slutdatum, kurskod, kursnamn, kurspoäng, använda tekniker, kort beskrivning, lång beskrivning, liten och stor bild, gruppstorlek och en länk projektsida. Projektnamn och projekt-id är obligatoriska, övriga fält kan lämnas tomma.”\\
+\textbf{Testfall 1}:\\
+Indata: Öppna data.json-filen och kontrollera att vardera projekt har de fält specificerade av kraven.\\
+Förväntat resultat: En .json-fil med projekt innehållande informationen specificerade ovan.\\
+Resultat: En .json-fil med projekt innehållande informationen specifierade ovan.\\
+Godkänt: \textbf{Ja}
+
+
+\subsection{Projekt-id}
+“Projekt-id ska vara ett unikt heltal för varje projekt”\\
+\textbf{Testfall 1}:\\
+Indata: Öppna data.json-filen och kontrollera att vardera projekt har ett unikt project-id, och att det är ett heltal och inte någon annan datatyp.\\
+Förväntat resultat: En .json-fil med projekt där vardera projekt har ett unikt project-id specificerat med ett heltal.\\
+Resultat: En .json-fil med projekt där vardera projekt har ett unikt project-id specificerat med ett heltal.\\
+Godkänt: \textbf{Ja}
+
+
+\subsection{Sekvens av tekniker}
+“Varje projekt kan ha en sekvens av tekniker angivna”\\
+\textbf{Testfall 1}:\\
+Indata: Öppna data.json-filen och kontrollera att vardera projekt har en lista med tekniker i fältet \verb|techniques_used|.\\
+Förväntat resultat: En .json-fil innehållandes projekt där alla projekt har en lista över använda tekniker.\\
+Resultat: En .json-fil innehållandes projekt där alla projekt har en lista över använda tekniker.\\
+Godkänt: \textbf{Ja}
+
+
+\subsection{Sökning på godtycklig information}
+“Sökning ska kunna göras på godtycklig projektinformation. Sökning kan ske på flera fält samtidigt. Sortering ska kunna göras på ett fält, i stigande och fallande träffordning. Man ska kunna filtrera utifrån använda tekniker i sökningen. Observera att allt ska fungera tillsammans, så att man kan söka på ett sökord, filtrera till vissa tekniker och sortera söklistan i en viss ordning samtidigt.”\\
+\textbf{Testfall 1}:\\
+Indata: Sök på projekt där \verb|project_name| = "Portfolio"\\
+Förväntat resultat: Projektet med ID 1 och namnet "Portfolio"\\
+Resultat: Projektet med ID 1 och namnet "Portfolio"\\
+Godkänt: \textbf{Ja}
+
+\textbf{Testfall 2}:\\
+Indata: Sök på projekt där \verb|project_name| = "Detta är inget projekt"\\
+Förväntat resultat: Inga sökresultat.\\
+Resultat: Inga sökresultat.\\
+Godkänt: \textbf{Ja}
+
+
+\subsection{INTE LÄNGRE KRAV}
+
+\subsection{INTE LÄNGRE KRAV}
+
+\subsection{Datalagring}
+“Data lagras i JavaScript Object Notation (JSON) i filen data.json. Filen ska lagras med UTF-8 teckenkodning.”\\
+\textbf{Testfall 1}:\\
+Indata: Kontrollera att data.json-filen har filavslutet .json och kan laddas in av datalagret.\\
+Förväntat resultat: En inladdningsbar data.json-fil.\\
+Resultat: En inladdningsbar data.json-fil.\\
+Godkänt: \textbf{Ja}
+
+\textbf{Testfall 2}: \\
+Indata: Döp om projektet med ID = 1 till "Pårtföliä". Sök sedan efter ett projekt med namnet "Pårtföliä". Detta kontrollerar att .json-filen använder UTF-8 teckenkodning.\\
+Förväntat resultat: Ett returnerat projekt som heter "Pårtföliä".\\
+Resultat: Ett returnerat projekt som heter "Pårtföliä".\\
+Godkänt: \textbf{Ja}
+
+
+\subsection{Addition av data}
+“Data läggs till i JSON-filer manuellt (eller av andra verktyg) i systemet.”\\
+\textbf{Testfall 1}:\\
+Indata: Lägg till en nytt projekt i data.json-filen. Vad fälten har för innehåll spelar ingen roll. Sök därefter på det projektet.\\
+Förväntat resultat: Det tillagda projektet.\\
+Resultat: Det tillagda projektet.\\
+Godkänt: \textbf{Ja}
+
+\textbf{Testfall 2}: \\
+Indata: Lägg till ett projekt med felaktigt innehåll i data.json-filen och sök på det projektet.\\
+Förväntat resultat: Sidan krashar med ett fel.\\
+Resultat: Sidan krashar med ett fel.\\
+Godkänt: \textbf{Ja}
+
+
+\subsection{Live-data}
+“Förändring av data.json ska slå igenom direkt i systemet utan omstart\\
+av webbserver.”\\
+\textbf{Testfall 1}: \\
+Indata: Starta sidan. Gå in på /project/1 och notera projektbeskrivningen. Gå sedan in i data.json-filen och ändra beskrivningen på projektet med \verb|project_id| = 1. Uppdatera sedan projektsidan.\\
+Förväntat resultat: En projektsida med uppdaterad beskrivning.\\
+Resultat: En projektsida med uppdaterad beskrivning.\\
+Godkänt: \textbf{}
+
+
+\subsection{Dataredigering}
+“(Frivilligt) Utvidga systemet med en administrativ sida för redigering\\
+av data.”\\
+\textbf{Testfall 1}:\\
+Indata: \\
+Förväntat resultat:\\
+Resultat:\\
+Godkänt: \textbf{?}
+
+\textbf{Testfall 2}:\\
+Indata:\\
+Förväntat resultat:\\
+Resultat:\\
+Godkänt: \textbf{}
+
+
+\end{document}

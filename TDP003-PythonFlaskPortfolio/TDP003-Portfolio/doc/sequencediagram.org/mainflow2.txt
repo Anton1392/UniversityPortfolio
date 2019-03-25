@@ -1,0 +1,18 @@
+title Huvudflödet
+
+participant Användare:
+participant main.py (Webb-server):
+participant data.py (Datalagret):
+participant data.json (Databas):
+
+main.py (Webb-server)<-data.py (Datalagret): Importerar datamodulen\nvid serverstart
+
+Användare->main.py (Webb-server):Begär en webbsida
+
+main.py (Webb-server)-->data.py (Datalagret):Anropar datamodulen om\nsidan kräver data från\ndatabasen
+
+data.py (Datalagret)<-data.json (Databas):Läser in data
+
+main.py (Webb-server)<-data.py (Datalagret):Returnerar filtrerad data
+
+Användare<-main.py (Webb-server):Renderar HTML

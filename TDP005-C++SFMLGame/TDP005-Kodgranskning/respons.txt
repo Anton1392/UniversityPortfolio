@@ -1,0 +1,23 @@
+ ni inkluderar vissa h filer fler än en gång
+
+
+vissa datamedlemmar deklareras utanför konstruktorn, finns det någon anledning till detta som vi inte ser?
+
+Annars så blir det mer lättläst om de deklareras i konstruktorn. 
+
+
+Blir lite förvirrande när ni har 4 klasser i mixin..
+
+Det hade varit enklare att förstå om ni dela upp det i fyra olika filer, eller ange ett bättre namn till mixin.
+
+Som det är nu, så får man chansa lite för att hitta de olika klasserna. 
+
+
+En del rader är längre än 80 tecken (rekommenderat att inte ha längre än detta), värt att tänka på innan inlämning.
+
+
+De flesta variabler har bra namn (man förstår vad de gör), men namnet på Spawner pekaren som skapas innan första while loopen  är mindre bra och samma namn används även i for looparna vilket gör det lite förvirrande. 
+
+
+De flesta kommentarer som finns är bra. Kanske att man ska lägga till lite fler till vissa funktioner.
+
