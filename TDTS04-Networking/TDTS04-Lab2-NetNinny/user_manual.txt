@@ -1,0 +1,77 @@
+------------------
+Compilation:
+This proxy is written in Python 3, which subsequently means that no compilations is needed. It only needs to be interpreted through a terminal window.
+------------------
+Configuration:
+
+All things are configured in the main.py file.
+Forbidden content aka iq_reductors are changed under the proxy class. To add more restrictions, simply add them at the end of the present array. The restrictions are not case sensitive, so words can be ether lower or upper case (or a mix of both). Spaces are taken into consideration when looking for a word. For example the forbidden content "Britney Spears", Britney and spears can exist in the page. But not in the order that the restrictions dedicate.
+
+The proxy is hardcoded to run in localhost (127.0.0.1)
+
+In all socket.recv calls, can the receiving socket-buffer size be changed, (currently 4096), Recommendations are: "For best match with hardware and network realities, the value of buffer size should be a relatively small power of 2, for example, 4096.".
+
+To change what pages the proxy redirects to, in case of forbidden content found, can be changed at line 78 & 79 (in case of forbidden URL). Respectively line 96 & 177 (in case of forbidden HTML content).
+------------------
+Setup:
+
+Socket for proxy:
+
+In Windows, web browsers use the proxy settings configured in Control Panel -> Internet Options -> Connections -> LAN Settings ->Proxy Server where Use a proxy server for your LAN should be checked and the Address and Port should be entered. To fine-tune the proxy settings such that they are only applied to HTTP (and not HTTPS, FTP, etc.) you can use the Advanced push button.
+
+In MAC follow this guide: HTTPS://kb.netgear.com/25191/Configuring-TCP-IP-and-Proxy-Settings-on-Mac-OSX
+
+To set up proxy in chrome, follow this guide: HTTPS://www.cactusvpn.com/tutorials/how-to-set-up-proxy-on-chrome/
+
+The proxy settings for Firefox can be configured regardless of the proxy settings of the OS. Depending on the OS, you can find the Options window for Firefox either under Tools->Options (e.g. in Windows) or Edit->Preferences (e.g. in Solaris). In the Options window, select Advanced->Network->Settings... And choose the Manual proxy configuration option. Here you can enter the HTTP Proxy address and Port. (NOTE: if you are using localhost as the proxy address, remember to clear the contents of the No proxy for text box)
+
+Start proxy:
+In the terminal, locate where the main.py proxy file is, and run it in the terminal with "python3 [location/]main.py PORT_NUMBER"
+Port number is whatever number you entered in the settings from the prior setup.
+------------------
+Requirement fulfillment:
+1. Support both HTTP/1.0 and HTTP/1.1.
+This is possible because we pass on the headers we get from ether side, line 141 and 174.
+
+2. Handle simple HTTP GET interactions between client and server. Found in the run-function.
+
+3. Blocks requests for undesirable URL, using HTTP redirection to display error page instead. Line 92-99, 165-170. Filtration at lines 17-37
+
+4. Detects inappropriate content bytes within a Web page before it is returned to the user, and redirecting to error page. Same lines as above.
+
+6. Is compatible with all major browsers
+While we do not claim that the proxy is perfect for all major browsers (as discussed in the test documentation). The proxy works fine for all major browsers.
+
+7. Allows the user to select the proxy port
+Fulfilled in Line 50->56, where the program reads the port from the command line. If there is no port specified, the program quits and alerts of proper usage.
+
+8. Is smart in selection of what HTTP content should be searched for the forbidden keywords.
+On line 139 we scan the recieved headers for "content-type: text" as any match for that is some form of plain text. If not plain text, we forward everything. If plain text, we fill the buffer, scan, and then send.
+
+------------------
+Summary:
+What the proxy can do:
+Relay communication between the browser and the server.
+Filter an URL.
+Filter the returned content.
+Redirect to an error page.
+Relay objects between the browser and the server.
+Write a live log in the terminal.
+The proxy can handle HTTP 1.0 and 1.1.
+
+What the proxy can't do:
+Handle more than one connection at a time (as discussed in the testing documentation).
+POST requests (as discussed in the testing documentation).
+Some pages do not appear (as discussed in the testing documentation).
+Will not work on pages or items that do not have content-length in the HTTP header (as discussed in the testing documentation).
+Can't sort trough content other than ASCII. If content is coded in other things then ASCII, .decode() in is_allowed_content() will trow an error. If an error is thrown here, the proxy will simply passes on the content without filtration
+
+List/summarize/discuss:
+We have not found any examples of non-HTTPS streaming websites. HTTPS-streaming sites such as Youtube and Vimeo work great though.
+
+HTTPS websites bypass our proxy entirely, as it is the nature of HTTPS. Sites that return gzip-compressed content work fine. We tested http://httpbin.org/gzip for that. We have not encountered any streaming websites that use gzip.
+
+Websites that contain advertisements may overwhelm the proxy, slowing it down to some extent. This can be improved by using a adblocker (discussed in the testing documentation).
+
+Some pages on Firefox also have a tendency to request many certifications (eg digicert) for the webpage, this is a potential "resource hogger".
+

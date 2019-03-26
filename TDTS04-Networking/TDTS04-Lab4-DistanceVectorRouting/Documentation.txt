@@ -1,0 +1,123 @@
+####################################################################################################
+(I) How distance vector routing works:
+
+When a new router, A, wants to connect to a network, it begins by making a routing table, and setting itself (A) to distance 0. (0 indicates that I am myself) A also keeps track of its neighbors routing tables, which initialize to infinite distance. 
+When A is initialized, it passes its table to all its neighbors.
+
+Router D and E happens to be at the end of As connections, and is able to respond. (Another router may be connected to A, but for some reason unable to respond, e.g. broken connection or be overflowed by data).
+D and E sees the a new router connected, thus adds a new router to its own routing table, setting the cost of travelling to that router.
+
+D and E recalculates their shortest distance to all known routers, and then sends their own routing tables to neighbors, if the table has changed.
+
+A receives D and Es routing table. A now adds D and E, plus all routers D and E can reach, to its own(As) routing table. If for some reason both D and E can reach, lets say, router K. A will decide to route to K trough the link(router) that can reach K in the smallest "cost" (eg. distance/time etc), and add that path to its routing table.
+
+Lastly, if the table of A was updated, A will send the newer routing table back to A's neighbors, so that they in turn may discover that they can route shorter through A, to a specific router.
+
+This smallest-route calculation is implemented using the Bellman Ford algorithm. In a nutshell, if the cost from route A to B, plus the distance from myself to A is smaller than my stored shortest distance to B, we have found a new route.
+The table is then updated, along with the next-hop router(A), and then all my neighbors are alerted of an updated table.
+
+This sending of routing tables back and forth will continue until all routers in the network knows, approximately, the "best" route to all other routers.
+
+In a "real" implementation, the routers will occasionally ping each other and send each other routing tables even though no updates have happened. In the simulation this is not the case as it shuts down when no packets are being transmitted.
+
+####################################################################################################
+(ii) How you tested the algorithms:
+
+First:
+The basic algorithm, containing:
+the constructor,
+sendUpdate(),
+recvUpdate(),
+printDistanceTable()
+was implemented and tested using RouterSimulator4 and RouterSimulator5.
+
+Then:
+The implementation of updateLinkCost() was tested with RouterSimulator3, RouterSimulator4 and RouterSimulator5.
+RouterSimulator4 and 5 had their LINKCHANGES flag set to true (default was false).
+This version of the code, the one lacking poisoned reverse capabilities, had count to infinity problems.
+
+Lastly:
+The algorithm containing poison reverse capabilities was tested with RouterSimulator3, RouterSimulator4 and RouterSimulator5.
+RouterSimulator4 and 5 had, again, their LINKCHANGES flag set to true (default was false).
+This version of the code fixed the count to infinity problems.
+
+All these test, were checked manually for correct values, as we did not have an answer sheet in hand.
+That is the program was ran, and the resulting numbers were manually compared to the expected result.
+We ran many tests, with two pairs of eyes to check the numbers. Thus, invalid tests is unlikely.
+
+
+####################################################################################################
+(iii) Some cases in which poisoned reverse may fail:
+
+FIRST CASE:
+Take this network for example:
+A---C
+|
+|
+B
+
+Lets say that A---C is broken:
+
+A-\-C
+|
+|
+B
+
+In the ideal case, A will tell B that it no longer can reach C, thus B will "find" another way to C, and later tell A that it "found" a new path.
+
+Now consider that As message to B (the one about not being able to reach C), fails. If for some unfortunate reason, B sends its routing table to A before B can receive As newest table. B will tell A that it can reach C in 2 hops (even though this is achieved by going trough A to C).
+
+A will now think that B can reach C, and thus updates its routing table to account for the changed(increased) cost. Then it will send this newer routing table back to B. B will now send that routing to C, trough A, have increased in cost thus updating its own routing table, and sending it back to A.
+
+This will continue until infinity count is reached, thus it is called the "count to infinity problem".
+
+
+SECOND CASE:
+This network:
+A---B---C
+    |   |
+    |   |
+    D---┘
+
+Now lets say this occurs:
+A-\-B---C
+    |   |
+    |   |
+    D---┘
+
+In the ideal case, B detects that A is unreachable, and tells C and D this. Thus C and D knows A is unreachable.
+
+But if for some unfortunate reason B's message to D is delayed, consider the following:
+C, wanting to reach A again, gets a routing table from D, saying that D still can reach A. C then decides to route trough D. C Sends it table to B. Making B think that C can reach A.
+Thus yet again creating a count to infinity loop.
+
+The difference between this case and the prior, is that in this case a three point loop is created, instead of a two point loop (back and forth bounce).
+
+####################################################################################################
+(iv) A solution to this problem:
+
+First case solution:
+The "natural" solution to this problem, is if B would find another path, one that cost less then the ever-increasing A path. (In this example that is not a possibility.)
+
+If B can't find another path, another solution must be proposed.
+One solution is to define a maximum hop count, for example 20. Then if the hop count is above 20, it is interpreted as infinity. Thus avoiding having to count to infinity.
+
+One solution is the so called "split-horizon". In this solution each connection(neighbor) gets its own routing table. But with the general rule that "it is never useful to send information about a route back to the direction from which the original information came".
+
+In this example the sequence of event is as follows:
+A sends to B that it can't reach C (this message is lost).
+B sends to A that it can reach C.
+A sends to B a table that does not contain information that A can reach C. (As B was the one who told A how to reach C).
+Thus B sees that it can no longer reach C trough A, and sends this fact back to A.
+Making A know that B can no longer reach C.
+
+This solution can be slightly altered, so that instead if of not sending information back, it sends infinity value back (poison).
+
+
+
+Second case solution:
+This case can't be solved by split-horizon, as the path is sent around a short (three router) "circle", (not bounced back and forth like the first case, a two point count to infinity problem).
+
+It is however posible to reduce the risk of a count to infinity problem, by having a Max length (same as the prior case). As well as finding another shorter path before infinity is reached.
+
+The only way to reduce this further is to use other routing protocols, these other protocols are usually much more complex and probably a bit slower/performance drawing

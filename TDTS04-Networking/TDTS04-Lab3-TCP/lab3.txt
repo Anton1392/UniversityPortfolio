@@ -1,0 +1,159 @@
+Task A |
+########
+
+1. The first packet is number 4, the last one is packet 199. You can tell by the TCP reassembled fragments in the POST-packet, which is packet 199, the last packet.
+
+2. The source computer has IP 192.168.1.102, on port 1161.
+
+3. gaia.cs.umass.edu has IP 128.119.245.12, port number 80 (the default webserver port)
+
+4. (relative) Sequence number 0. The Syn-flag (one bit) is set to 1.
+
+5. It too, is (relative) sequence number 0. The (relative) Ack-number is 1, as it acknowledges the Syn-packet, and expects another packet with sequence number 1. Both the Ack and Syn flags are set, Ack for acknowledging the previous packet, and Syn for saying "I want to establish a connection, as well"
+
+6. 164041 (packet number 199).
+
+7.  Sequence numbers (relative): 1, 566, 2026, 3486, 4946, 6406
+	Time sent: 0.026477, 0.041737, 0.054026, 0.054690, 0.077405, 0.078157
+	Time acked: 0.053937, 0.077294, 0.124085, 0.169118, 0.217299, 0.267802
+	Delta time: 0.02746, 0.035557, 0.070059, 0.114428, 0.139894, 0.189645
+
+	EstimatedRTT = 0.875*EstimatedRTT + 0.125*SampleRTT
+	1st packet: EstimatedRTT = 0.02746
+	2nd packet: EstimatedRTT = 0.875*0.02746 + 0.125*0.035557 = 0.028472125
+	3rd packet: EstimatedRTT = 0.875*0.028472125 + 0.125*0.070059 = 0.03367048437
+	4th packet: EstimatedRTT = 0.875*0.03367048437 + 0.125*0.114428 = 0.04376517382
+	5th packet: EstimatedRTT = 0.875*0.04376517382 + 0.125*0.139894 = 0.05578127709
+	6th packet: EstimatedRTT = 0.875*0.05578127709 + 0.125*0.189645 = 0.07251424245
+
+
+8. I'm assuming this refers to the TCP segments assembled to the POST-request, similar to the question above.
+   Lengths: First segment: 619 bytes(565 payload), Rest: 1514 bytes(1460 payload).
+
+# fifth segment is 1147
+
+
+9. 5840 bytes. The window seems to grow as time goes on, thus the sender does not seem throttled at all.
+
+# stops growing at 62780 (in No. 51)
+
+10. No. Wireshark would say "TCP Retransmission" in the place that currently says "TCP segment of a reassembled PSU" on all packets. Also it would be color coded black, there is no retransmission in this file.
+
+11. Around 1500 bytes seems to be the default, with a bit of a difference on the first segment. This makes sense as the MTU of Ethernet is 1518 bytes, 18 of which are overhead. At packet number 59 and 60 the difference in ACK-number was approximately 3000, this is a double acknowledgement as we know the MTU is 1518 bytes, which basically is half of 3000.
+
+12. 150kB of data was sent. This became 164kB with overheads being transferred (derived from the final ack number.). The final ack happened at packet 202, at around 5.46 seconds. Average throughput then becomes 164kB/5.46s = ~30kBps.
+
+bitstransferredtimated RTT to modify the window size. The optimal window size is the Link speed multiplied by the Estimated RTT. If the window size increases past that, it can congest the link, causing packet loss. If the window size is less than that the link is not fully utilized, which is less efficient.
+TCP can also artificially drop packets to reduce congestion.
+Congestion is the leading cause of packet loss in the network layer.
+
+
+
+
+
+####################################################################################################
+Task B |
+########
+
+13.
+For the "old" trace, it seams as the sender never leaves never leave slow start. As before the next burst of bytes, the sent ones have all been ACK'd.
+
+This is excluding the first 0.15 sec  (TCP establishment + slow-starts windup)
+And last ~.5 sec, timeframe 5.25 -> 5.7 sec, which is the TCP closure.
+
+Why the 'poster' never leaves slow-start could be explained by that the application layer do not send enough data to cause a packet drop, thus not triggering a switch to linear growth.
+
+
+As for the "new" trace, slow-start seems to be left around the time 0.5. This is probably because the sender (the server in this case) detects packet loss and waits until it received ACKs
+
+After the short break (probably the time the server waits for ACKs), the server begins again in slow-start. But this time, stops slow-start at a certain point and switches to linear growth. Until it detects a packet drop. Then it waits for ACKs, and restarts the transmission in slow-start.
+
+
+
+14.
+The sender have control of the congestion window, the congestion window dedicate how many unacknowledged packets the sender allows to be sent to the network. The sender will increase the congestion window until it experiences packet loss, then it will half the window and increase it until the next loss. (And so forth)
+
+The advertised window is at the receivers end, it tells the sender how much data it can handle in its buffer.
+
+The sender will also use the receivers advertised window to decide how many bytes it should send (the size of the congestion window), as if the sender sends to mutch######### data, the receiver will be overwhelmed and discard the overflow.
+
+The effective window is the smallest window of advertised window and congestion window (at the time). The effective window is use by slow-start and congestion avoidance.
+
+
+15.
+It is not possible to see the senders congestion window in the trace file, as the sender do not send any data about its congestion window.
+
+However, you can estimate the congestion window by looking at sent bytes and received ACSs timeframe.
+The smaller timeframe the bytes are received and ACKs sent, the bigger the sender congestion window.
+Also taking into consideration the receivers advertised window. As the congestion window is, in most cases, not bigger then the advertised window.
+
+
+
+
+
+####################################################################################################
+Task C |
+########
+
+16. In this scenario each of the connections have the same round-trip time, which ideally should mean they get an equal proportion of the connection. The average throughput for these connections can be described by total transferred bytes divided by the time it took (the duration). Here are the calcs:
+	1. 165095720*8/521 = ~2.54 Mbps
+	2. 165842766*8/521 = ~2.54 Mbps
+	3. 165458792*8/514 = ~2.58 Mbps
+	4. 163235772*8/512 = ~2.55 Mbps
+The total bandwitdh of the host is all of the connections summarized, this is: 10.21 Mbps
+The TCP fairness seems very fair in this case. The lowest connection speed is only (1 - 2.54/2.58) =~1.6% slower than the fastest speed.
+
+
+
+
+
+17. In this case the duration is a constant. Using the same division as above we get the throughputs:
+	1. 261319130*8/90 = ~23.2 Mbit/sec
+	2. 175995832*8/90 = ~15.6 Mbit/sec
+	3. 151894552*8/90 = ~13.5 Mbit/sec
+	4. 140388568*8/90 = ~12.5 Mbit/sec
+	5. 108610702*8/90 = ~9.7 Mbit/sec
+	6. 70644690*8/90  = ~6.3 Mbit/sec
+	7. 65744938*8/90  = ~5.8 Mbit/sec
+	8. 43212876*8/90  = ~3.8 Mbit/sec
+	9. 39222524*8/90  = ~3.5 Mbit/sec
+Total bandwidth is still the same equation, just add all these up. This becomes: ~94 Mbit/sec on the host.
+Fairness can't be calculated through the above method though, we need a new factor. Fortunately for us, the RTT is variable across connections.
+Throughput increases by the inverse of RTT, meaning lower RTT gives a proportionally higher throughput. Through this we can calculate some sort of "Fairness number".
+The product of throughput and RTT should ideally be a constant in a fair TCP connection. We multiply above throughput with the RTT to get the "Fairness number".
+Calculations below are done using Mbits per second.
+	1. 23.2 * 13    = 301.6
+	2. 15.6 * 35   = 546
+	3. 13.5 * 68   = 919
+	4. 12.5 * 73   = 911
+	5. 9.7 * 49   = 474
+	6. 6.3 * 33  = 207
+	7. 5.8 * 135 = 788
+	8. 3.8 * 326 = 1252
+	9. 3.5 * 322 = 1123
+We can see from these numbers that this system is quite a bit less fair than the above one. Connections 3 and 4 have similar fairness, so does 8 and 9.
+Connections 8 and 9 seem to benefit from this, getting more throughput per roundtriptime than the other connections. Connections 5, 6, 2, and 1 seem to be on the less fortunate end.
+Using this method it's possible to see the amount of fairness, even though the circumstances with latency is different.
+
+
+18. Getting the "fairness number" for this case is the same as above, but we now use a variable duration instead of a constant one.
+(bytes transferred/duration * RTT) is the equation for the fairness number.
+Here are the "fairness number" calculations:
+	1. 108851134 / 58 * 40 = 75069747
+	2. 90435681 / 58 * 36  = 56132491
+	3. 57971584 / 53 * 100 = 109380347
+	4. 32000012 / 29 * 68  = 75034510
+	5. 32557334 / 35 * 31  = 28836495
+	6. 27199361 / 31 * 33  = 28954158
+	7. 26329578 / 31 * 122 = 103619629
+	8. 38834490 / 56 * 146 = 101247063
+	9. 23571761 / 35 * 74  = 49837437
+	10. 36252962 / 55 * 66 = 43503554
+Connections 3, 7, and 8 have a similar value of about 105 million.
+Connections 2, 9, and 10 have a similar value of about 50 million.
+Connections 1 and 4 have a value of around 75 million.
+Connections 5 and 6 have a value of around 29 million.
+
+The fairness number is quite unfair, with connections 5 and 6 suffering compared to 3, 7 and 8.
+These values are most likely not very accurate, but it's the best we can do with the information we were given.
+Variables are inherently variable, and extreme fluctuations may cause problems with these calculations. If the RTT is too low, there may simply not be enough bandwidth on the host to allocate a "fair" amount of bandwidth to the connection.
