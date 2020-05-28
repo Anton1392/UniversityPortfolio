@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<title>Twatchat.com</title>
+
+		<!--Loads bootstrap and jQuery(needed for bootstrap)-->
+		<script src="external/js/jquery-3.3.1.js"></script>
+		<link rel="stylesheet" type="text/css" href="external/css/bootstrap.css">
+		<script src="external/js/bootstrap.js"></script>
+
+		<!--Loads vue-->
+		<script src="external/js/vue.js"></script>
+
+		<!--Loads our own scripts-->
+		<script src="cookies.js"></script>
+		<link rel="stylesheet" type="text/css" href="style.css">
+
+		<meta charset="UTF-8">
+	</head>
+
+	<body>
+		<div class="container" id="app">
+			<h1>Logged in as: {{ username }}</h1>
+			<a href="myProfile.html">
+				<button type="button" class="btn btn-primary">My profile</button>
+			</a>
+
+			<a href="chat.html">
+				<button type="button" class="btn btn-primary">Chatroom</button>
+			</a>
+
+			<button type="button" class="btn btn-primary" onclick="logOut()">Log out</button>
+
+			<h1>Add friends!</h1>
+
+			<form id = "filterForm">
+				<div class="form-group">
+					<label for="filter">Filter users</label>
+					<input type="text" class="form-control" id="filter" onkeyup="filterFriends()">
+				</div>
+			</form>
+
+			<ul class="list-group">
+				<li class="list-group-item" v-for="friend in filteredFriends" >
+					<a :href="'profile.html?user=' + friend">
+						{{ friend }}
+					</a>
+
+					<button type="button" :data-friend="friend" class="btn btn-primary btn-sm" onclick="addFriend(event)">Add friend</button>
+				</li>
+			</ul>
+		</div>
+
+		<script src="friends.js"></script>
+	</body>
+</html>

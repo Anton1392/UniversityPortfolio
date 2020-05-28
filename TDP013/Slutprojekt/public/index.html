@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<title>Twatchat.com</title>
+
+		<!--Loads bootstrap and jQuery(needed for bootstrap)-->
+		<script src="external/js/jquery-3.3.1.js"></script>
+		<link rel="stylesheet" type="text/css" href="external/css/bootstrap.css">
+		<script src="external/js/bootstrap.js"></script>
+
+		<!--Loads vue-->
+		<script src="external/js/vue.js"></script>
+
+		<!--Loads our own scripts-->
+		<script src="cookies.js"></script>
+		<script src="index.js"></script>
+		<link rel="stylesheet" type="text/css" href="style.css">
+
+		<meta charset="UTF-8">
+	</head>
+
+	<body>
+		<div class="container">
+			<h1 id="logInStatus">You are not logged in!</h1>
+			<form id="logInForm">
+				<div class="form-group">
+					<label for="usr">Name</label>
+					<input type="text" class="form-control" id="usr">
+				</div>
+
+				<div class="form-group">
+					<label for="pwd">Password:</label>
+					<input type="password" class="form-control" id="pwd">
+				</div>
+			</form>
+
+			<button type="button" class="btn btn-primary" onclick="logIn()" id="btnLogin">Log in</button>
+			<!--<button type="button" class="btn btn-primary" onclick="logOut()">Log out</button>-->
+
+			<h1>Register here</h1>
+			<form id="registerForm">
+				<div class="form-group">
+					<label for="usr">Name</label>
+					<input type="text" class="form-control" id="usrReg">
+				</div>
+
+				<div class="form-group">
+					<label for="pwd">Password:</label>
+					<input type="password" class="form-control" id="pwdReg">
+				</div>
+			</form>
+
+			<button type="button" class="btn btn-primary" id="btnReg" onclick="register()">Register</button>
+		</div>
+	</body>
+</html>

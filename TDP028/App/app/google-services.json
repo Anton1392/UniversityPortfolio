@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "269235803052",
+    "firebase_url": "https://alarmingappfirebase.firebaseio.com",
+    "project_id": "alarmingappfirebase",
+    "storage_bucket": "alarmingappfirebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:269235803052:android:e08b93337d3fc1c9",
+        "android_client_info": {
+          "package_name": "com.example.anton.myfirstapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "269235803052-7kv2p5lg8g8b9dfb6ms7h33kobapch9h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.anton.myfirstapp",
+            "certificate_hash": "cdab5cc0536961799b693263868135f25ba2945a"
+          }
+        },
+        {
+          "client_id": "269235803052-8t0937i2iq5u6dfa53002sghkqbo0a02.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCky7HDz-zuvsldtzlOxzfmQR93GiIKSZo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "269235803052-8t0937i2iq5u6dfa53002sghkqbo0a02.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,5 @@
+Angåenge det vi skrev häromdagen med färgkoder så utgår vi främst från färgerna Lila: #712981, Blå: #0d68b1, Grå: #f0f0f0 .
+Någon detaljskiss kommer vi däremot inte kunna bistå med då vi heller inte vet exakt hur vi vill att slutprodukten ska se ut.
+Utgå från de hemsidor vi gett som exempel så kan ni se ungefär vilket innehåll, samt färger, som kan vara intressant att använda / visa.
+
+Vart saker ska läggas spelar sen nog mindre roll. Det ni vill kolla upp är "nginx" och hur man använder det för att sätta upp en webserver.

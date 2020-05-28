@@ -1,0 +1,19 @@
+1a. Skriv testerna först, bygg sedan programmet och funktioner som uppfyller dessa tester på bra sett. 
+
+	När man konstruerar enhetstester tänk så på att testa vardera mindre del i programmet, och varje "gren" av logik. Man behöver ofta två test per metod, om det finns en sann och en falsk gren i den metoden. 
+
+1b Båda språken är uppmärkningsspråk, de är båda till för att lagra information på ett visst sätt.
+HTML används främst av webbläsare för att visa webbsidor. XML kan användas i flera sammanhang, delvis för att skapa en slags databas med objekt som har en viss struktur, likt JSON.
+HTML är främst designat för att vara läsbart av människor, medan XML kan läsas av både människa och maskin. 
+
+1c. [\w\-!"#¤%&\/]+@[\w\.]+]"
+
+1d. Man behöver inte omuppfinna hjulket. Istället för att ha  sina egna specialiserade klasser så kan man enkelt utöka en redan existerande klas där den passar bra in, till exempel fibonacci-funktionen för integers. Man behöver inte h eller hålla  koll på osammanhängande klassnamn när mnan skriver vidare på sin kod.
+
+En nackdel är att man har inget som stoppar en fgrån att "förstöra" redan funktionella inbyggda funktioner. Om man importerar en modul som någonstans ändrar på funktionaliteten av klassen så har man svårt för att felsöka det.
+
+2a.  initialize tar in ett block och lagrar detta i c-variabeln. a-variabeln håller koll på hur många gånger c har kallats från korvgryta-metoden. b är summan av alla utvärden som c-kallningen har returnerat.
+
+korvgryta-metoden returnerar summan av alla kallningar delat med antalet kallningar, alltså medelvärdet av alla c-kallningar. 1.0* används för att konvertera divisionen till en float-division så man får alla decimaler som man vill ha.
+
+d-parametern i korvgryta är eventuell indata för c-metoden som kallas, det defaultas till 0. I det givna fallet med ett random-block så behövs ingen speciell indata, så random kallas som vanligt ändå.

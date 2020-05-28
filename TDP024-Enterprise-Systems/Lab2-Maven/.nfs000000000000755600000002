@@ -1,0 +1,7 @@
+cd GoServer
+
+fuser -k 8080/tcp
+
+echo Starting Go-server
+
+./GoServer

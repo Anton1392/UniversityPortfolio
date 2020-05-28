@@ -1,0 +1,405 @@
+## 2019-01-30 (4h pass)
+Anton:
+1. Igår påbörjade jag kodstandarden, tekniska översikten, omdesignade readme.md, och kollade deras dokument/sidor.
+2. Idag ska jag läsa på lite om git branch-kommandon.
+3. Inget stoppar mig. Kanske är bra att bestämma hur/om vi ska organisera alla branches.
+
+Jimmy:
+1. Igår, Läste jag in mig på restApi och kollade över kodstandarden plus deras dokument och sidor
+2. Idag tänker jag kolla över stories och se om jag kan bryta ner dem till tasks
+3. Det bör inte finnas några problem, men uppstår det något kommer jag att ta upp det till allmän diskussion
+
+
+Joakim
+1) Igår kollade jag på zoezi's testmiljö och api
+2)Idag tänkte jag läsa trello instruktioner,  git branching samt kika lite på React då jag inte använt det förut.  3) Nej.
+
+
+Dennis:
+1) Igår kollade jag zoezis grejer, läste på om flask+react och skapade utvecklingsmiljö för frontend;
+2) Idag hinner jag inte göra någonting, kommer istället att lära mig branching etc imorgon när vi skulle skippa arbetspasset;
+3) Inga problem att ta upp
+
+Gustaf:
+1) Igår kolla jag på deras hemsida & email(+dokument). Samt fixa git redmen med "projectlogistik". Samt fixa en del med Trello boarden. Sedan fixa jag en draft till trelloinsturktioner, samt kopierade scrum info till giten( och redigerade detta lite). Sedan läste jag igenom den nya avtals mallen. Även så var jag (och alla andra) på möte med kund.
+
+2) Idag ska jag bli klar med att merga avtalen, och skicka detta till kund. Om tid finns kvar ska jag även: kolla Readmen, kolla kodstandard, kolla igenom tekniska standarden, git dockumentet, redigera trello instruktionerna. Samt förhopningsvis färdistella några av dessa.
+
+3) Jag skulle upskatta om jag får någon kommentar på trello instruktionerna sammt readmen, sammt på de andra dockumetn jag blir klara med idag. Förutom det har jag saker att göra
+
+
+Victor:
+1. Igår kollade jag igenom zoezis system och dokumentation
+2. Idag ska jag läsa igenom trello allt nytt på trello, och lära mig git brancherna
+3. inget som jag märkt
+
+
+
+
+
+
+
+## 2019-01-30 (4h pass)
+Anton:
+1) läste på om git komando,
+2) API??
+3) -
+
+Jimmy:
+1) skrivit på avtal, testat deras api
+2)
+3)
+
+Joakim:
+1) Läste git dockumeent, kika på react
+2)
+3)
+
+Dennis:
+1) Kolla  på git
+2)
+3)
+
+
+Victor:
+1) skrivit på avtal
+2)
+3)
+
+Gustaf:
+1) satt med avtal
+2)
+3)
+
+
+
+
+
+
+
+## 2019-02-7 (4h pass)
+Anton:
+1) skrev på avtal, 1 timme på react
+2) Backend?
+3)
+
+Jimmy:
+1) skrev på avtal, fixa att jhämta data från
+2) titta på sökning/motor
+3)
+
+Joakim:
+1) Igår övade och testade jag react.
+2) Idag tänkte jag fixa ett middleware med flask och python.
+3) Borde inte bli några problem
+
+
+
+Dennis:
+1) skrev på avtal
+2) frontend delen börja med
+3)
+
+
+Victor:
+1) Skrev på avtal, resertch sökmotor
+2) fixa sökmotor
+3)
+
+Gustaf:
+1) skrev på avtal, fixa trello, dockumentation
+2) mejla kund, hjälpa inte dennis
+3)
+
+
+
+
+
+
+
+
+
+
+
+
+## 2019-02-8 (4h pass)
+Anton:
+1) Förra passet försökte jag lägga in testdata i Zoezis API, jag skapade en timer som höll vår data uppdaterad, och skapade ordentliga branches i git.
+2) Idag är jag osäker på vad jag ska göra. Skulle kunna ta till mig synonym-databasen och fylla på. Annars kollar jag trello då och då och gör det som kan göras.
+3) Om @thiextar#8287 och @Spathatos#9716 inte har tagit åt sig databasen redan. Tänkte en .json-fil med flera listor där varje ord i en lista betyder samma sak.
+
+
+Jimmy:
+1)
+2)
+3)
+
+
+Joakim:
+1) Middle were (resertch)
+2) validation backend
+3)
+
+
+Dennis:
+1) frontend, sök component, list komponent
+2) forsätta med ovan
+3) vi behöver sammarbeta med att kopla ihop
+
+
+Victor:
+1) sökmotor,
+2) fortätta med sök & synonym databas
+3)
+
+
+Gustaf:
+1) Gick igenom lappat som skulle testas. Mejla lappar till kund att välja på, väntar fortfarande. Skapa burndown chart
+2) Länka trello kort korekt, hjälpa till med frontend
+3)
+
+
+
+
+
+
+
+
+## 2019-02-13 (4h pass)
+Anton:
+1) Förra passet gjorde jag-synonymgrejor
+2) Kommer nog inte göra något idag, känner mig förstörd
+3) -
+
+
+Jimmy:
+1) -
+2) -
+3) -
+
+
+Joakim:
+1) validera sök termer, updatering i flask
+2) Merga sökfunktioner
+3) Kolla vilka brancher som är vad
+
+Dennis:
+1) Visa sökresultat, sök input.
+2) Små förbättringar på serathc baren, få en faktisk sökning att fungera
+3) -
+
+
+Victor:
+1) förra passet jobbade jag med sökmotorn och synonymer
+2) idag om jag blir piggare kommer jag försöka förbättra sökmotorn lite till, men kommer probably inte orka idag
+3)  inget som jag behöver hjälp med
+
+Gustaf:
+1) testa o intigrera
+2)
+3)
+
+y
+
+
+
+
+
+## 2019-02-14 (4h pass)
+Anton:
+1) -
+2) -
+3) -
+
+
+Jimmy:
+1) -
+2) -
+3) -
+
+
+Joakim:
+1) -
+2) -
+3) -
+
+Dennis:
+1) integration av branches
+2) planera
+3)
+
+
+Victor:
+1) göra vara sjuk
+2) planera
+3)
+
+Gustaf:
+1) peta i allt
+2) planera
+3)
+
+## 2019-02-20 (4h pass)
+Anton:
+1) Tidsestimering, server till class
+2) backend lagra info
+3) -
+
+
+Jimmy:
+1) Tidsestimering, websockets
+2) socket flask module
+3) -
+
+Joakim:
+1) Produktsida layout
+2) Produktsida
+3) -
+
+Dennis:
+1) sjuk
+2) kund-stuff, scrumgrejer, produktsida
+3)
+
+
+Victor:
+1) sjuk
+2) sjuk
+3)
+
+Gustaf:
+1) tog över Dennis slack, gitignore
+2) hakar på Anton
+3)
+
+## 2019-02-21 (4h pass)
+Anton:
+1) Uppdateringslogik för backend.
+2) Systemdokumentation
+3) -
+
+
+Jimmy:
+1) Connection med Zoezis websocket
+2) Liveuppdateringar till klienten
+3) -
+
+Joakim:
+1) Produktsida
+2) Produktsida
+3) -
+
+Dennis:
+1) Hämta data till produktsida, search suggestions
+2) Fortsätta med search suggestions
+3) -
+
+
+Victor:
+1) sjuk
+2) sjuk
+3)
+
+Gustaf:
+1) Backend
+2) Backend
+3)
+
+## 2019-02-26 (4h pass)
+Anton:
+1) Systemdokumentation
+2) Merga gammal branch
+3) -s
+
+
+Jimmy:
+1) socket mellan zoezi och oss, socket i flask
+2) klientsocket
+3) -
+
+Joakim:
+1) komma ihåg sökning
+2) SEO
+3) -
+
+Dennis:
+1) autosuggest
+2) autosuggest
+3) -
+
+
+Victor:
+1) sjuk
+2) klientsocket
+3) -
+
+Gustaf:
+1) refactoring backend
+2) backend, klientsocket, flytta saker som ligger i testing
+3) -
+
+## 2019-02-27 (4h pass)
+Anton:
+1) testing, config, searchdelay
+2) testing
+3)
+
+
+Jimmy:
+1) socket
+2) socket
+3)
+
+Joakim:
+1) seo
+2) testing
+3)
+
+Dennis:
+1) sökförslag
+2) testing
+3)
+
+
+Victor:
+1) socket
+2) socket
+3)
+
+Gustaf:
+1) testing
+2) testing, git
+3)
+
+## 2019-02-27 (4h pass)
+Anton:
+1)
+2)
+3)
+
+
+Jimmy:
+1)
+2)
+3)
+
+Joakim:
+1)
+2)
+3)
+
+Dennis:
+1)
+2)
+3)
+
+
+Victor:
+1)
+2)
+3)
+
+Gustaf:
+1)
+2)
+3)

@@ -1,0 +1,4 @@
+FAIL tests/klaar/pfs deadlock inconsistent
+
+FAIL tests/userprog/sc-bad-arg 5+19
+FAIL tests/userprog/read-bad-ptr 5+15+19

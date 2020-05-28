@@ -1,0 +1,268 @@
+### 1-1 What does RAID stand for.
+> Redundant Array of Independent Disks
+
+### 1-2 What does JBOD stand for.
+> Just a Bunch Of Disks
+
+### 1-3 Explain roughly how RAID-0 works.
+> Uses striping across the disks, distributing the files evenly across all disks. This greatly increases reading speeds.
+
+### 1-4 Explain roughly how RAID-1 works.
+> Uses mirroring, basically having two (or more) identical disks that can each serve data. Both disks need to fail for the array to fail.
+
+### 1-5 Explain roughly how RAID-5 works.
+> Uses striping on the block level. Blocks are distributed across the drives.
+	Uses distributed parity for error checking, the parity bits are distributed across the drives.
+	If a single drive fails, the lost data can be recovered by calculations on the data from the other drives.
+
+### 1-6 Explain roughly how RAID-6 works.
+> Like RAID-5 but with double parity instead, this allows two drives to fail while still being recoverable.
+
+### 1-7 What is RAID 1+0 (sometimes known as RAID 10).
+> Creates two mirrored stripes. Fails if atleast one drive from each mirror fails.
+
+### 1-8 What is RAID 0+1 (sometimes known as RAID 01).
+> Creates a striped set from a series of mirrored drives.
+	Can sustain multiple drive losses as long as there is atleast one drive in each mirror.
+
+### 1-9 What is a hot spare.
+> Essentially a backup plan. If a drive fails, the hot spare can swap in and take its place.
+The "hot" aspect is because it is already connected to the system, ready to be swapped in .
+
+### 2-1 Explain the following concepts: physical volume, volume group, and logical volume and how they fit together.
+> Physical volume - Some real-life storage unit (like a hard drive, usb stick)
+Logical volume - A collection of physical volumes that act as one single volume. Or a smaller part of a physical volume that acts as a single volume.
+Volume group - A collection of physical volumes that logical volumes can be created from.
+
+### 2-2 The names of all commands that manipulate physical volumes start with the same two letters. What are they.
+```bash
+pv
+````
+
+### 2-3 The names of all commands that manipulate volume groups start with the same two letters. What are they?
+```bash
+vg
+```
+
+### 2-4 The names of all commands that manipulate logical volumes start with the same two letters. What are they.
+```bash
+lv
+```
+
+### 3-1 What is the main difference between an ext2 and an ext3 file system.
+> Ext3 supports journaling.
+
+### 3-2 Which command is used to create a new ext3 file system.
+```bash
+mkfs -t ext3 /dev/hdbX
+```
+> Where hdb is the hard drive number, and X is the partition number.
+
+### 3-3 If you want to increase the size of an ext3 file system, which command should you use.
+```bash
+resize2fs /dev/hdbX [size]
+```
+
+### 3-4 What does the fsck command do?
+> Validates the file system, checking for errors. Can also repair.
+
+### 4-1 Combine /dev/ubd2(vda) and /dev/ubd3(vdb) into a RAID 0 set named /dev/md0
+```bash
+mdadm --create /dev/md0 --level=raid0 --raid-devices=2 /dev/vda /dev/vdb
+```
+
+### 4-2 Create a file system on /dev/md0 and mount it on /mnt. How much space is there in the file system.
+```bash
+mkfs /dev/md0
+mount /dev/md0 /mnt
+95195 * 1kB blocks = 95.195 MB
+umount /mnt
+mdadm --stop /dev/md0
+```
+
+### 5-1 Combine /dev/ubd2(vda) and /dev/ubd3(vdb) into a RAID 1 set named /dev/md0.
+```bash
+mdadm --create /dev/md0 --level=raid1 --raid-devices=2 /dev/vda /dev/vdb
+```
+
+### 5-2 Create a file system on /dev/md0 and mount it on /mnt. How much space is there in the file system? Why.
+```bash
+mkfs /dev/md0
+mount /dev/md0 /mnt
+```
+> 48585 * 1KB = 48.585 MB. It's half the size of previous as the block devices are mirrored instead of joined.
+
+
+### 5-3 Add /dev/ubd4 (vdc) as a spare in /dev/md0, then fail /dev/ubd3 (vdb) (using mdadm). What happens.
+```bash
+mdadm --add /dev/md0 /dev/vdc
+cat /proc/mdstat to verify that vdc is marked with (S), meaning spare.
+mdadm /dev/md0 --fail /dev/vdb
+cat /proc/mdstat shows that vdb is marked as faulty (F), and that vdc has gone from (S) to a regular part of the array.
+umount /mnt
+mdadm --stop /dev/md0
+```
+
+### 6-1 Combine /dev/ubd2 (vda), /dev/ubd3 (vdb), /dev/ubd4 (vdc), and /dev/ubd5 (vdd) into a RAID 1+0 device named /dev/md0. You may need to create intermediate raid sets to do this.
+```bash
+mdadm --create /dev/md0 --level=raid10 --raid-devices=4 /dev/vda /dev/vdb /dev/vdc /dev/vdd
+```
+
+### 6-2 Create an ext2 file system on /dev/md0 and mount it on mnt. How much space is there in the file system?
+```bash
+mkfs /dev/md0
+mount /dev/md0 /mnt
+95195 * 1KB = 95.195 MB
+umount /mnt
+mdadm --stop /dev/md0
+```
+
+### 7-1 Create physical volumes on /dev/ubd2 (vda), /dev/ubd3 (vdb), and /dev/ubd4 (vdc).
+```bash
+wipefs -a /dev/vda
+wipefs -a /dev/vdb
+wipefs -a /dev/vdc
+pvcreate /dev/vda
+pvcreate /dev/vdb
+pvcreate /dev/vdc
+```
+
+### 7-2 Create a single volume group named vg1 containing all physical volumes. Since you will be working with very small volumes, make sure you set the physical extent size appropriately.
+```bash
+vgcreate vg1 /dev/vda /dev/vdb /dev/vdc --physicalextentsize 1
+```
+
+### 7-3 Create two logical volumes (lvol0 and lvol1), each 2MB in size. This will create devices named /dev/vg1/lvol0 and /dev/vg1/lvol1, which can be used just like any other block device.
+```bash
+lvcreate -n lvol0 -L 2M vg1
+lvcreate -n lvol1 -L 2M vg1
+```
+
+### 7-4 Create ext2 file systems, i.e. file systems without journals (without the -j option) on both logical volumes, and mount them as /lv0 and /lv1. If you create filesystems with journals, then there will be hardly any room for files, and the remaining labs won't work.
+```bash
+mkfs /dev/vg1/lvol0
+mkfs /dev/vg1/lvol1
+mkdir /lv0
+mkdir /lv1
+mount /dev/vg1/lvol0 /lv0
+mount /dev/vg1/lvol1 /lv1
+```
+
+### 8-1 Attempt to create a 2.5MB file on /lv1. This should fail.
+```bash
+cd /lv1
+head -c 2500K < /dev/zero > myfile.txt
+```
+
+### 8-2 Resize lvol0 to 3MB in size. Don't forget to resize the ext3 file system that it contains as well (using resize2fs). Mount it and attempt to create a 2.5MB file again. This time it should work.
+```bash
+lvextend --size 3M /dev/vg1/lvol0
+resize2fs /dev/vg1/lvol0
+cd /lv0
+head -c 2500K </dev/zero >myfile.txt
+```
+>	It worked!
+
+### 8-3 Add a new physical volume to vg1. You can use /dev/ubd5 (vdd) for this.
+```bash
+wipefs -a /dev/vdd
+pvcreate /dev/vdd
+vgextend /dev/vg1 /dev/vdd
+```
+
+### 8-4 Migrate any data off the physical volume /dev/ubd2 (vda) to other volumes in vg1 and remove /dev/ubd2 (vda) from vg1. You can now use /dev/ubd2 (vda) for something else.
+```bash
+pvmove /dev/vda /dev/vdb
+vgreduce /dev/vg1 /dev/vda
+```
+
+### 9-1 Copy some files to the /lv1 directory (it doesn't matter which files).
+```bash
+cp /etc/resolv.conf /lv1/resolv.conf
+```
+
+### 9-2 Use the sync command to write any buffered data to disk, and then create a snapshot of vg1/lvol1.
+```bash
+sync
+lvcreate -L 2M --snapshot --name lvol1snap /dev/vg1/lvol1
+```
+
+### 9-3 Run fsck to check the consistency of the new snapshot (because you copied a live file system, it is likely that fsck will have to fix something), then mount it as /sn
+```bash
+fsck /dev/vg1/lvol1snap
+mkdir /sn
+mount /dev/vg1/lvol1snap /sn
+```
+
+### 9-4 Edit the files in /lv1 and then compare them to the corresponding files in /sn.
+>	Changes do not carry over to snapshot. (makes sense)
+
+### 9-5 Unmount /sn and remove the snapshot from the volume group.
+```bash
+umount /sn
+lvremove /dev/vg1/lvol1snap
+```
+
+------------------------------------------------------------
+### Cleanup
+```bash
+umount /lv0
+umount /lv1
+wipefs -a /dev/vg1/lvol0
+wipefs -a /dev/vg1/lvol1
+lvremove /dev/vg1/lvol0
+lvremove /dev/vg1/lvol1
+vgremove vg1
+pvremove /dev/vda
+pvremove /dev/vdb
+pvremove /dev/vdc
+pvremove /dev/vdd
+```
+------------------------------------------------------------
+
+### 10-1 Use RAID 1 to create a device on which you place an ext2 file system optimized for many small files, that you mount as /home1 on the server. Make sure that /home1 is correctly mounted at boot.
+```bash
+mdadm --create /dev/md0 --level=raid1 --raid-devices=2 /dev/vda /dev/vdb
+mkfs -b 1024 /dev/md0
+mkdir /home1
+mount /dev/md0 /home1
+```
+>	Smallest block size = optimized for small files.
+
+### 10-2 Use LVM to create a device on which you place an ext2 file system optimized for a smaller number of large files, that you mount as /home2 on the server. Make sure that /home2 is correctly mounted at boot.
+```bash
+pvcreate /dev/vdc
+pvcreate /dev/vdd
+vgcreate vg1 /dev/vdc /dev/vdd --physicalextentsize 4
+lvcreate -n lvol0 -L 90M vg1
+mkfs -b 4096 /dev/vg1/lvol0
+mkdir /home2
+mount /dev/vg1/lvol0 /home2
+```
+>	Largest block size = optimized for large files
+
+### 11-1 Why is RAID 1+0 generally considered more reliable than RAID 0+1.
+> Raid10 is generally considered more reliable as the common case has more groups than drives per group.
+For RAID01 to fail, two drives of the same mirror (but different groups) need to fail.
+For RAID10 to fail, two drives of the same group need to fail.
+If you have more groups than drives per group, Raid10 will have better failure tolerance.
+If you have more drives per group than groups, Raid01 will have better failure tolerance.
+
+### 11-2 As individual disk sizes grow, RAID-5 is no longer considered useful, and RAID-6 is also rapidly becoming obsolete. Why.
+> As disks grow larger, it takes more time to rebuild data if one drive fails.
+The longer it takes to rebuild data from the distributed parity disks, the more likely it is for more drives to fail during rebuild.
+RAID 5 can not tolerate a drive failing during rebuild.
+RAID 6 tolerates a single drive failing during rebuild.
+
+### 11-3 What is the point of the file system journal in e.g. ext3.
+> If an improper shutdown occurs, the journal can be used to remove any corruption that may have occured.
+
+### 11-4 Explain the purpose of using a volume manager, like LVM.
+> It allows for easily used, flexible storage solutions.
+You can mix and match drives into volume groups, create logical volumes from the groups, change volume sizes at will, et cetera.
+The created logical volumes can in turn be used in other sub-volume-groups.
+It is easy to create snapshots for backing up data.
+
+### 11-5 Optional: compute the probability of data loss over three years in a RAID-6 array consisting of 24 6TB SAS disks, with two hot spares (i.e. 22 disks in the RAID set).
+> The RAID controller has 150MB/s throughput of which 80% can be used to rebuild.
+Assume MTBF of 145000 hours, latent sector error of 10E-13.

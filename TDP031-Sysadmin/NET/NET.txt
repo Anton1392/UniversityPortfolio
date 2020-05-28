@@ -1,0 +1,87 @@
+1-1 Review the documentation for the ping utility and answer the following questions.
+  a) What is the ping utility used for.
+    Sending echo requests to network hosts and receiving the response.
+  b) What command-line option to ping causes it to print numerical addresses.
+    -n
+  c) How does the ping utility work.
+    Ping uses the ICMP ECHO_REQUEST datagram, which demands an ECHO_RESPONSE from the host.
+  d) How can you detect if the host 10.17.1.1 is up.
+    ping 10.17.1.1, if a response is recieved it is up. Otherwise it says "Destination Host Unreachable"
+
+1-2 Review the documentation for the traceroute utility and answer the following questions.
+  a) What is the traceroute utility used for.
+    To view the route packets take to reach a certain host.
+  b) How does traceroute work.
+    It sends packets toward the host (3 at a time), first the packets have a TTL (time to live) of 1, meaning they return instantly.
+    After the first packets have returned, new packets are sent with a TTL of two, meaning they reach two nodes before returning.
+    This repeats, tracing a longer and longer route until the host is reached.
+  c) What command-line option causes traceroute to print numerical addresses.
+    -n
+  d) Use traceroute with a remote host of your choosing as the target. Explain all the output.
+        traceroute to 8.8.8.8 (8.8.8.8), 30 hops max, 60 byte packets // Our target IP, it tracks maximum 30 nodes. Each packet is 60 bytes in size.
+     1  130.236.64.3 (130.236.64.3)  0.385 ms  0.544 ms  0.709 ms // First column is the host name (or IP if DNS is unavilable), second column is host IP. Columns 3-5 is the round-trip-time of each packet sent.
+     2  130.236.4.207 (130.236.4.207)  0.327 ms  0.494 ms  0.660 ms
+     3  130.236.4.225 (130.236.4.225)  0.455 ms  0.525 ms  0.599 ms
+     4  130.236.4.64 (130.236.4.64)  0.382 ms  0.445 ms  0.507 ms
+     5  liu-g--lo-sunet-r2.net.liu.se (130.236.9.202)  0.383 ms  0.454 ms  0.387 ms // The packets reached LiUs outer router.
+     6  norrkoping-nkg188-r1.sunet.se (130.242.6.76)  1.013 ms  0.987 ms  0.997 ms // The packets reached some router in Norrköping.
+     7  stockholm-tug-r1.sunet.se (130.242.4.59)  3.496 ms  3.511 ms  3.649 ms // 7-11 Packets are traveling through Sweden.
+     8  se-tug.nordu.net (109.105.102.17)  3.576 ms  3.579 ms  3.592 ms
+     9  se-kst2.nordu.net (109.105.97.25)  3.611 ms  3.611 ms  3.607 ms
+    10  as15169-10g-sk1.sthix.net (192.121.80.47)  4.336 ms  4.307 ms 72.14.196.42 (72.14.196.42)  3.647 ms
+    11  108.170.254.33 (108.170.254.33)  5.344 ms 108.170.253.177 (108.170.253.177)  5.142 ms 108.170.253.161 (108.170.253.161)  5.113 ms
+    12  209.85.242.83 (209.85.242.83)  5.307 ms 209.85.241.225 (209.85.241.225)  5.001 ms 216.239.56.117 (216.239.56.117)  4.202 ms // The packets reached the eastern shore of USA.
+    13  dns.google (8.8.8.8)  4.309 ms  4.134 ms  4.150 ms // Packets have reached the destination.
+
+1-3
+  b) How do you display the current routing table using ip?
+    ip route
+1-4 Review the documentation for sysctl command and answer the following.
+  a) What is a sysctl (not what does the command do, but what a sysctl actually is).
+    A software utility for modifying kernel parameters.
+  b) In what file can you place sysctl values so they are loaded at boot time.
+    /etc/sysctl.conf
+  c) Which sysctl controls IP forwarding.
+    sysctl net.ipv4.ip_forward
+
+1-5 Think of which addresses your hosts should use? Which names? Which netmasks and broadcast addresses?
+  All hosts
+    Netmask: 255.255.255.0
+    Broadcast: 10.0.0.255
+
+  Router
+    Address: 10.0.0.1
+    Name: gw
+
+  Server
+    Address: 10.0.0.2
+    Name: server
+
+  Client 1
+    Address: 10.0.0.3
+    Name: client-1
+
+  Client 2
+    Address: 10.0.0.4
+    Name: client-2
+
+1-6 Explain the difference between routing and forwarding (as related to IP networking).
+  Routing is calculating a path for a packet through a network to a certain target. (Like planning a road trip)
+  Forwarding is pushing a packet out on a particular interface. (Like going through an intersection on your road trip)
+
+7-1 Answer the following questions.
+  a) What configuration file controls NSS.
+    /etc/nsswitch.conf
+
+  b) What configuration file controls the resolver.
+    /etc/resolv.conf
+
+  c) What does the "search" keyword in the resolver configuration file do.
+    Defines which domains should be searched for a host name.
+    If trying to find host "myComputer" with "search example.com" in the file, we try to resolve myComputer.example.com.
+
+7-2 Configure the resolver on all systems to use 130.236.1.9 as its name server.
+
+7-3 Configure the name service switch on all systems to use DNS as a source for host names.
+
+7-4 Test that name resolution works by attempting to communicate with remote-und.ida.liu.se (use ping or telnet if they are available).

@@ -1,0 +1,13 @@
+// Install
+sudo apt-get install ntp
+
+// Verify
+sntp --version
+
+// Change /etc/ntp.conf to you pool
+
+// Restart NTP server
+service ntp restart
+
+// Verify NTP running
+service ntp status

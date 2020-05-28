@@ -1,0 +1,19 @@
+cd build && make check
+make[1]: Entering directory '/home/anton/Desktop/Edu/TDIU16-Pintos/pintos/src/userprog/build'
+pintos -v -k -T 60 --qemu  --fs-disk=2 -p tests/klaar/read-bad-buf -a read-bad-buf -p ../../tests/klaar/sample.txt -a sample.txt -- -q  -F=10000  -f run read-bad-buf < /dev/null 2> tests/klaar/read-bad-buf.errors > tests/klaar/read-bad-buf.allput
+pintos -v -k -T 60 --qemu  --fs-disk=2 -p tests/klaar/low-mem -a low-mem -p tests/klaar/child-simple -a child-simple -- -q  -F=10000 -tcl=3 -f run low-mem < /dev/null 2> tests/klaar/low-mem.errors > tests/klaar/low-mem.allput
+pintos -v -k -T 60 --qemu  --fs-disk=2 -p tests/klaar/exec-corrupt -a exec-corrupt -p ../../tests/klaar/corrupt-elf -a corrupt-elf -- -q  -F=10000  -f run exec-corrupt < /dev/null 2> tests/klaar/exec-corrupt.errors > tests/klaar/exec-corrupt.allput
+pintos -v -k -T 180 --qemu  --fs-disk=2 -p tests/klaar/pfs -a pfs -p tests/klaar/pfs-reader -a pfs-reader -p tests/klaar/pfs-writer -a pfs-writer -- -q  -F=10000 -F=20000 -f run 'pfs 10 5' < /dev/null 2> tests/klaar/pfs.errors > tests/klaar/pfs.allput
+pintos -v -k -T 60 --qemu  --fs-disk=2 -p tests/filst/sc-bad-write -a sc-bad-write -- -q  -F=10000  -f run sc-bad-write < /dev/null 2> tests/filst/sc-bad-write.errors > tests/filst/sc-bad-write.allput
+pintos -v -k -T 60 --qemu  --fs-disk=2 -p tests/userprog/args-none -a args-none -- -q  -F=10000  -f run args-none < /dev/null 2> tests/userprog/args-none.errors > tests/userprog/args-none.allput
+pintos -v -k -T 60 --qemu  --fs-disk=2 -p tests/userprog/args-single -a args-single -- -q  -F=10000  -f run 'args-single onearg' < /dev/null 2> tests/userprog/args-single.errors > tests/userprog/args-single.allput
+pintos -v -k -T 60 --qemu  --fs-disk=2 -p tests/userprog/args-multiple -a args-multiple -- -q  -F=10000  -f run 'args-multiple some arguments for you!' < /dev/null 2> tests/userprog/args-multiple.errors > tests/userprog/args-multiple.allput
+../../tests/Make.tests:105: recipe for target 'tests/klaar/exec-corrupt.output' failed
+../../tests/Make.tests:105: recipe for target 'tests/filst/sc-bad-write.output' failed
+../../tests/Make.tests:105: recipe for target 'tests/userprog/args-single.output' failed
+../../tests/Make.tests:105: recipe for target 'tests/userprog/args-multiple.output' failed
+../../tests/Make.tests:105: recipe for target 'tests/klaar/low-mem.output' failed
+../../tests/Make.tests:105: recipe for target 'tests/userprog/args-none.output' failed
+../../tests/Make.tests:105: recipe for target 'tests/klaar/pfs.output' failed
+../../tests/Make.tests:105: recipe for target 'tests/klaar/read-bad-buf.output' failed
+../Makefile.kernel:10: recipe for target 'check' failed

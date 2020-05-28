@@ -1,0 +1,21 @@
+x = 200;
+y = 200;
+
+# Fokusera på Paint genom att klicka på det.
+Move(x, y);
+Click();
+
+# First line
+loop x < 400
+{
+	y = 200;
+	loop y < 400
+	{
+		Move(x, y);
+		Click();
+		y+=3;
+		Sleep(1)
+	};
+	x+=3
+}
+

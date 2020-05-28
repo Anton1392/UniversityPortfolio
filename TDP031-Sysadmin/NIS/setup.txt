@@ -1,0 +1,27 @@
+--------------------------
+Server
+apt-get -y install nis
+
+nano /etc/default/nis
+Change NISSERVER=master
+
+nano /etc/yp.conf
+Change ypserver server.student.ida.liu.se
+service ypbind restart
+
+nano /etc/yp/Makefile
+På rad 123, lägg till rad:
+  ALL += auto.master auto.home
+
+--------------------------
+Client(s)
+apt-get -y install nis
+
+nano /etc/yp.conf
+Change ypserver server.student.ida.liu.se
+
+systemctl start ypbind
+
+nano /etc/nsswitch.conf
+Change all entries to "files nis" where you want to request the server. passwd, shadow, group, gshadow (users and passwords)
+--------------------------

@@ -1,0 +1,17 @@
+;
+; BIND data file for local loopback interface
+;
+$TTL    604800
+@       IN      SOA     server.student.ida.liu.se. root.student.ida.liu.se. (
+                            4         ; Serial
+                        86400         ; Refresh
+                         7200         ; Retry
+                      2419200         ; Expire
+                       3600 )       ; Negative Cache TTL
+;
+@       IN      NS      server.student.ida.liu.se.
+server  IN      A       10.0.0.2
+
+gw      IN      A       10.0.0.1
+client-1        IN      A       10.0.0.3
+client-2        IN      A       10.0.0.4

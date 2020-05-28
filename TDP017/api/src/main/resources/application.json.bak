@@ -1,0 +1,12 @@
+{
+  "auth": {
+    "secret": "esdcheckSecret2019"
+  },
+  "database": {
+    "host": "localhost",
+    "port": 3308,
+    "dbName": "esdcheck",
+    "username": "esdcheck",
+    "password": "esdcheck"
+  }
+}

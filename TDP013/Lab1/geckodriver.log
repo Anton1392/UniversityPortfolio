@@ -1,0 +1,37 @@
+1537180502221	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.QijOCSk7eN9y"
+1537180502813	Marionette	INFO	Enabled via --marionette
+1537180504074	Marionette	INFO	Listening on port 33327
+1537180504138	Marionette	WARN	TLS certificate errors will be ignored for this session
+1537180632555	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.cxLdW39S7SRB"
+1537180633363	Marionette	INFO	Enabled via --marionette
+1537180635141	Marionette	INFO	Listening on port 43003
+1537180635167	Marionette	WARN	TLS certificate errors will be ignored for this session
+1537180710486	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.vxMlilwN3LRd"
+1537180711354	Marionette	INFO	Enabled via --marionette
+1537180713243	Marionette	INFO	Listening on port 44003
+1537180713302	Marionette	WARN	TLS certificate errors will be ignored for this session
+1537180728241	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.mC8fvW49wZLg"
+1537180729050	Marionette	INFO	Enabled via --marionette
+1537180730850	Marionette	INFO	Listening on port 41433
+1537180731762	Marionette	WARN	TLS certificate errors will be ignored for this session
+1537180756804	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.nYgqRQsStBwe"
+1537180757560	Marionette	INFO	Enabled via --marionette
+1537180759468	Marionette	INFO	Listening on port 35097
+1537180759516	Marionette	WARN	TLS certificate errors will be ignored for this session
+1537180825928	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.PYLadskLWWj2"
+1537180826503	Marionette	INFO	Enabled via --marionette
+1537180827806	Marionette	INFO	Listening on port 34357
+1537180827849	Marionette	WARN	TLS certificate errors will be ignored for this session
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1537355481938	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.9Hh3rOB1AE0q"
+1537355482993	Marionette	INFO	Enabled via --marionette
+1537355484453	Marionette	INFO	Listening on port 36781
+1537355484550	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XPCOMUtils.jsm, line 266: TypeError: Cc[aContract] is undefined
+1537355486565	addons.xpi	WARN	Exception running bootstrap method shutdown on activity-stream@mozilla.org: [Exception... "Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIObserverService.removeObserver]"  nsresult: "0x80004005 (NS_ERROR_FAILURE)"  location: "JS frame :: resource://activity-stream/lib/SnippetsFeed.jsm :: uninit :: line 125"  data: no] Stack trace: uninit()@resource://activity-stream/lib/SnippetsFeed.jsm:125 < onAction()@resource://activity-stream/lib/SnippetsFeed.jsm:141 < _middleware/</<()@resource://activity-stream/lib/Store.jsm:51 < Store/this[method]()@resource://activity-stream/lib/Store.jsm:30 < uninit()@resource://activity-stream/lib/Store.jsm:153 < uninit()@resource://activity-stream/lib/ActivityStream.jsm:278 < uninit()@resource://gre/modules/addons/XPIProvider.jsm -> jar:file:///usr/lib/firefox/browser/features/activity-stream@mozilla.org.xpi!/bootstrap.js:80 < shutdown()@resource://gre/modules/addons/XPIProvider.jsm -> jar:file:///usr/lib/firefox/browser/features/activity-stream@mozilla.org.xpi!/bootstrap.js:196 < callBootstrapMethod()@resource://gre/modules/addons/XPIProvider.jsm:4406 < observe()@resource://gre/modules/addons/XPIProvider.jsm:2270 < GeckoDriver.prototype.quit()@driver.js:3381 < despatch()@server.js:560 < execute()@server.js:534 < onPacket/<()@server.js:509 < onPacket()@server.js:508 < _onJSONObjectReady/<()@transport.js:500
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1537355706066	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.Fwvy7YbHLoPB"
+1537355706621	Marionette	INFO	Enabled via --marionette
+1537355707826	Marionette	INFO	Listening on port 43609
+1537355707879	Marionette	WARN	TLS certificate errors will be ignored for this session
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping

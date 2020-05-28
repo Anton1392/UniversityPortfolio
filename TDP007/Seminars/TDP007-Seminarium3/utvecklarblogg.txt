@@ -1,0 +1,78 @@
+-----Uppgift 1-----
+
+
+Vi skapade en klass Person som innehåller alla värden vi behöver hålla reda på, typ av bil, postnummer, med mera. Person har även en klass evaluate_policy som tar in en Ruby-formaterad fil innehållandes Hashtabeller.
+
+
+self.instance_eval användes för att få tillgång till Persons klassvariabler.
+
+
+Vi valde att ha policy.rb-filen formaterad med en metod som returnerar två stycken hashtabeller, en additive_rules-tabell och en multiplicative_rules-tabell. Vi testade först att utelämna metoden och bara instansiera tabellerna som variabler, men då blev de inte tillgängliga utanför instance_eval metoden. Av någon anledning så “överlev” metoder inuti policy.rb, så vi gjorde en metod som returnerade båda tabellerna.
+
+
+Det fanns två stycken sätt att formatera ex1.rb, och policy.rb-filen. Sättet vi valde var att ha tabellerna additive- och mutliplicative_rules inuti policy.rb, där varje nyckel var ett “eval-bart” uttryck som returnerar sant/falskt, och värdet vara hur mycket poängen skulle förändras.
+Exempel på tabellinnehåll: "@car == 'BMW'" => 5,
+Fördelen med detta sätt är att man kan gruppera alla additiva regler i en enda stor tabell, plus att de kan utökas på många sätt pga. tillgång till klassvariablerna i Person, det är mycket generellt, alltså. Nackdelen är att man måste skriva korrekt Ruby-syntax i nyckelvärdet, vilket gör det mindre användarvänligt än den andra strategin vi funderade på.
+
+
+Den andra planen vi hade var att göra en tabell för varje klassattribut i Person, exempel:
+
+
+gender_rules{
+        “M” => 1
+        “F” => 1
+}
+car_rules{
+        “BMW” => 5
+}
+etc.
+Nackdelen med detta är att det returneras väldigt många tabeller från metoden, som då måste hanteras separat i ex1.rb-filen. Det skulle kräva en for-loop för varje attribut som Person har, med separat logik i vardera loop, strängjämföring, splicing, kolla om heltal ligger inuti ett intervall, etc.
+
+
+
+Den första metoden tillåter jättefin kod inuti ex1.rb, nedanstående kodstycke är det enda som krävs för utvärdering:
+additive_rules.each do |k, v|
+        if self.instance_eval(k)
+                grade += v
+        end
+end
+
+multiplicative_rules.each do |k, v|
+        if self.instance_eval(k)
+                grade *= v
+        end
+end
+
+Båda sätten är väldigt lika med för/nackdelar, men vi föredrog det första sättet.
+
+
+Våra enhetstester är inte särskilt omfattande, vilket beror på att vi återigen väntade med att skriva dem till efter programmet var klart. Detta resulterar i att vi inte delar upp koden i mindre funktioner som går att testa var för sig, och därför kan vi bara testa hela programmet.
+
+
+
+
+
+
+-----Uppgift 2-----
+Vi stötte på vissa problem under arbetet med den här uppgiften.
+Vi listade ut att man kunde använda en Hash-tabell för att spara variabler, men vi hade problem med att delar av koden inte kom åt denna Hash-tabell. Vi använde “@” för att göra tabellen till en instansvariabel vilket gjorde att andra klasser inte kom åt den. Lösningen var att använda “@@” för att göra tabellen till en klassvariabel istället.
+
+
+Vi hade också problem först att tillåta godtyckliga variabelnamn och använde först en array med olika bokstäver som tilläts, innan vi kom på att man kunde matcha med datatypen String istället för specifika strängar. Det visade sig också vara viktigt att matcha med String sist, eftersom konstanterna ‘true’ och ‘false’ annars kommer hanteras som variabler.
+
+
+Vi fick några problem med tilldelning och läsning av variabler. Vid första lösningen fungerade inte:
+(set a true)
+(set a false)
+Första set-satsen fungerade väl då, men i andra satsen blev det ekvivalent till (set true false). Detta skedde eftersom a returnerade värdet true, och inte sitt egna variabelnamn.
+Vi löste detta genom att sätta variabelhämtningen i term-definitionen, istället för var-definitionen.
+
+
+
+
+
+
+-----Allmän Ruby-kunskap-----
+
+
+Vi använde Rubys slice-funktion för att plocka ut de två första tecknen ur en sträng (postkoden). Som i många andra språk kommer man åt ett visst tecken genom ett index, såsom str[index]. För att komma åt flera värden använder man två värden skilda med kommatecken. Det första värdet representerar index för det första tecknet man vill ha. Innan vi läste på (ruby-doc.org) trodde vi att det andra tecknet representerade index för det sista tecknet, men tydligen är antalet tecken man vill ha. För att plocka ut de två första tecknen kan man alltså skriva str[0, 2]

@@ -1,0 +1,17 @@
+- När man söker på 'dålig' stad, men tomt typ fält. Skapas ett tomt okatigoriserad sökning
+
+-När man söker på tom sökning. Så får man inga pass (man skulle få alla)
+
+-HELA databasen töms varje dag, (då den stora refrechen körs). Detta tar bort alla admin inlagda pass. (Borttagning sker i api_data.py) Borde bytas ut mot en rensningsrution som tar bort basserats på ugånget datum, eller annat önskade parametrar
+
+-Backen scemat är inte 'hårt bundet', dvs det finns inga forain keys mellan tex pass och denns ägare
+
+-socket filtret som ligger socket updaterings rutinen får inte borttagnings noticer, bara tillägnings noticer.
+
+-Socket på live servern fungerar inte
+
+
+-Sidor laddas inte alltid när man använder bakåtknappen? (i dev build)
+
+
+-För att stänga av servern behöver man kracha trådarna

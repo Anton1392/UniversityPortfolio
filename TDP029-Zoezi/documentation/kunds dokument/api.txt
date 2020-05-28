@@ -1,0 +1,25 @@
+
+
+Format
+	date: string enligt format yyyy-mm-dd
+	datetime: string enligt format yyyy-mm-dd hh:mm:ss
+	site: object enligt format { name, address, city, zipCode }
+
+Parametrar:
+	fromDate: <date>
+	toDate: <date>
+
+Return-object
+	id: <string> genererat object id, <prefix><id>_<suffix>
+	name: <string> namn på produkt
+	price: <int | null> pris
+	pdescription: <string> beskrivning av produkt 
+	description: <string> beskrivning av enskild produkt
+	ptype: <string> typ av product (ex, workout, service, course)
+	type <string> aktivitetstype (ex, core, spinning, yoga)
+	url: <string> länk till produkt
+	startTime: <datetime> aktivitets start
+	endTime: <datetime> aktivitets slut
+	duration: <int | null> bokningslängd
+	site: <site> anläggning
+	available: <int | null> tillgängliga platser (om satt i systemet, annars null)

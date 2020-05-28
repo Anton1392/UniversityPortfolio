@@ -1,0 +1,33 @@
+Grupp:
+ Välj ut en mängd user stories (i prioriteringsordning) så att den uppskattade summan av tider stämmer ungefär överens med den tillgängliga tiden för user stories denna sprint (ta hänsyn till förra sprints velocity vid beräkning av tillgänglig tid).
+
+Grupp:
+ Bryt ner valda user stories till tasks och skriv task-lappar.
+
+Kund:
+ Det är bra om kunden finns tillhands och kan svara på frågor då stories bryts ner till tasks (antingen på plats eller via telefon/chat).
+
+Grupp:
+ Tidsestimera alla tasks med Planning poker.
+ Skriv den överenskomna tiden på respektive task-lapp.
+ Om summan av tiden för alla tasks som ingår i en story är mycket större än den uppskattade tiden för storyn, kontakt kunden för en diskussion.
+ Ska en annan story släppas från denna sprint?
+ Ska storyns omfång (scope) definieras om?
+ Ska prioriteringen av stories ändras?
+ Allt är möjligt.
+
+Scrum master:
+ Placera lapparna för alla valda stories på tavlan.
+ Alla stories och deras tillhörande tasks placeras i kolumnen Not Started och sorteras i prioriteringsordning med högst prioritet överst.
+
+Grupp:
+ Kör ett kort scrum-möte för att avgöra vem som börjar med vad.
+ Varje gruppmedlem (eller par om man kör parprogrammering) väljer en task, och skriver sitt namn på lappen och flyttar den till kolumnen Started.
+
+Scrum master:
+ Ritar upp ny burn-down chart:
+  x-axeln speglar antal arbetsdagar som ingår i denna sprint.
+  Y-axeln speglar summan av tidsuppskattningarna för alla tasks som hör till utvalda stories.
+
+Grupp:
+ Utvecklingsarbetet börjar.

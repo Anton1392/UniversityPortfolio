@@ -1,0 +1,8 @@
+# Ignore python cache
+__pycache__/
+.vscode
+logs/*.log
+
+#Ignore db
+data_cache.json
+data_cache_date.txt

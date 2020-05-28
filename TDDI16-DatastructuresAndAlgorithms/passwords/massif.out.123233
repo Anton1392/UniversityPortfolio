@@ -1,0 +1,733 @@
+desc: (none)
+cmd: ./decrypt vbskbezp
+time_unit: i
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=170726128
+mem_heap_B=1248080
+mem_heap_extra_B=619768
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=2
+#-----------
+time=285719617
+mem_heap_B=2291272
+mem_heap_extra_B=983336
+mem_stacks_B=0
+heap_tree=detailed
+n4: 2291272 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 1229080 0x40221B: std::__detail::_Map_base<Key, std::pair<Key const, std::vector<Key, std::allocator<Key> > >, std::allocator<std::pair<Key const, std::vector<Key, std::allocator<Key> > > >, std::__detail::_Select1st, std::equal_to<Key>, myHash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](Key&&) (in /home/antsk320/TDDI16/Passwords/decrypt)
+  n0: 1229080 0x4012F5: main (in /home/antsk320/TDDI16/Passwords/decrypt)
+ n1: 743680 0x401E8A: std::_Hashtable<Key, std::pair<Key const, std::vector<Key, std::allocator<Key> > >, std::allocator<std::pair<Key const, std::vector<Key, std::allocator<Key> > > >, std::__detail::_Select1st, std::equal_to<Key>, myHash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned long, std::integral_constant<bool, true>) (in /home/antsk320/TDDI16/Passwords/decrypt)
+  n1: 743680 0x40201E: std::_Hashtable<Key, std::pair<Key const, std::vector<Key, std::allocator<Key> > >, std::allocator<std::pair<Key const, std::vector<Key, std::allocator<Key> > > >, std::__detail::_Select1st, std::equal_to<Key>, myHash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<Key const, std::vector<Key, std::allocator<Key> > >, false>*) (in /home/antsk320/TDDI16/Passwords/decrypt)
+   n1: 743680 0x402256: std::__detail::_Map_base<Key, std::pair<Key const, std::vector<Key, std::allocator<Key> > >, std::allocator<std::pair<Key const, std::vector<Key, std::allocator<Key> > > >, std::__detail::_Select1st, std::equal_to<Key>, myHash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](Key&&) (in /home/antsk320/TDDI16/Passwords/decrypt)
+    n0: 743680 0x4012F5: main (in /home/antsk320/TDDI16/Passwords/decrypt)
+ n1: 245808 0x401D9B: void std::vector<Key, std::allocator<Key> >::_M_emplace_back_aux<Key const&>(Key const&) (in /home/antsk320/TDDI16/Passwords/decrypt)
+  n0: 245808 0x40169A: main (in /home/antsk320/TDDI16/Passwords/decrypt)
+ n1: 72704 0x4EB8DAE: _GLOBAL__sub_I_eh_alloc.cc (eh_alloc.cc:123)
+  n1: 72704 0x40101D8: call_init.part.0 (dl-init.c:78)
+   n1: 72704 0x40102C1: _dl_init (dl-init.c:36)
+    n1: 72704 0x4001298: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+     n1: 72704 0x0: ???
+      n1: 72704 0xFFF000301: ???
+       n0: 72704 0xFFF00030B: ???
+#-----------
+snapshot=3
+#-----------
+time=441453252
+mem_heap_B=3110768
+mem_heap_extra_B=1693528
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=4
+#-----------
+time=577989225
+mem_heap_B=4567912
+mem_heap_extra_B=1991528
+mem_stacks_B=0
+heap_tree=detailed
+n4: 4567912 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 2489320 0x40221B: std::__detail::_Map_base<Key, std::pair<Key const, std::vector<Key, std::allocator<Key> > >, std::allocator<std::pair<Key const, std::vector<Key, std::allocator<Key> > > >, std::__detail::_Select1st, std::equal_to<Key>, myHash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](Key&&) (in /home/antsk320/TDDI16/Passwords/decrypt)
+  n0: 2489320 0x4012F5: main (in /home/antsk320/TDDI16/Passwords/decrypt)
+ n1: 1508032 0x401E8A: std::_Hashtable<Key, std::pair<Key const, std::vector<Key, std::allocator<Key> > >, std::allocator<std::pair<Key const, std::vector<Key, std::allocator<Key> > > >, std::__detail::_Select1st, std::equal_to<Key>, myHash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned long, std::integral_constant<bool, true>) (in /home/antsk320/TDDI16/Passwords/decrypt)
+  n1: 1508032 0x40201E: std::_Hashtable<Key, std::pair<Key const, std::vector<Key, std::allocator<Key> > >, std::allocator<std::pair<Key const, std::vector<Key, std::allocator<Key> > > >, std::__detail::_Select1st, std::equal_to<Key>, myHash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<Key const, std::vector<Key, std::allocator<Key> > >, false>*) (in /home/antsk320/TDDI16/Passwords/decrypt)
+   n1: 1508032 0x402256: std::__detail::_Map_base<Key, std::pair<Key const, std::vector<Key, std::allocator<Key> > >, std::allocator<std::pair<Key const, std::vector<Key, std::allocator<Key> > > >, std::__detail::_Select1st, std::equal_to<Key>, myHash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](Key&&) (in /home/antsk320/TDDI16/Passwords/decrypt)
+    n0: 1508032 0x4012F5: main (in /home/antsk320/TDDI16/Passwords/decrypt)
+ n1: 497856 0x401D9B: void std::vector<Key, std::allocator<Key> >::_M_emplace_back_aux<Key const&>(Key const&) (in /home/antsk320/TDDI16/Passwords/decrypt)
+  n0: 497856 0x40169A: main (in /home/antsk320/TDDI16/Passwords/decrypt)
+ n1: 72704 0x4EB8DAE: _GLOBAL__sub_I_eh_alloc.cc (eh_alloc.cc:123)
+  n1: 72704 0x40101D8: call_init.part.0 (dl-init.c:78)
+   n1: 72704 0x40102C1: _dl_init (dl-init.c:36)
+    n1: 72704 0x4001298: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+     n1: 72704 0x0: ???
+      n1: 72704 0xFFF000301: ???
+       n0: 72704 0xFFF00030B: ???
+#-----------
+snapshot=5
+#-----------
+time=666800626
+mem_heap_B=4692368
+mem_heap_extra_B=2406408
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=6
+#-----------
+time=813109492
+mem_heap_B=5682992
+mem_heap_extra_B=3066824
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=7
+#-----------
+time=928259492
+mem_heap_B=6436304
+mem_heap_extra_B=3569032
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=8
+#-----------
+time=1033823025
+mem_heap_B=7106144
+mem_heap_extra_B=4015608
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=9
+#-----------
+time=1174657262
+mem_heap_B=9194104
+mem_heap_extra_B=4040776
+mem_stacks_B=0
+heap_tree=detailed
+n4: 9194104 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5050840 0x40221B: std::__detail::_Map_base<Key, std::pair<Key const, std::vector<Key, std::allocator<Key> > >, std::allocator<std::pair<Key const, std::vector<Key, std::allocator<Key> > > >, std::__detail::_Select1st, std::equal_to<Key>, myHash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](Key&&) (in /home/antsk320/TDDI16/Passwords/decrypt)
+  n0: 5050840 0x4012F5: main (in /home/antsk320/TDDI16/Passwords/decrypt)
+ n1: 3060400 0x401E8A: std::_Hashtable<Key, std::pair<Key const, std::vector<Key, std::allocator<Key> > >, std::allocator<std::pair<Key const, std::vector<Key, std::allocator<Key> > > >, std::__detail::_Select1st, std::equal_to<Key>, myHash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned long, std::integral_constant<bool, true>) (in /home/antsk320/TDDI16/Passwords/decrypt)
+  n1: 3060400 0x40201E: std::_Hashtable<Key, std::pair<Key const, std::vector<Key, std::allocator<Key> > >, std::allocator<std::pair<Key const, std::vector<Key, std::allocator<Key> > > >, std::__detail::_Select1st, std::equal_to<Key>, myHash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<Key const, std::vector<Key, std::allocator<Key> > >, false>*) (in /home/antsk320/TDDI16/Passwords/decrypt)
+   n1: 3060400 0x402256: std::__detail::_Map_base<Key, std::pair<Key const, std::vector<Key, std::allocator<Key> > >, std::allocator<std::pair<Key const, std::vector<Key, std::allocator<Key> > > >, std::__detail::_Select1st, std::equal_to<Key>, myHash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](Key&&) (in /home/antsk320/TDDI16/Passwords/decrypt)
+    n0: 3060400 0x4012F5: main (in /home/antsk320/TDDI16/Passwords/decrypt)
+ n1: 1010160 0x401D9B: void std::vector<Key, std::allocator<Key> >::_M_emplace_back_aux<Key const&>(Key const&) (in /home/antsk320/TDDI16/Passwords/decrypt)
+  n0: 1010160 0x40169A: main (in /home/antsk320/TDDI16/Passwords/decrypt)
+ n0: 72704 in 1 place, below massif's threshold (01.00%)
+#-----------
+snapshot=10
+#-----------
+time=1289802181
+mem_heap_B=8991688
+mem_heap_extra_B=4579272
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=11
+#-----------
+time=1458586760
+mem_heap_B=10155632
+mem_heap_extra_B=5355224
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=12
+#-----------
+time=1596327879
+mem_heap_B=11081264
+mem_heap_extra_B=5972312
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=13
+#-----------
+time=1734065966
+mem_heap_B=11990632
+mem_heap_extra_B=6578568
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=14
+#-----------
+time=1837377866
+mem_heap_B=12663104
+mem_heap_extra_B=7026888
+mem_stacks_B=0
+heap_tree=detailed
+n4: 12663104 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 8783480 0x40221B: std::__detail::_Map_base<Key, std::pair<Key const, std::vector<Key, std::allocator<Key> > >, std::allocator<std::pair<Key const, std::vector<Key, std::allocator<Key> > > >, std::__detail::_Select1st, std::equal_to<Key>, myHash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](Key&&) (in /home/antsk320/TDDI16/Passwords/decrypt)
+  n0: 8783480 0x4012F5: main (in /home/antsk320/TDDI16/Passwords/decrypt)
+ n1: 2050232 0x401E8A: std::_Hashtable<Key, std::pair<Key const, std::vector<Key, std::allocator<Key> > >, std::allocator<std::pair<Key const, std::vector<Key, std::allocator<Key> > > >, std::__detail::_Select1st, std::equal_to<Key>, myHash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned long, std::integral_constant<bool, true>) (in /home/antsk320/TDDI16/Passwords/decrypt)
+  n1: 2050232 0x40201E: std::_Hashtable<Key, std::pair<Key const, std::vector<Key, std::allocator<Key> > >, std::allocator<std::pair<Key const, std::vector<Key, std::allocator<Key> > > >, std::__detail::_Select1st, std::equal_to<Key>, myHash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<Key const, std::vector<Key, std::allocator<Key> > >, false>*) (in /home/antsk320/TDDI16/Passwords/decrypt)
+   n1: 2050232 0x402256: std::__detail::_Map_base<Key, std::pair<Key const, std::vector<Key, std::allocator<Key> > >, std::allocator<std::pair<Key const, std::vector<Key, std::allocator<Key> > > >, std::__detail::_Select1st, std::equal_to<Key>, myHash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](Key&&) (in /home/antsk320/TDDI16/Passwords/decrypt)
+    n0: 2050232 0x4012F5: main (in /home/antsk320/TDDI16/Passwords/decrypt)
+ n1: 1756688 0x401D9B: void std::vector<Key, std::allocator<Key> >::_M_emplace_back_aux<Key const&>(Key const&) (in /home/antsk320/TDDI16/Passwords/decrypt)
+  n0: 1756688 0x40169A: main (in /home/antsk320/TDDI16/Passwords/decrypt)
+ n0: 72704 in 1 place, below massif's threshold (01.00%)
+#-----------
+snapshot=15
+#-----------
+time=1975129906
+mem_heap_B=13541120
+mem_heap_extra_B=7612232
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=16
+#-----------
+time=2112876576
+mem_heap_B=14405360
+mem_heap_extra_B=8188408
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=17
+#-----------
+time=2389416388
+mem_heap_B=18586248
+mem_heap_extra_B=8201064
+mem_stacks_B=0
+heap_tree=detailed
+n4: 18586248 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 10251160 0x40221B: std::__detail::_Map_base<Key, std::pair<Key const, std::vector<Key, std::allocator<Key> > >, std::allocator<std::pair<Key const, std::vector<Key, std::allocator<Key> > > >, std::__detail::_Select1st, std::equal_to<Key>, myHash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](Key&&) (in /home/antsk320/TDDI16/Passwords/decrypt)
+  n0: 10251160 0x4012F5: main (in /home/antsk320/TDDI16/Passwords/decrypt)
+ n1: 6212160 0x401E8A: std::_Hashtable<Key, std::pair<Key const, std::vector<Key, std::allocator<Key> > >, std::allocator<std::pair<Key const, std::vector<Key, std::allocator<Key> > > >, std::__detail::_Select1st, std::equal_to<Key>, myHash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned long, std::integral_constant<bool, true>) (in /home/antsk320/TDDI16/Passwords/decrypt)
+  n1: 6212160 0x40201E: std::_Hashtable<Key, std::pair<Key const, std::vector<Key, std::allocator<Key> > >, std::allocator<std::pair<Key const, std::vector<Key, std::allocator<Key> > > >, std::__detail::_Select1st, std::equal_to<Key>, myHash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<Key const, std::vector<Key, std::allocator<Key> > >, false>*) (in /home/antsk320/TDDI16/Passwords/decrypt)
+   n1: 6212160 0x402256: std::__detail::_Map_base<Key, std::pair<Key const, std::vector<Key, std::allocator<Key> > >, std::allocator<std::pair<Key const, std::vector<Key, std::allocator<Key> > > >, std::__detail::_Select1st, std::equal_to<Key>, myHash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](Key&&) (in /home/antsk320/TDDI16/Passwords/decrypt)
+    n0: 6212160 0x4012F5: main (in /home/antsk320/TDDI16/Passwords/decrypt)
+ n1: 2050224 0x401D9B: void std::vector<Key, std::allocator<Key> >::_M_emplace_back_aux<Key const&>(Key const&) (in /home/antsk320/TDDI16/Passwords/decrypt)
+  n0: 2050224 0x40169A: main (in /home/antsk320/TDDI16/Passwords/decrypt)
+ n0: 72704 in 1 place, below massif's threshold (01.00%)
+#-----------
+snapshot=18
+#-----------
+time=2509947367
+mem_heap_B=17380624
+mem_heap_extra_B=8764120
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=19
+#-----------
+time=2630205015
+mem_heap_B=18221200
+mem_heap_extra_B=9324520
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=20
+#-----------
+time=2744619179
+mem_heap_B=19013536
+mem_heap_extra_B=9852744
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=21
+#-----------
+time=2830430118
+mem_heap_B=19601632
+mem_heap_extra_B=10244808
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=22
+#-----------
+time=2944843690
+mem_heap_B=20380672
+mem_heap_extra_B=10764184
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=23
+#-----------
+time=3087864189
+mem_heap_B=21344904
+mem_heap_extra_B=11407016
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=24
+#-----------
+time=3202274971
+mem_heap_B=22109440
+mem_heap_extra_B=11916712
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=25
+#-----------
+time=3288084005
+mem_heap_B=22675704
+mem_heap_extra_B=12294232
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=26
+#-----------
+time=3402497861
+mem_heap_B=23430016
+mem_heap_extra_B=12797096
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=27
+#-----------
+time=3516913188
+mem_heap_B=24182472
+mem_heap_extra_B=13298744
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=28
+#-----------
+time=3631335517
+mem_heap_B=24926128
+mem_heap_extra_B=13794520
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=29
+#-----------
+time=3774362077
+mem_heap_B=25845520
+mem_heap_extra_B=14407448
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=30
+#-----------
+time=3888780316
+mem_heap_B=26577048
+mem_heap_extra_B=14895160
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=31
+#-----------
+time=4070545863
+mem_heap_B=27723328
+mem_heap_extra_B=15659336
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=32
+#-----------
+time=4262461419
+mem_heap_B=28917760
+mem_heap_extra_B=16455624
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=33
+#-----------
+time=4864590777
+mem_heap_B=37656776
+mem_heap_extra_B=16651416
+mem_stacks_B=0
+heap_tree=detailed
+n4: 37656776 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 20809640 0x40221B: std::__detail::_Map_base<Key, std::pair<Key const, std::vector<Key, std::allocator<Key> > >, std::allocator<std::pair<Key const, std::vector<Key, std::allocator<Key> > > >, std::__detail::_Select1st, std::equal_to<Key>, myHash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](Key&&) (in /home/antsk320/TDDI16/Passwords/decrypt)
+  n0: 20809640 0x4012F5: main (in /home/antsk320/TDDI16/Passwords/decrypt)
+ n1: 12612512 0x401E8A: std::_Hashtable<Key, std::pair<Key const, std::vector<Key, std::allocator<Key> > >, std::allocator<std::pair<Key const, std::vector<Key, std::allocator<Key> > > >, std::__detail::_Select1st, std::equal_to<Key>, myHash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned long, std::integral_constant<bool, true>) (in /home/antsk320/TDDI16/Passwords/decrypt)
+  n1: 12612512 0x40201E: std::_Hashtable<Key, std::pair<Key const, std::vector<Key, std::allocator<Key> > >, std::allocator<std::pair<Key const, std::vector<Key, std::allocator<Key> > > >, std::__detail::_Select1st, std::equal_to<Key>, myHash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<Key const, std::vector<Key, std::allocator<Key> > >, false>*) (in /home/antsk320/TDDI16/Passwords/decrypt)
+   n1: 12612512 0x402256: std::__detail::_Map_base<Key, std::pair<Key const, std::vector<Key, std::allocator<Key> > >, std::allocator<std::pair<Key const, std::vector<Key, std::allocator<Key> > > >, std::__detail::_Select1st, std::equal_to<Key>, myHash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](Key&&) (in /home/antsk320/TDDI16/Passwords/decrypt)
+    n0: 12612512 0x4012F5: main (in /home/antsk320/TDDI16/Passwords/decrypt)
+ n1: 4161920 0x401D9B: void std::vector<Key, std::allocator<Key> >::_M_emplace_back_aux<Key const&>(Key const&) (in /home/antsk320/TDDI16/Passwords/decrypt)
+  n0: 4161920 0x40169A: main (in /home/antsk320/TDDI16/Passwords/decrypt)
+ n0: 72704 in 1 place, below massif's threshold (01.00%)
+#-----------
+snapshot=34
+#-----------
+time=4960554187
+mem_heap_B=34171408
+mem_heap_extra_B=17102440
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=35
+#-----------
+time=5152468570
+mem_heap_B=35520928
+mem_heap_extra_B=18002136
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=36
+#-----------
+time=5248433447
+mem_heap_B=36190384
+mem_heap_extra_B=18448440
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=37
+#-----------
+time=5344390966
+mem_heap_B=36854080
+mem_heap_extra_B=18890920
+mem_stacks_B=0
+heap_tree=detailed
+n4: 36854080 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 23609000 0x40221B: std::__detail::_Map_base<Key, std::pair<Key const, std::vector<Key, std::allocator<Key> > >, std::allocator<std::pair<Key const, std::vector<Key, std::allocator<Key> > > >, std::__detail::_Select1st, std::equal_to<Key>, myHash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](Key&&) (in /home/antsk320/TDDI16/Passwords/decrypt)
+  n0: 23609000 0x4012F5: main (in /home/antsk320/TDDI16/Passwords/decrypt)
+ n1: 8450584 0x401E8A: std::_Hashtable<Key, std::pair<Key const, std::vector<Key, std::allocator<Key> > >, std::allocator<std::pair<Key const, std::vector<Key, std::allocator<Key> > > >, std::__detail::_Select1st, std::equal_to<Key>, myHash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned long, std::integral_constant<bool, true>) (in /home/antsk320/TDDI16/Passwords/decrypt)
+  n1: 8450584 0x40201E: std::_Hashtable<Key, std::pair<Key const, std::vector<Key, std::allocator<Key> > >, std::allocator<std::pair<Key const, std::vector<Key, std::allocator<Key> > > >, std::__detail::_Select1st, std::equal_to<Key>, myHash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<Key const, std::vector<Key, std::allocator<Key> > >, false>*) (in /home/antsk320/TDDI16/Passwords/decrypt)
+   n1: 8450584 0x402256: std::__detail::_Map_base<Key, std::pair<Key const, std::vector<Key, std::allocator<Key> > >, std::allocator<std::pair<Key const, std::vector<Key, std::allocator<Key> > > >, std::__detail::_Select1st, std::equal_to<Key>, myHash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](Key&&) (in /home/antsk320/TDDI16/Passwords/decrypt)
+    n0: 8450584 0x4012F5: main (in /home/antsk320/TDDI16/Passwords/decrypt)
+ n1: 4721792 0x401D9B: void std::vector<Key, std::allocator<Key> >::_M_emplace_back_aux<Key const&>(Key const&) (in /home/antsk320/TDDI16/Passwords/decrypt)
+  n0: 4721792 0x40169A: main (in /home/antsk320/TDDI16/Passwords/decrypt)
+ n0: 72704 in 1 place, below massif's threshold (01.00%)
+#-----------
+snapshot=38
+#-----------
+time=5536301765
+mem_heap_B=38181384
+mem_heap_extra_B=19775800
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=39
+#-----------
+time=5680233479
+mem_heap_B=39163848
+mem_heap_extra_B=20430792
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=40
+#-----------
+time=5824174374
+mem_heap_B=40139544
+mem_heap_extra_B=21081256
+mem_stacks_B=0
+heap_tree=detailed
+n4: 40139544 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 26346880 0x40221B: std::__detail::_Map_base<Key, std::pair<Key const, std::vector<Key, std::allocator<Key> > >, std::allocator<std::pair<Key const, std::vector<Key, std::allocator<Key> > > >, std::__detail::_Select1st, std::equal_to<Key>, myHash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](Key&&) (in /home/antsk320/TDDI16/Passwords/decrypt)
+  n0: 26346880 0x4012F5: main (in /home/antsk320/TDDI16/Passwords/decrypt)
+ n1: 8450584 0x401E8A: std::_Hashtable<Key, std::pair<Key const, std::vector<Key, std::allocator<Key> > >, std::allocator<std::pair<Key const, std::vector<Key, std::allocator<Key> > > >, std::__detail::_Select1st, std::equal_to<Key>, myHash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned long, std::integral_constant<bool, true>) (in /home/antsk320/TDDI16/Passwords/decrypt)
+  n1: 8450584 0x40201E: std::_Hashtable<Key, std::pair<Key const, std::vector<Key, std::allocator<Key> > >, std::allocator<std::pair<Key const, std::vector<Key, std::allocator<Key> > > >, std::__detail::_Select1st, std::equal_to<Key>, myHash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<Key const, std::vector<Key, std::allocator<Key> > >, false>*) (in /home/antsk320/TDDI16/Passwords/decrypt)
+   n1: 8450584 0x402256: std::__detail::_Map_base<Key, std::pair<Key const, std::vector<Key, std::allocator<Key> > >, std::allocator<std::pair<Key const, std::vector<Key, std::allocator<Key> > > >, std::__detail::_Select1st, std::equal_to<Key>, myHash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](Key&&) (in /home/antsk320/TDDI16/Passwords/decrypt)
+    n0: 8450584 0x4012F5: main (in /home/antsk320/TDDI16/Passwords/decrypt)
+ n1: 5269376 0x401D9B: void std::vector<Key, std::allocator<Key> >::_M_emplace_back_aux<Key const&>(Key const&) (in /home/antsk320/TDDI16/Passwords/decrypt)
+  n0: 5269376 0x40169A: main (in /home/antsk320/TDDI16/Passwords/decrypt)
+ n0: 72704 in 1 place, below massif's threshold (01.00%)
+#-----------
+snapshot=41
+#-----------
+time=5968107135
+mem_heap_B=41121672
+mem_heap_extra_B=21736008
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=42
+#-----------
+time=6064064220
+mem_heap_B=41770192
+mem_heap_extra_B=22168360
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=43
+#-----------
+time=6255977638
+mem_heap_B=43054056
+mem_heap_extra_B=23024280
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=44
+#-----------
+time=6351939027
+mem_heap_B=43698976
+mem_heap_extra_B=23454232
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=45
+#-----------
+time=6447893876
+mem_heap_B=44336080
+mem_heap_extra_B=23878968
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=46
+#-----------
+time=6639807114
+mem_heap_B=45597864
+mem_heap_extra_B=24720168
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=47
+#-----------
+time=6735767115
+mem_heap_B=46221136
+mem_heap_extra_B=25135672
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=48
+#-----------
+time=6831723832
+mem_heap_B=46860264
+mem_heap_extra_B=25561784
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=49
+#-----------
+time=6927689761
+mem_heap_B=47493616
+mem_heap_extra_B=25984008
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=50
+#-----------
+time=7013498981
+mem_heap_B=48056232
+mem_heap_extra_B=26359112
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=51
+#-----------
+time=7099309466
+mem_heap_B=48618024
+mem_heap_extra_B=26733640
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=52
+#-----------
+time=7185120277
+mem_heap_B=49176784
+mem_heap_extra_B=27106136
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=53
+#-----------
+time=7270936411
+mem_heap_B=49735168
+mem_heap_extra_B=27478392
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=54
+#-----------
+time=7356748392
+mem_heap_B=50289376
+mem_heap_extra_B=27847864
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=55
+#-----------
+time=7442558376
+mem_heap_B=50840376
+mem_heap_extra_B=28215208
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=56
+#-----------
+time=7528370029
+mem_heap_B=51391504
+mem_heap_extra_B=28582632
+mem_stacks_B=0
+heap_tree=detailed
+n4: 51391504 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 35723520 0x40221B: std::__detail::_Map_base<Key, std::pair<Key const, std::vector<Key, std::allocator<Key> > >, std::allocator<std::pair<Key const, std::vector<Key, std::allocator<Key> > > >, std::__detail::_Select1st, std::equal_to<Key>, myHash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](Key&&) (in /home/antsk320/TDDI16/Passwords/decrypt)
+  n0: 35723520 0x4012F5: main (in /home/antsk320/TDDI16/Passwords/decrypt)
+ n1: 8450584 0x401E8A: std::_Hashtable<Key, std::pair<Key const, std::vector<Key, std::allocator<Key> > >, std::allocator<std::pair<Key const, std::vector<Key, std::allocator<Key> > > >, std::__detail::_Select1st, std::equal_to<Key>, myHash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned long, std::integral_constant<bool, true>) (in /home/antsk320/TDDI16/Passwords/decrypt)
+  n1: 8450584 0x40201E: std::_Hashtable<Key, std::pair<Key const, std::vector<Key, std::allocator<Key> > >, std::allocator<std::pair<Key const, std::vector<Key, std::allocator<Key> > > >, std::__detail::_Select1st, std::equal_to<Key>, myHash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<Key const, std::vector<Key, std::allocator<Key> > >, false>*) (in /home/antsk320/TDDI16/Passwords/decrypt)
+   n1: 8450584 0x402256: std::__detail::_Map_base<Key, std::pair<Key const, std::vector<Key, std::allocator<Key> > >, std::allocator<std::pair<Key const, std::vector<Key, std::allocator<Key> > > >, std::__detail::_Select1st, std::equal_to<Key>, myHash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](Key&&) (in /home/antsk320/TDDI16/Passwords/decrypt)
+    n0: 8450584 0x4012F5: main (in /home/antsk320/TDDI16/Passwords/decrypt)
+ n1: 7144696 0x401D9B: void std::vector<Key, std::allocator<Key> >::_M_emplace_back_aux<Key const&>(Key const&) (in /home/antsk320/TDDI16/Passwords/decrypt)
+  n0: 7144696 0x40169A: main (in /home/antsk320/TDDI16/Passwords/decrypt)
+ n0: 72704 in 1 place, below massif's threshold (01.00%)
+#-----------
+snapshot=57
+#-----------
+time=7614180946
+mem_heap_B=51937848
+mem_heap_extra_B=28946872
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=58
+#-----------
+time=7699993443
+mem_heap_B=52481200
+mem_heap_extra_B=29309096
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=59
+#-----------
+time=7785806403
+mem_heap_B=53030320
+mem_heap_extra_B=29675192
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=60
+#-----------
+time=7871623645
+mem_heap_B=53581360
+mem_heap_extra_B=30042552
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=61
+#-----------
+time=7957438257
+mem_heap_B=54121792
+mem_heap_extra_B=30402840
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=62
+#-----------
+time=8043250342
+mem_heap_B=54666352
+mem_heap_extra_B=30765880
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=63
+#-----------
+time=8129061782
+mem_heap_B=55207168
+mem_heap_extra_B=31126424
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=64
+#-----------
+time=8214876312
+mem_heap_B=55744000
+mem_heap_extra_B=31484328
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=65
+#-----------
+time=8300685745
+mem_heap_B=56286544
+mem_heap_extra_B=31846024
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=66
+#-----------
+time=8386495867
+mem_heap_B=56820976
+mem_heap_extra_B=32202312
+mem_stacks_B=0
+heap_tree=detailed
+n4: 56820976 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 40248080 0x40221B: std::__detail::_Map_base<Key, std::pair<Key const, std::vector<Key, std::allocator<Key> > >, std::allocator<std::pair<Key const, std::vector<Key, std::allocator<Key> > > >, std::__detail::_Select1st, std::equal_to<Key>, myHash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](Key&&) (in /home/antsk320/TDDI16/Passwords/decrypt)
+  n0: 40248080 0x4012F5: main (in /home/antsk320/TDDI16/Passwords/decrypt)
+ n1: 8450584 0x401E8A: std::_Hashtable<Key, std::pair<Key const, std::vector<Key, std::allocator<Key> > >, std::allocator<std::pair<Key const, std::vector<Key, std::allocator<Key> > > >, std::__detail::_Select1st, std::equal_to<Key>, myHash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned long, std::integral_constant<bool, true>) (in /home/antsk320/TDDI16/Passwords/decrypt)
+  n1: 8450584 0x40201E: std::_Hashtable<Key, std::pair<Key const, std::vector<Key, std::allocator<Key> > >, std::allocator<std::pair<Key const, std::vector<Key, std::allocator<Key> > > >, std::__detail::_Select1st, std::equal_to<Key>, myHash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<Key const, std::vector<Key, std::allocator<Key> > >, false>*) (in /home/antsk320/TDDI16/Passwords/decrypt)
+   n1: 8450584 0x402256: std::__detail::_Map_base<Key, std::pair<Key const, std::vector<Key, std::allocator<Key> > >, std::allocator<std::pair<Key const, std::vector<Key, std::allocator<Key> > > >, std::__detail::_Select1st, std::equal_to<Key>, myHash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](Key&&) (in /home/antsk320/TDDI16/Passwords/decrypt)
+    n0: 8450584 0x4012F5: main (in /home/antsk320/TDDI16/Passwords/decrypt)
+ n1: 8049608 0x401D9B: void std::vector<Key, std::allocator<Key> >::_M_emplace_back_aux<Key const&>(Key const&) (in /home/antsk320/TDDI16/Passwords/decrypt)
+  n0: 8049608 0x40169A: main (in /home/antsk320/TDDI16/Passwords/decrypt)
+ n0: 72704 in 1 place, below massif's threshold (01.00%)
+#-----------
+snapshot=67
+#-----------
+time=8472305595
+mem_heap_B=57351568
+mem_heap_extra_B=32556056
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=68
+#-----------
+time=8558114934
+mem_heap_B=57881536
+mem_heap_extra_B=32909368
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=69
+#-----------
+time=8643926272
+mem_heap_B=58407376
+mem_heap_extra_B=33259928
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=70
+#-----------
+time=9957762723
+mem_heap_B=58854944
+mem_heap_extra_B=33558328
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=71
+#-----------
+time=9957814720
+mem_heap_B=58854944
+mem_heap_extra_B=33558328
+mem_stacks_B=0
+heap_tree=peak
+n4: 58854944 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 41943040 0x40221B: std::__detail::_Map_base<Key, std::pair<Key const, std::vector<Key, std::allocator<Key> > >, std::allocator<std::pair<Key const, std::vector<Key, std::allocator<Key> > > >, std::__detail::_Select1st, std::equal_to<Key>, myHash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](Key&&) (in /home/antsk320/TDDI16/Passwords/decrypt)
+  n0: 41943040 0x4012F5: main (in /home/antsk320/TDDI16/Passwords/decrypt)
+ n1: 8450584 0x401E8A: std::_Hashtable<Key, std::pair<Key const, std::vector<Key, std::allocator<Key> > >, std::allocator<std::pair<Key const, std::vector<Key, std::allocator<Key> > > >, std::__detail::_Select1st, std::equal_to<Key>, myHash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash_aux(unsigned long, std::integral_constant<bool, true>) (in /home/antsk320/TDDI16/Passwords/decrypt)
+  n1: 8450584 0x40201E: std::_Hashtable<Key, std::pair<Key const, std::vector<Key, std::allocator<Key> > >, std::allocator<std::pair<Key const, std::vector<Key, std::allocator<Key> > > >, std::__detail::_Select1st, std::equal_to<Key>, myHash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<Key const, std::vector<Key, std::allocator<Key> > >, false>*) (in /home/antsk320/TDDI16/Passwords/decrypt)
+   n1: 8450584 0x402256: std::__detail::_Map_base<Key, std::pair<Key const, std::vector<Key, std::allocator<Key> > >, std::allocator<std::pair<Key const, std::vector<Key, std::allocator<Key> > > >, std::__detail::_Select1st, std::equal_to<Key>, myHash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](Key&&) (in /home/antsk320/TDDI16/Passwords/decrypt)
+    n0: 8450584 0x4012F5: main (in /home/antsk320/TDDI16/Passwords/decrypt)
+ n1: 8388608 0x401D9B: void std::vector<Key, std::allocator<Key> >::_M_emplace_back_aux<Key const&>(Key const&) (in /home/antsk320/TDDI16/Passwords/decrypt)
+  n0: 8388608 0x40169A: main (in /home/antsk320/TDDI16/Passwords/decrypt)
+ n0: 72712 in 2 places, all below massif's threshold (01.00%)
+#-----------
+snapshot=72
+#-----------
+time=10514037521
+mem_heap_B=58854944
+mem_heap_extra_B=33558328
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=73
+#-----------
+time=11560815437
+mem_heap_B=58854944
+mem_heap_extra_B=33558328
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=74
+#-----------
+time=12029187314
+mem_heap_B=58854944
+mem_heap_extra_B=33558328
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=75
+#-----------
+time=12589195878
+mem_heap_B=58854928
+mem_heap_extra_B=33558296
+mem_stacks_B=0
+heap_tree=empty

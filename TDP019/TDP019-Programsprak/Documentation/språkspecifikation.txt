@@ -1,0 +1,127 @@
+Koncept:
+Språket ska kunna köras som globala macros, eg i en excel fil, klicka på försa cellen,
+kör "scriptet", så den redigerar den celler efter vad "scriptet" säger.
+
+Vi vill att språket ska kunna användas för att snabba upp "vardagliga" och "repetitiva" uppgifter.
+
+Vi skulle även, om vi har tid och möjlighet, få programmet att kunna lyssna efter tangenttryck och utföra automation.
+
+
+Scope beter sig "vanligt", som i Python/C++/Ruby, där man har tillgång till lokala scopet och alla scope ovanför.
+
+Dynamiskt typat, vi vill ha så enkelt & snabbt som möjligt att slänga ihop scripts.
+
+Pass by reference är nog passande, eftersom få variabler används generellt i språket. Kan då skapa små funktioner som enkelt ändrar på värden.
+
+
+
+
+
+Vi skulle även, om vi har tid och möjlighet, få programmet att kunna lysna efter tangenttryck.
+För att kunna skapa "macros" som är mer "on the fly", eg:
+<ctr><alt>1<ctr><alt>0<ctr><alt>0<ctr><alt>Y #aktivera Y funktionen 100 gr
+
+
+
+
+Exempelkod
+fun DoStuff(param1, param2)
+{
+    a = 2
+    a++1 # Ökning av sig själv
+    a--1 # Säkning av sig själv
+    a//2 # Dela sig själv med 2
+    a**2 # multiplicera sig själv med 2
+    a^^2 # höja upp sig själv med 2, motsvarighet a = a^2
+
+    i = a # Tilldelning
+
+    b = True
+    b = False
+
+    loop b # Vad som helst som returnerar en bool
+    {
+      dostuff until b is false
+    }
+    loop 5 # Vad som helst som returnerar ett heltal
+    {
+      do 5 stuff
+    }
+
+    a+1 # Statement
+    a-1
+    a/2
+    a*2
+
+    #tangent/mus simulering
+    Send("HEJ<ctrl>P") # Tar emot sträng av tecken som man vill skriva ut. <specialtecken> är för ctrl/alt/shift mm.
+
+    Send("<ctrl down>P<ctrl up>")
+    Send("(p up)")
+    Send("p") är ekvivalent till send("(p)") #Parenteser tilåter mer avancerad kontroll. down/up t.ex
+
+    listen() # läs in knapptryckningar
+
+
+    # Muskontroll
+    # Röra
+    Mouse.Move(int,int)
+    Mouse.Click()
+    Mouse.RightClick()
+    Mouse.MiddleClick()
+    Mouse.Hold("Right")
+    Mouse.Release("Right")
+
+
+
+
+
+
+
+    Sleep(int)  # Timing i macron (i den egena tråden)
+
+    # Klicka
+
+    #If else etc
+    if
+    {
+
+    }
+    else
+    {
+
+    }
+
+
+    #Intentering krävs ej
+    #olika sätt att avsluta ett statment
+    i++2
+    i++3; i++2
+}
+
+
+DoStuff("hej",2) # calla en function
+
+
+
+
+
+https://github.com/erinata/auto_click
+
+NOTES:
+lambda
+datatyper?
+funktionskallning, rekursiv??
+(kan köra c-kod i ruby)
+logiska:  and   or   not    ?????
+klasser (för högre betyg)???
+
+FIXA BNF TILL NÄSTA HANDLEDNING
+
+BNF:
+prioritering på "+" och "*" etc
+
+
+
+
+

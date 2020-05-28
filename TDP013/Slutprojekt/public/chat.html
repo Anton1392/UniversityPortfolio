@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<title>Twatchat.com</title>
+
+		<!--Loads bootstrap and jQuery(needed for bootstrap)-->
+		<script src="external/js/jquery-3.3.1.js"></script>
+		<link rel="stylesheet" type="text/css" href="external/css/bootstrap.css">
+		<script src="external/js/bootstrap.js"></script>
+
+		<!--Loads vue-->
+		<script src="external/js/vue.js"></script>
+
+		<!--Loads our own scripts-->
+		<script src="cookies.js"></script>
+		<link rel="stylesheet" type="text/css" href="style.css">
+
+		<meta charset="UTF-8">
+	</head>
+
+	<body>
+		<div class="container" id="app">
+			<h1>Logged in as: {{ username }}</h1>
+			<a href="myProfile.html">
+				<button type="button" class="btn btn-primary">My profile</button>
+			</a>
+			<button type="button" class="btn btn-primary" onclick="logOut()">Log out</button>
+
+			<div id="chat">
+			</div>
+
+			<form id="messageForm">
+				<div class="form-group">
+					<label for="messageInput">Chat!</label>
+					<input type="text" class="form-control" id="messageInput">
+					<button type="button" class="btn btn-primary" onclick="sendMessage()">Send message</button>
+				</div>
+			</form>
+
+		</div>
+
+		<script src="http://localhost:3000/socket.io/socket.io.js"></script>
+		<script src="chat.js"></script>
+	</body>
+</html>

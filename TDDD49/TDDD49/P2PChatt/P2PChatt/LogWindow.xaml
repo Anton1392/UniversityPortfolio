@@ -1,0 +1,19 @@
+﻿<Window x:Class="P2PChatt.LogWindow"
+        x:Name="logWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:P2PChatt"
+        mc:Ignorable="d"
+        Title="Chat Log" Height="790.775" Width="736.014" ResizeMode="CanMinimize" WindowStartupLocation="CenterOwner">
+    <Grid>
+        <ListBox x:Name="logBox" HorizontalAlignment="Left" Height="668" Margin="10,84,0,0" VerticalAlignment="Top" Width="710">
+            <ListBox.ItemsSource>
+                <Binding ElementName="logWindow" Path="resultList"/>
+            </ListBox.ItemsSource>
+        </ListBox>
+        <TextBox x:Name="nameSearch" HorizontalAlignment="Left" Height="23" Margin="10,44,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="343" RenderTransformOrigin="-1.833,1.835" TextChanged="nameSearch_TextChanged"/>
+        <TextBlock TextWrapping="Wrap" Text="Search by name" Margin="10,10,377,723"/>
+    </Grid>
+</Window>

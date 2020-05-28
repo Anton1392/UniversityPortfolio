@@ -1,0 +1,68 @@
+Utvecklardagbok:
+
+Lab1:
+
+För att lära oss Ruby har vi deltagit på föreläsningarna samt använt oss av ruby-doc.org. Google och stack-overflow har även varit användbara för informationssökning.
+
+Yield-kommandot är nytt för oss. Det verkar väldigt smidigt och elegant att använda. Vi tycker det påminner om hur man kallar på lambda-funktioner i andra språk. Även inject-kommandot är ett sedan tidigare okänt men väldigt kraftfullt verktyg.
+
+Ruby liknar på många sätt Python, t.ex. hur man enkelt kan skriva ut data som inte är strängar eller tecken på skärmen.
+Jämfört med andra språk, dock särskilt C++, så tolkar Ruby mycket av koden åt programmeraren. Man måste inte specificera vilken typ av datatyp något är. Att Ruby automatiskt returnerar det sista värden i en funktion är också nytt.
+
+Ruby-kod är lättläst vilket gör det enkelt att förstå kod-exempel från dokumentation och andra källor.
+
+När vi skulle lösa problem med reguljärautryck kom http://rubular.com/ till stor användning, då det förenklar testning av uttrycket. Sidan innehåller också en kort beskrivning om hur Regex fungerar. Att implementera detta reguljärautryck i Ruby var mycket smidigt och fungerade som vi hade tänkt.
+
+2018-01-18:
+Under dagens labbpass skrevs all uppgiftskod, enhetstester, samt utvecklardagbok.
+
+Uppgift 1.1:
+Denna uppgift kan lösas på många olika sätt. Olika sätt ger dock lite olika returvärden. Vi valde att använda integer-klassens metod "times", som returnerar talet. Detta gör det enkelt att enhetstesta.
+
+Uppgift 1.4:
+Denna var svårlöst. Vi valde att inte lösa uppgiften.
+
+Uppgift 1.6:
+Vi tolkade uppgiften som att det inte skulle vara ett direkt arv av klassen PersonName från uppgift 1.5.
+
+Uppgift 1.9:
+Klassen Array har redan en metod kallad rotate som gör precis det som efterfrågas. Istället för att kalla på den i vår egen funktion valde vi att skriva den från grunden.
+
+Uppgift 1.11:
+Vi valde att även ta med alla sluttaggar.
+
+Uppgift 1.12:
+Vi löste matchningen genom att söka i intervallen mellan de förbjudna bokstäverna. Finns säkert någon snyggare/bättre metod att lösa detta på.
+If-satsen ser till att returnera false om inget regnr hittas.
+
+
+Lab2:
+
+Upg. 1 Uppgiften hade varit mycket svårlöst utan http://rubular.com/. Stor del av koden från fotbollsuppgiften gick att återanvända i väderuppgiften, skillanden mellan de två var regexutrycket och vilka kolumner vars värden skulle jämföras.
+Dag 26 i weather.txt finns det en "*" som ställde till det för vårat regexutryck, detta är nu löst.
+Vi använder oss av parenteser i regex-uttrycket för att dela upp datan i olika match-grupper och sparar den efterfrågade datan i en array. Detta gör det enkelt att sedan bearbeta informationen. För att räkna ut skillnaden mellan värdena i tabell använde vi oss av absolutvärdet för att vara säkra på att det alltid blev positivt.
+Försök gjordes att dela upp filen i en array av rader för att sedan leta upp relevant data, men denna metod var krångligare så vi valde att inte fortsätta med den.
+
+Upg. 2 Vi löste denna uppgift med hjälp av träd-parsning i REXML. Vi försökte lösa uppgiften innan föreläsning 4 vilket resulterade i mycket letande efter korrekta uttryck. Föreläsning 4 var informativ.
+
+Information hittades på REXMLs hemsida (http://www.germane-software.com/software/rexml/). Dock var deras tutorial inte så bra tyckte vi. Dokumentationen (som man var tvungen att ladda ner för att kunna läsa) var svårläst.
+
+Vi hittade en annan informationskälla, https://www.tutorialspoint.com/ruby/ruby_xml_xslt.htm.
+Denna var lite enklare att använda.
+
+En funktion från föreläsning 4 som var mycket användbar för att få en överblick av strukturen i events.html var denna:
+
+def print_tree(elem, indent=0)
+    elem.elements.each do |subelem|
+        puts " "*2*indent x subelem.name
+        print_tree(subelem, ident+1)
+    end
+end
+
+Med lite modifieringar kunde man se var i filen eventen fanns.
+
+Först så användes följande XPath-uttryck för att hitta början av ett event:
+"html/body/table/tr/td/div"
+När seminarieuppgiften lästes lite noggrannare såg vi att man kunde leta efter 'vevent'. XPath-uttrycket ändrades då till:
+"//div[@class='vevent']"
+Vilket vi tyckte var mycket smidigt.

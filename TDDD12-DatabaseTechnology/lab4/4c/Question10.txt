@@ -1,0 +1,29 @@
+a)
+	No, in the test scripts the payment is added last
+	and when it is added it is first checked if the 
+	remaining free seats could accomodate the current
+	reservation size.
+
+b)
+	Yes, if the check inside payment is read before being
+	set by another caller (client).
+
+	Caller#1:	Can it accomodate? Yes
+	Caller#2: 	Can it accomodate? Yes
+	Caller#1: 	Updates data
+	Caller#2:	Updates data (now overbooked)
+
+c)
+	If enough free seats
+	SELECT SLEEP(5);
+	Make booking
+
+	(see main.sql addPayment)
+
+d)
+	Make the booking in a 
+	transaction, with a final 
+	check before committing or 
+	rolling back.
+
+	(see main.sql addPayment)

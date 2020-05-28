@@ -1,0 +1,80 @@
+3-1 Set your server up as a file server using NFS (or the network file system of your choice).
+  * On the server *
+  apt install nfs-kernel-server
+
+3-2 Configure your server to export the /usr/local directory to all clients. It must not be possible to access /usr/local from any other system. Your server must not treat root users on the client as root on the exported file system.
+  chown nobody:nogroup /usr/local
+  chmod 777 /usr/local
+
+  nano /etc/exports
+  Add this to bottom, root_squash makes root requests into anonymous UID/GID:
+    /usr/local      10.0.0.3(rw,root_squash,sync,no_subtree_check)
+    /usr/local      10.0.0.4(rw,root_squash,sync,no_subtree_check)
+
+  exportfs -a
+  systemctl restart nfs-kernel-server
+
+
+3-3 Configure your clients to automatically mount /usr/local from the server at boot.
+  * On the client *
+  apt-get install nfs-common
+  mkdir -p /mnt/usr/local
+
+  nano /etc/fstab
+  Add this to bottom:
+    10.0.0.2:/usr/local     /mnt/usr/local  nfs     defaults        0       0
+
+4-2 Create two new users, but move one user's home directory to /home2/USERNAME and the other user's home directory to /home1/USERNAME (you will probably have to create the /home1 and /home2 directories first). Ensure that no home directories remain in /home. Do not change the home directory location in the user database.
+  * On the server *
+  Make sure /home1 and /home2 exist from STO lab.
+  useradd -d /home/tester1 tester1
+  useradd -d /home/tester2 tester2
+  passwd tester1
+  passwd tester2
+
+4-3 Configure your NFS server to export /home1 and /home2 with the appropriate permissions to your clients (and only your clients).
+  nano /etc/exports
+  Add this to bottom:
+    /home1  10.0.0.3(rw,root_squash,sync,no_subtree_check)
+    /home1  10.0.0.4(rw,root_squash,sync,no_subtree_check)
+    /home2  10.0.0.3(rw,root_squash,sync,no_subtree_check)
+    /home2  10.0.0.4(rw,root_squash,sync,no_subtree_check)
+  exportfs -a
+  systemctl restart nfs-kernel-server
+
+5-1 Install an automounter on the clients and on the server. The autofs package is recommended, but you may try amd or some other automounter if you prefer. Note the warning above.
+  * On server, client-1, client-2 *
+  apt-get install autofs
+  // Is priority needed?
+  //update-rc.d -f autofs remove
+  //update-rc.d -f nis remove
+  //update-rc.d -f portmap remove
+  //update-rc.d autofs defaults 19
+  //update-rc.d nis defaults 18
+  //update-rc.d portmap defaults 17
+
+  * On clients *
+  nano /etc/nsswitch.conf
+  Add to bottom:
+    automount:  nis
+
+  * On server *
+  nano /etc/auto.master
+  Add:
+    /home yp:auto.home -timeout=600
+  nano /etc/auto.home
+  Add:
+    tester1 -fstype=nfs,rw  10.0.0.2:/home1/tester1
+    tester2 -fstype=nfs,rw  10.0.0.2:/home2/tester2
+
+  cd /var/yp
+  make auto.master
+  make auto.home
+  cp auto.master student.ida.liu.se/auto.master
+  cp auto.home student.ida.liu.se/auto.home
+  service nis restart
+
+5-2 Configure the automounter so it mounts /home/USERNAME from the user's real home directory (on the NFS server). Make /home an indirect mount point - that is, the automounter will automatically mount subdirectories of /home, but not /home itself. You will probably need one line per user in the configuration file.
+  See above
+
+5-3 Verify that all users can log on to the client and that the correct home directories are mounted.

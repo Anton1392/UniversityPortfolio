@@ -1,0 +1,18 @@
+//
+// Do any local configuration here
+//
+
+// Consider adding the 1918 zones here, if they are not used in your
+// organization
+//include "/etc/bind/zones.rfc1918";
+
+zone "student.ida.liu.se" {
+      type master;
+      file "/etc/bind/fwd.student.ida.liu.se.db";
+};
+
+zone "0.0.10.in-addr.arpa"{
+      type master;
+      //notify no; //we are not notifying to begin with?
+      file "/etc/bind/rev.0.0.10.in-addr.arpa.db";
+};

@@ -1,0 +1,4 @@
+apt-get update
+apt-get install mdadm
+apt-get install lvm2
+service lvm2 start

@@ -1,0 +1,6 @@
+Generellt:
+          Följ språkets generella utseende
+          ---
+          Varje skriven modul ska vara fristående. (Därav inga globala variabler eller hög coupling)
+          ---
+

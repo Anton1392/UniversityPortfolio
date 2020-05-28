@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright (C) 2017 Advanced Card Systems Ltd. All rights reserved.
+
+    This software is the confidential and proprietary information of Advanced
+    Card Systems Ltd. ("Confidential Information").  You shall not disclose such
+    Confidential Information and shall use it only in accordance with the terms
+    of the license agreement you entered into with ACS.
+-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.acs.bletest.MainActivity">
+
+    <!-- Terminal -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/terminal"
+            android:textSize="18sp" />
+
+        <Spinner
+            android:id="@+id/activity_main_spinner_terminal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <!-- Protocol -->
+
+    <!-- Control Code -->
+
+    <!-- Script -->
+
+    <LinearLayout
+        android:id="@+id/loggerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="230sp"
+        android:gravity="end"
+        android:orientation="vertical">
+
+
+        <TextView
+
+            android:id="@+id/activity_main_text_view_log"
+            android:layout_width="match_parent"
+            android:layout_height="168dp"
+            android:layout_weight="1"
+            android:scrollbars="vertical"
+            android:typeface="monospace" />
+
+        <Button
+            android:id="@+id/hideshowButton"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Show"
+            tools:visibility="visible" />
+
+
+    </LinearLayout>
+
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/UserHintImg"
+            android:layout_width="164dp"
+            android:layout_height="146dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.501"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.236"
+            app:srcCompat="@mipmap/cardscanicon_foreground" />
+
+        <Button
+            android:id="@+id/oldESDButton"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="200sp"
+            android:layout_height="140sp"
+            android:layout_weight="1"
+            android:text="@string/ShowOldEsdChecks"
+            android:textSize="28sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/UserHintImg" />
+
+        <Button
+            android:id="@+id/newESDButton"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="200sp"
+            android:layout_height="140sp"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:text="@string/NewEsdCheck"
+            android:textSize="28sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/oldESDButton"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/UserHintImg" />
+
+        <Button
+            android:id="@+id/logOutButton"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="200sp"
+            android:layout_height="140sp"
+            android:layout_marginEnd="16dp"
+            android:layout_weight="1"
+            android:text="@string/LogOut"
+            android:textSize="28sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/oldESDButton"
+            app:layout_constraintTop_toBottomOf="@+id/UserHintImg" />
+
+        <TextView
+            android:id="@+id/UserHintTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text=""
+            android:textSize="32dp"
+            app:layout_constraintBottom_toTopOf="@+id/UserHintImg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.428" />
+
+        <TextView
+            android:id="@+id/welcomeView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text=""
+            android:textSize="32dp"
+            app:layout_constraintBottom_toTopOf="@+id/UserHintImg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.428" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</LinearLayout>
+
+
+

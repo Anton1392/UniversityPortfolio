@@ -1,0 +1,7 @@
+#!/bin/sh -e
+
+iptables -t nat -A POSTROUTING -o ens3 -j MASQUERADE
+iptables -A FORWARD -i ens3 -o ens4 -m state --state RELATED,ESTABLISHED -j ACCEPT
+iptables -A FORWARD -i ens4 -o ens3 -j ACCEPT
+
+exit 0

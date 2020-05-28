@@ -1,0 +1,10 @@
+SETUP:
+
+$ sudo pip3 install psycopg2==2.7.3.2
+$ sudo apt-get install postgresql
+$ sudo apt-get install postgresql-contrib
+$ sudo /etc/init.d/postgresql restart
+$ sudo -u postgres psql
+
+postgres=#   ALTER USER postgres PASSWORD 'postgres';
+postgres=#   CREATE DATABASE zoezi;

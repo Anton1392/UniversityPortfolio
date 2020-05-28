@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name = "ShowOldEsdChecks">Show Old Esd Checks</string>
+    <string name = "NewEsdCheck">New Esd Check</string>
+    <string name = "LogOut">Log out</string>
+    <string name ="Hide">Hide</string>
+    <string name = "Show">Show</string>
+    <string name = "ScanCard">Scan Card</string>
+    <string name = "ConnectingToCardReader">Connecting to cardreader</string>
+    <string name="title_settings">Settings</string>
+    <string name="get_battery_level">Get battery level</string>
+    <string name="esd_control">ESD test</string>
+    <string name="pass">Pass</string>
+    <string name="fail">Fail</string>
+    <string name="register">Register</string>
+    <string name="new_card_detected">New Card Detected</string>
+    <string name="please_enter_name">Please Enter Name</string>
+    <string name="first_name">Namn</string>
+    <string name="last_name">Efternamn</string>
+    <string name="test_backend">Test backend and auth</string>
+    <string name="backend_username">Backend username</string>
+    <string name="backend_password">Backend password</string>
+    <string name="save_and_restart">Save and restart</string>
+    <string name="test_auth">Test authentication</string>
+    <string name="prevesd_welcome">Here you can see your previous ESD test results.\nGreen=Pass\nRed=Fail</string>
+    <string name="main_welcome">Welcome, %1s!</string>
+    <string name="language">Language</string>
+    <string name="permissionTitle">Location Permission Required</string>
+    <string name="permissionExplanation">The app cannot connect with the card reader without location runtime permissions</string>
+    <string name="allow">Allow</string>
+    <string name="deny">Deny</string>
+    <string name="DontShowTitle">Don\'t show again</string>
+    <string name="DontShowExplanaition">Since you have chosen "do not show again" you will need to manually give this app course location runtime permission if you want to use the card reader.</string>
+    <string name ="UnableToAcquireToken">Failed to acquire authenticate token from the database</string>
+</resources>

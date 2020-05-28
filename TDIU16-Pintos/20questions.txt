@@ -1,0 +1,14 @@
+1. Nej. Trådbyte kan ske mellan lookup-checken och tillägget.
+
+2. Ja, tror jag. Trådbyte kan ske mellan namn-lookup checken och borttagningen. Den andra processen kommer förmodligen då dö vid borttaging, eftersom den redan är borttagen. I alla fall så tas filen bort, och nisse läggs alltid till eftersom det är skilt. Det finns rick att en process krashar.
+
+3. open_cnt++ är inte atomär, count kan vara inkorrekt. Trådbyte kan ske när man har kollat i listan över öppna inodes, inte garanterat att det bara finns 1 referens.
+
+4. Nej. Filen kan öppnas direkt efter open_cnt checken i close. Det blir då fel.
+
+5. Nej. Flera bitflippningar är inte atomära. Trådbyte kan ske.
+
+6. Förmodligen inte. Både close och remove påverkar inodes bitmap, och skulle trådbyte ske kan dåliga saker hända.
+
+7. Processlistan är trådsäker, jag har lås på dess funktioner.
+Fillistan bör vara trådsäker eftersom det inte är en delad resurs och är per tråd.

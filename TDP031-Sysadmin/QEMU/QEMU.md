@@ -1,0 +1,28 @@
+### 1-1 What is the command to run a macine with qemu
+> `qemu -hda machine.img`, assuming qemu is the PATH to the binary.
+
+### 1-2 What does the -m parameter to the qemu command do.
+> Allocates an amount megabytes of memory to the VM.
+
+### 1-3 What is a user block device.
+> A file representation of a users hardware. Such as keyboards, mice, disks.
+It acts as a buffer for communication between the system and external hardware.
+
+### 1-4 What is VDE (as related to networking and virtualization).
+> "Virtual Distributed Ethernet". A set of programs which can run virtual ethernet devices, such as routers and switches.
+
+### 3-3 Run ip address to see what IP address it has on virtual networking.
+> `10.0.2.15/24`
+
+### ### -1 What command would you use to copy the file /etc/network/interfaces from the instance to your IDA home folder.
+```bash
+scp -P 2220 root@127.0.0.1:/etc/network/interfaces ~
+```
+
+6-2 What command would you use to copy the directory /etc/default (and all its contents) from the instance to your IDA home folder.
+```bash
+scp -P 2220 -r root@127.0.0.1:/etc/default ~
+```
+
+### 6-3 Start your instance and make sure you can copy files both to and from the instances.
+> It works!

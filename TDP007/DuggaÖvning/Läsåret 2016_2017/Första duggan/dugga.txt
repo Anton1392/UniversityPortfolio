@@ -1,0 +1,169 @@
+Dugga 1 i TDP007 torsdag 9 februari 2016 kl 13.30-15.30
+-------------------------------------------------------
+
+Duggan startar kl. 13.30 och pågår till 15:30. Ni kommer att få köra
+på i vår begränsade datortentamiljö, som ni säkert redan känner till.
+Instruktioner för att logga in lämnas i salen. Alla filer som ni
+behöver för att lösa uppgifterna finns i hemkatalogen, under
+given_files, när ni har loggat in. Där finns också en PDF-version av
+en tidig utgåva av kursboken som ni gärna får använda er av. Öppna den
+med t ex kommandot xpdf. Under tentan kommer ni också att kunna komma
+åt ruby-doc.org och rubular.com för att kunna kolla upp och testa saker.
+
+Svar på frågor skrivs i vanliga textfiler och programkod skrivs i
+rb-filer.  En fil per huvuduppgift ska produceras, totalt alltså fyra
+filer. Ingen särskild inlämning behöver göras. När man är färdig
+loggar man ut och lämnar salen.
+
+Duggan består av fyra uppgifter (några indelade i deluppgifter) som
+totalt kan ge 25 poäng. Dessa poäng summeras ihop med poängen från den
+andra duggan.
+
+Uppgift 1 (7p)
+--------------
+
+a) Ge ett bra råd till någon som ska börja arbeta med enhetstestning.
+   Vad ska man tänka på när man konstruerar enhetstester? Hur många behöver
+   man? Hur detaljerade ska de vara? (2p)
+
+b) Hur förhåller sig XML till HTML? Vad är skillnader och likheter
+   mellan dem? (2p)
+
+c) Konstruera ett reguljärt uttryck som kan matcha en korrekt
+   e-postadress! (2p)
+
+d) I Ruby kan man lägga till eller ändra metoder i en redan definierad
+   klass. Nämn någon fördel och någon nackdel med detta! (1p)
+
+Uppgift 2 (4p)
+--------------
+
+I den bifogade filen myclass.rb finns en klass MyClass. Här är ett
+exempel på hur den kan användas:
+
+  >> a=MyClass.new { rand(7) }
+  => #<MyClass:0x00000001a69d38 @a=0, @b=0, @c=#<Proc:0x00000001a69ce8@(irb):2>>
+  >> a.korvgryta
+  => 6.0
+  >> a.korvgryta
+  => 4.5
+  >> a.korvgryta
+  => 4.333333333333333
+  >> b=MyClass.new { |i| i }
+  => #<MyClass:0x00000001a51198 @a=0, @b=0, @c=#<Proc:0x00000001a51170@(irb):6>>
+  >> b.korvgryta(1)
+  => 1.0
+  >> b.korvgryta(2)
+  => 1.5
+  >> b.korvgryta(3)
+  => 2.0
+
+a) (2p) Förklara vad klassen MyClass gör (d v s vad poängen skulle kunna 
+   vara med en sådan klass) samt föreslå bättre och mer förklarande namn på 
+   klassen, dess attribut och metoder, inklusive parametrar.
+
+b) (2p) Utforma därefter en uppsättning lämpliga enhetstester för klassen 
+   MyClass, eller vad den nu borde heta.
+
+Uppgift 3 (6p)
+--------------
+
+I file w_high_jump_2015.txt finns resultatet från finalen i damernas
+höjdhopp vid världsmästerskapen i friidrott i Beijing 2015. Det
+framgår inte omedelbart vem som har vunnit, utan i filen finns bara
+resultatet av hopparnas försök på respektive höjd. Din uppgift är att
+läsa in filen, räkna ut resultatet för varje hoppare, och skriva ut en
+sorterad och formatterad resultatlista. Det ska funka så här:
+
+  >> print_results("w_high_jump_2015.txt")
+  Maria KUCHINA                 RUS  2.01
+  Blanka VLASIC                 CRO  2.01
+  Anna CHICHEROVA               RUS  2.01
+  Kamila LICWINKO               POL  1.99
+  Ruth BEITIA                   ESP  1.99
+  Marie-Laurence JUNGFLEISCH    GER  1.99
+  Jeanelle SCHEPER              LCA  1.92
+  Eleanor PATTERSON             AUS  1.92
+  Svetlana RADZIVIL             UZB  1.88
+  Ana SIMIC                     CRO  1.88
+  Mirela DEMIREVA               BUL  1.88
+  Doreen AMATA                  NGR  1.88
+  Levern SPENCER                LCA  1.88
+
+För att kunna göra detta behöver du veta åtminstone lite om hur
+höjdhoppstävlingar funkar. Man försöker på en höjd i taget och höjer
+ribban successivt. Varje hoppare har max tre försök på respektive
+höjd, sedan åker man ut och får inte försöka mer. I tabellen betyder X
+en rivning och O att hopparen har klarat höjden. Hopparen kan också
+välja stå över en höjd, för att spara på krafterna. Det markeras med
+ett streck. Slutresultatet är alltså den högsta höjden där det finns
+ett O.
+
+För att kunna skilja hoppare med samma höjdresultat åt kollar man i
+första hand på hur många rivningar de har på sin högsta avklarade
+höjd. Den som har minst antal riviningar på samma höjd räknas högst. I
+andra hand räknar man hur många rivningar man har totalt. I vårt
+exempel vann Kuchina över Vlasic eftersom Vlasic hade en rivning på
+1.92. Chicerova hade två rivningar på lägre höjder och fick därför
+brons. (Ordningen mellan hoppare som verkligen har exakt samma
+resultat spelar ingen roll.)
+
+Uppgift 4 (8p)
+--------------
+
+I filen records.xml finns uppgifter om ett antal studenter och deras
+studieresultat. Första delen av filen innehåller en lista över studenterna
+och den andra delen över kurser och genomförda examinationer. Varje kurs
+består av en eller flera delar som vardera har en särskild kod (TEN1, UPG1
+etc). Varje sådan del kan ha examinerats en eller flera gånger, och för
+varje examination finns en lista över studenternas resultat. Detta kopplas
+ihop med studenterna med hjälp av personnummer. Alla uppgifter i filen är
+givetvis fejkade och alla likheter med riktiga förhållanden är helt och
+hållet slumpmässiga.
+
+a) (3p) Skriv en funktion print_stat som kan räkna ut betygsstatistik för
+   ett givet examinationstillfälle. Indata till funktionen ska vara
+   XML-filen med alla data, kurskoden, koden för kursdelen samt datumet
+   för examinationen. Tanken är att det ska funka så här:
+
+     >> print_stat("records.xml","TJKS23", "TEN1", "2016-03-19")
+     Betygsstatistik för TJKS23 Kosmologiska perspektiv
+     U: 9 (24%)
+     5: 12 (32%)
+     4: 11 (30%)
+     3: 5 (14%)
+
+  Exakt hur utskriften ser ut är inte viktigt, så länge all information som
+  finns i exemplet ovan är med (t ex kursens namn, antal studenter som fick
+  respektive betyg samt andelen uttryckt i procent).
+
+b) (3p/5p) Skriv en funktion print_records som kan skriva ut studieresultat
+   för en given person. Indata till funktionen ska vara XML-filen med alla
+   data samt login för den sökta studenten. Tanken är att det ska funka
+   så här:
+
+     >> print_records("records.xml", "johka612")
+     Johan Kaller
+     TJKS01 Introduktion till kosmologi
+       TEN1 3 (2016-06-09)
+     TJKS75 Astronomiska programvaror
+       DAT1 4 (2016-06-08)
+
+   Exakt hur utskriften ser ut är inte viktigt, så länge all information som
+   finns med i exemplet ovan är med, alltså kurskod, kursnamn, kursdelens
+   kod, betyg och datum för betyget.
+
+   Observera att en student kan ha försökt flera gånger på samma examination
+   innan hen blivit godkänd. I fallet Johan här ovan skriv endast det senaste
+   resultatet ut för tentan i TJKS01 och inte hans misslyckade försök
+   från mars samma år.
+
+   För full poäng på uppgiften, 5p, ska utskriften endast innehålla det
+   senaste resultatet. Den som vill kan istället lösa den kanske lite
+   enklare uppgiften att skriva ut alla försök. Om man gör det på ett bra
+   sätt kan man få 3p.
+
+Om du vill göra en strömparser-lösning hittar du ett exempel att utgå
+från i filen sax_example.rb och om du vill göra en trädparser-lösning
+hittar du lite information om metoderna i klassen REXML::Element samt
+några exempel på XPath-uttryck i filen rexml.txt.

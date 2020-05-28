@@ -1,0 +1,7 @@
+a) How can you protect the credit card information in the database from hackers?
+
+Encryption and possibly password protected (encrypted) in case the data should only be handled upon customer request. As well as making sure the table storing the data is only accessable by (client) systems who needs it.
+
+b) Give three advantages of using sored procedures in the database (and thereby execute them on the server) instead of writing the same functions in the front-end of the system (in for example java-script on a web-page)?
+
+Using stored procedures hopefully means that someone with good knowledge of the database creates them, it means there is a *single* (correct) procedure, in case there are several interfaces (e.g. web-pages) and it decouples front-end from back-end which is desireble in many ways.

@@ -1,0 +1,9 @@
+# For emacs temp files
+\#*#
+*~
+
+# Node module cache
+client/my-app/node_modules/.cache/*
+
+# Python junk
+*.pyc

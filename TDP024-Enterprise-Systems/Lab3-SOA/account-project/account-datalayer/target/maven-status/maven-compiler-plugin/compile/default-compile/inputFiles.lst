@@ -1,0 +1,15 @@
+/home/antsk320/Desktop/tdp024---enterprise-systems/Lab3-SOA/account-project/account-datalayer/src/main/java/se/liu/ida/tdp024/account/data/api/entity/Person.java
+/home/antsk320/Desktop/tdp024---enterprise-systems/Lab3-SOA/account-project/account-datalayer/src/main/java/se/liu/ida/tdp024/account/data/impl/db/facade/AccountEntityFacadeDB.java
+/home/antsk320/Desktop/tdp024---enterprise-systems/Lab3-SOA/account-project/account-datalayer/src/main/java/se/liu/ida/tdp024/account/data/impl/db/util/StorageFacadeDB.java
+/home/antsk320/Desktop/tdp024---enterprise-systems/Lab3-SOA/account-project/account-datalayer/src/main/java/se/liu/ida/tdp024/account/data/impl/db/util/EMF.java
+/home/antsk320/Desktop/tdp024---enterprise-systems/Lab3-SOA/account-project/account-datalayer/src/main/java/se/liu/ida/tdp024/account/data/impl/db/entity/TransactionDB.java
+/home/antsk320/Desktop/tdp024---enterprise-systems/Lab3-SOA/account-project/account-datalayer/src/main/java/se/liu/ida/tdp024/account/data/impl/db/facade/TransactionEntityFacadeDB.java
+/home/antsk320/Desktop/tdp024---enterprise-systems/Lab3-SOA/account-project/account-datalayer/src/main/java/se/liu/ida/tdp024/account/data/impl/db/entity/AccountDB.java
+/home/antsk320/Desktop/tdp024---enterprise-systems/Lab3-SOA/account-project/account-datalayer/src/main/java/se/liu/ida/tdp024/account/data/impl/db/entity/PersonDB.java
+/home/antsk320/Desktop/tdp024---enterprise-systems/Lab3-SOA/account-project/account-datalayer/src/main/java/se/liu/ida/tdp024/account/data/api/util/StorageFacade.java
+/home/antsk320/Desktop/tdp024---enterprise-systems/Lab3-SOA/account-project/account-datalayer/src/main/java/se/liu/ida/tdp024/account/data/api/entity/Bank.java
+/home/antsk320/Desktop/tdp024---enterprise-systems/Lab3-SOA/account-project/account-datalayer/src/main/java/se/liu/ida/tdp024/account/data/impl/db/entity/BankDB.java
+/home/antsk320/Desktop/tdp024---enterprise-systems/Lab3-SOA/account-project/account-datalayer/src/main/java/se/liu/ida/tdp024/account/data/api/facade/TransactionEntityFacade.java
+/home/antsk320/Desktop/tdp024---enterprise-systems/Lab3-SOA/account-project/account-datalayer/src/main/java/se/liu/ida/tdp024/account/data/api/entity/Account.java
+/home/antsk320/Desktop/tdp024---enterprise-systems/Lab3-SOA/account-project/account-datalayer/src/main/java/se/liu/ida/tdp024/account/data/api/entity/Transaction.java
+/home/antsk320/Desktop/tdp024---enterprise-systems/Lab3-SOA/account-project/account-datalayer/src/main/java/se/liu/ida/tdp024/account/data/api/facade/AccountEntityFacade.java

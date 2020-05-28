@@ -1,0 +1,9 @@
+b)
+
+	No, the transaction (A) which added it has not commited.
+
+c)
+
+	"The given reservation number does not exist".
+	The reservation does not exist globally in the database yet,
+	but only in the uncommited transaction.

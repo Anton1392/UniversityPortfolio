@@ -1,0 +1,100 @@
+﻿<Window x:Class="P2PChatt.MainWindow"
+        x:Name="mainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:P2PChatt"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="790.775" Width="736.014" WindowStartupLocation="CenterScreen">
+
+    <Grid>
+        <Label x:Name="label" Content="Username: " HorizontalAlignment="Left" Margin="77,5,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="146,8,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120">
+            <TextBox.IsEnabled>
+                <Binding ElementName="mainWindow" Path="conn.isNotConnected"/>
+            </TextBox.IsEnabled>
+            <TextBox.Text>
+                <Binding ElementName="mainWindow" Path="myName"></Binding>
+            </TextBox.Text>
+        </TextBox>
+
+        <Button Click="btnListen_Click" x:Name="btnListen" Content="Listen to port" HorizontalAlignment="Left" Margin="10,36,0,0" VerticalAlignment="Top" Width="131">
+            <Button.IsEnabled>
+                <Binding ElementName="mainWindow" Path="conn.isNotConnected"/>
+            </Button.IsEnabled>
+        </Button>
+
+        <TextBox PreviewTextInput="validPort" x:Name="txtBoxPort" HorizontalAlignment="Left" Height="23" Margin="146,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120">
+            <TextBox.Text>
+                <Binding ElementName="mainWindow" Path="conn.listenPort"/>
+            </TextBox.Text>
+        </TextBox>
+
+        <Button Click="btnConnect_Click" x:Name="btnConnect" Content="Connect to IP and Port:" HorizontalAlignment="Left" Margin="10,61,0,0" VerticalAlignment="Top" Width="131">
+            <Button.IsEnabled>
+                <Binding ElementName="mainWindow" Path="conn.isNotConnected"/>
+            </Button.IsEnabled>
+        </Button>
+
+        <TextBox PreviewTextInput="validIP" x:Name="txtConnectIP" HorizontalAlignment="Left" Height="23" Margin="146,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120">
+            <TextBox.Text>
+                <Binding ElementName="mainWindow" Path="conn.connectIP"/>
+            </TextBox.Text>
+        </TextBox>
+
+        <TextBox PreviewTextInput="validPort" x:Name="txtConnectPort" HorizontalAlignment="Left" Height="23" Margin="271,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120">
+            <TextBox.Text>
+                <Binding ElementName="mainWindow" Path="conn.connectPort"/>
+            </TextBox.Text>
+        </TextBox>
+
+        <Button x:Name="btnDisconnect" Click="btnDisconnect_Click" Content="Disconnect" HorizontalAlignment="Left" Margin="10,86,0,0" VerticalAlignment="Top" Width="131">
+            <Button.IsEnabled>
+                <Binding ElementName="mainWindow" Path="conn.isConnected"/>
+            </Button.IsEnabled>
+        </Button>
+
+        <Button Click="btnAccept_Click" x:Name="btnAccept" Content="Accept" HorizontalAlignment="Left" Margin="146,111,0,0" VerticalAlignment="Top" Width="75">
+            <Button.IsEnabled>
+                <Binding ElementName="mainWindow" Path="conn.pendingAccept"/>
+            </Button.IsEnabled>
+        </Button>
+
+        <Button Click="btnDeny_Click" x:Name="btnDeny" Content="Deny" HorizontalAlignment="Left" Margin="271,111,0,0" VerticalAlignment="Top" Width="75">
+            <Button.IsEnabled>
+                <Binding ElementName="mainWindow" Path="conn.pendingAccept"/>
+            </Button.IsEnabled>
+        </Button>
+
+        <Button Click="btnImage_Click" x:Name="btnImage" Content="Image" HorizontalAlignment="Left" Margin="10,146,0,0" VerticalAlignment="Top" Width="40">
+            <Button.IsEnabled>
+                <Binding ElementName="mainWindow" Path="conn.allowSendMessages"/>
+            </Button.IsEnabled>
+        </Button>
+
+        <TextBox x:Name="txtMsg" HorizontalAlignment="Left" Height="23" Margin="55,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="271">
+            <TextBox.IsEnabled>
+                <Binding ElementName="mainWindow" Path="conn.allowSendMessages"/>
+            </TextBox.IsEnabled>
+            <TextBox.Text>
+                <Binding ElementName="mainWindow" Path="messageToSend"/>
+            </TextBox.Text>
+        </TextBox>
+
+        <Button Click="btnSendMsg_Click" x:Name="btnSendMsg" Content="Send" HorizontalAlignment="Left" Margin="331,146,0,0" VerticalAlignment="Top" Width="60">
+            <Button.IsEnabled>
+                <Binding ElementName="mainWindow" Path="conn.allowSendMessages"/>
+            </Button.IsEnabled>
+        </Button>
+
+        <ListView x:Name="lstChatBox" HorizontalAlignment="Left" Height="576" Margin="10,174,0,0" VerticalAlignment="Top" Width="381"/>
+
+        <ScrollViewer Name="txtInfo" Content="Info:" Background="Black" Foreground="White" HorizontalAlignment="Left" Height="318" Margin="400,10,0,0" VerticalAlignment="Top" Width="300" RenderTransformOrigin="-0.472,0.027"/>
+        <Button Click="btnLog_Click" x:Name="btnLog" Content="Chat Log" HorizontalAlignment="Left" Margin="10,111,0,0" VerticalAlignment="Top" Width="131">
+            <Button.IsEnabled>
+                <Binding ElementName="mainWindow"/>
+            </Button.IsEnabled>
+        </Button>
+    </Grid>
+</Window>

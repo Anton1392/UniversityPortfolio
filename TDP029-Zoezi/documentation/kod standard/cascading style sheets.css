@@ -1,0 +1,19 @@
+/*
+### Notes ###
+#
+*/
+
+
+
+/*
+### Example css code ###
+*/
+body{
+    background-color: blue;
+    width: 100%;
+}
+
+p{
+    color: red;
+    border: 1px solid black;
+}

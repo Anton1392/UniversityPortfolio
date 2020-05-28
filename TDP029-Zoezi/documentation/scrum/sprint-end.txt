@@ -1,0 +1,41 @@
+Demo
+ Allokera en timme för demon.
+ Schemalägg med kunden i god tid.
+
+ Grupp:
+  Dema systemet för kunden, och gå igenom alla user stories som gjorts under sprinten.
+ Kund:
+  Avgör om det blir pass/fail för varje user story.
+  User stories som fått fail skrivs om och läggs tillbaka i backlog.
+
+
+
+Retrospective
+ Allokera en timme för retrospective.
+ Äger rum efter demon (kunden deltar ej).
+
+  Scrum master:
+   Gå igenom sprinten som ägt rum och påminn om bra och dåliga saker som inträffat.
+  Grupp:
+   Varje gruppmedlem (inklusive scrum master) skriver (under tystnad) post-its med Plus (saker som gått riktigt bra under sprinten) och Delta (saker som inte fungerat under sprinten).
+  Scrum master:
+   Be varje medlem komma fram och sätta upp sina post-its på tavlan och kortfattat förklara vad som menas.
+   Ingen diskussion.
+  Scrum master:
+   gå igenom alla positiva post-its på tavlan, summera och be om eventuella kompletterande kommentarer.
+  Scrum master:
+   gå igenom alla Delta post-its på tavlan, summera och diskutera igenom det hela med gruppen.
+   Vad kan vi som grupp göra för att undvika dessa Delta?
+  Grupp:
+   Rösta om vilka Deltan som gruppen ska jobba med att förbättra under nästa sprint (tre röster per gruppmedlem).
+   Tre Deltan väljs ut.
+   Lapparna för dessa Deltan placeras på gruppens whiteboard.
+   Dessa tas också upp för diskussion vid nästa Retrospective.
+   Gick det bättre nu?
+  Scrum master:
+   Behåll lapparna för uppföljning.
+  Scrum master:
+   Efter retrospective rensar scrum master upp scrum board för att göra plats för nästa sprint, och beräknar den aktuella sprintens hastighet (velocity).
+   Hastigheten beräknas som: velocity = (tillgänglig tid för sprint, ej inräknat velocity / summan av uppskattad tid för godkända user stories under sprinten).
+   Denna hastighet används för att avgöra den maximala totaltiden för user stories som gruppen tar sig an vid nästa sprint.
+   Scrum master fyller också i sprintformuläret och lämnar in till läraren.

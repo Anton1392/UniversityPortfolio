@@ -1,0 +1,2 @@
+/home1    10.0.0.3(rw,root_squash,sync,no_subtree_check)  10.0.0.4(rw,root_squash,sync,no_subtree_check)
+/home2    10.0.0.3(rw,root_squash,sync,no_subtree_check)  10.0.0.4(rw,root_squash,sync,no_subtree_check)

@@ -1,0 +1,52 @@
+
+const WebSocket = require('ws');
+const marketplace_key = 'f91929d9d203a683f2085f9c186d3076';
+
+zoezi = {};
+
+zoezi.ws = {
+  isOpen: false,
+  authenticated: false,
+  socket: null
+};
+zoezi.ws.open = () => {
+  var socket = new WebSocket('wss://ipstudenter.zoezi.se/api/async?type=public');
+  socket.onopen = () => {
+    zoezi.ws.isOpen = true;
+    console.log('ws open');
+    setTimeout(zoezi.ws.poll, 2000);
+  };
+  socket.onclose = () => {
+    zoezi.ws.isOpen = false;
+    zoezi.ws.authenticated = false;
+  };
+  socket.onerror = (e) => {
+    console.error('WebSocket error occurred', e);
+    socket.close();
+  };
+  socket.onmessage = (event) => {
+    var data = JSON.parse(event.data);
+    zoezi.ws.authenticated = true;
+    const command = data.type;
+    data = data.data;
+
+    console.log('ws message', { type: event.type, command, data }, '\n');
+
+    if (command === 'channel2' && (data && data.type == 'marketplace')) {
+      console.log('New marketplace data', data.data);
+    }
+  };
+
+  zoezi.ws.socket = socket;
+};
+zoezi.ws.poll = () => {
+  if (!zoezi.ws.isOpen || !zoezi.ws.authenticated) { return; }
+  zoezi.ws.socket.send(JSON.stringify({ type: 'channel2', command: 'on', key: marketplace_key }));
+};
+zoezi.ws.close = () => {
+  if (!zoezi.ws.isOpen) { return; }
+  zoezi.ws.socket.close();
+}
+
+zoezi.ws.open();
+

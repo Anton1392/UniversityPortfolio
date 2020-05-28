@@ -1,0 +1,49 @@
+Generell git-branch-struktur.
+				 0.1                 0.2                 0.3                0.4
+	master: o-------------------o-------------------o------------------o
+sprint x: \---o---------o----/ \---o------o-------/\----------------/
+feature:      \--------/           \     /
+"stor" hotfix:                      \---/
+
+En branch per sprint, som vid sprint-end mergas med master.
+En branch per feature, som efter test och internal review mergas med sprint x.
+Om en stor buggfix krävs som involverar "många" delar av projektet, bör den också ha en egen branch som sedan testas ordentligt.
+Mindre buggfixar kan committas till sprint x direkt OM de är ordentligt testade och fullt funktionella.
+Master bör aldrig buggfixas direkt. Buggfixa på sprint-branchen och merga vid sprint-end.
+
+Pull requests bör vara onödiga. Varje gruppmedlem får ansvara för att de mergar och branchar "korrekt". Fråga någon om osäkerheter uppstår.
+
+Relevanta git-commands med körexempel:
+ 	# Pushar ändringar till en viss branch i ett visst repo.
+	git push <repository> <branchname>
+	git push origin feature1
+	
+	# Skapar en ny branch, och byter till den branchen.
+	git checkout -b <branchname>
+	git checkout -b sprint1
+
+	# Hämtar nya ändringar från alla branches i repot.
+	git pull
+
+	# Byter från en branch till en annan
+	git checkout <branchname>
+	git checkout feature2
+
+	# Se alla merge-konflikter
+	git diff
+	git diff <sourcebranch> <targetbranch>
+	git diff sprint1 master
+
+	# Mergar en annan branch in i din nuvarande branch.
+	git merge <branchname>
+	git checkout master
+	git merge sprint1
+
+	# Ångra ändringar av en viss fil i din lokala branch till den senaste versionen.
+	git checkout -- <filename>
+	git checkout -- <README.md>
+
+
+    # Om inte beskrivning finns i detta dockument
+    https://sethrobertson.github.io/GitFixUm/fixup.html#discard_all_unpushed
+    Har lite annat bra git stuff

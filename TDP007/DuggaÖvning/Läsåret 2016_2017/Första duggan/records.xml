@@ -1,0 +1,318 @@
+<?xml version="1.0"?>
+<StudentRecords>
+<Students>
+  <Student sid="701112-6583" login="alemu740">Alexandra Muse</Student>
+  <Student sid="791022-4455" login="emeju612">Emelie Jung</Student>
+  <Student sid="910626-8692" login="simwi854">Simon Wilson</Student>
+  <Student sid="951120-6048" login="hanek719">Hanna Ek</Student>
+  <Student sid="931008-5023" login="chaed277">Charles Junior Edlund</Student>
+  <Student sid="910809-8915" login="johka612">Johan Kaller</Student>
+  <Student sid="910930-9121" login="amaar579">Amanda Aronsson</Student>
+  <Student sid="931214-3648" login="carov721">Carolina Övrebö</Student>
+  <Student sid="880622-9897" login="aldgu591">Alden Gustafsson</Student>
+  <Student sid="950503-7409" login="vikho194">Viktoria Holmberg</Student>
+  <Student sid="920817-1521" login="matpe390">Mathilda Persson</Student>
+  <Student sid="930203-9558" login="erior428">Erik Oredsson</Student>
+  <Student sid="970619-5790" login="asasv396">Asad Svensson</Student>
+  <Student sid="940701-1619" login="viktu160">Viktor Tuhkala</Student>
+  <Student sid="760114-1752" login="håkhj396">Håkan Hjärpe</Student>
+  <Student sid="910329-0129" login="afzre820">Afzaal Rehult</Student>
+  <Student sid="921212-1363" login="sagpy642">Saga Pyk</Student>
+  <Student sid="910617-8545" login="adada457">Adam Dagel Wulfcrona</Student>
+  <Student sid="930902-6012" login="gusal775">Gustav Alarcon</Student>
+  <Student sid="921003-5961" login="samjo091">Samuel Johnsson</Student>
+  <Student sid="950405-1070" login="annno201">Anna Nordén</Student>
+  <Student sid="891030-4552" login="leoli907">Leo Lindegren</Student>
+  <Student sid="901129-5673" login="antad671">Anton Adok</Student>
+  <Student sid="920628-1496" login="frili542">Frida Lindberg</Student>
+  <Student sid="881011-1552" login="maren339">Martin Engdahl</Student>
+  <Student sid="890310-3599" login="simhj540">Simon Hjalmarsson</Student>
+  <Student sid="940916-6106" login="mohli337">Mohamad Hadi Lim</Student>
+  <Student sid="950607-7321" login="sofro630">Sofia Roth</Student>
+  <Student sid="760901-9273" login="sofsc252">Sofie Schartner</Student>
+  <Student sid="970405-2860" login="feral875">Feras Al-Jaff</Student>
+  <Student sid="900919-6396" login="annro811">Anna Rodriguez Ortega</Student>
+  <Student sid="901214-2379" login="marhe638">Martin Helgotsson</Student>
+  <Student sid="910828-1719" login="krifa475">Kristoffer Fälting</Student>
+  <Student sid="950425-1837" login="eircu927">Eirik Curtsson</Student>
+  <Student sid="961220-3944" login="regsk575">Regina Skoglund</Student>
+  <Student sid="930420-7914" login="linli065">Linnéa Lidsten</Student>
+  <Student sid="941203-2535" login="mirbe840">Mirsad Bergenholm</Student>
+  <Student sid="940516-5623" login="axeal540">Axel Alsterberg</Student>
+  <Student sid="961214-8164" login="guswe966">Gustav Werner</Student>
+  <Student sid="910512-0720" login="matsu741">Mathieu Sundin</Student>
+  <Student sid="970706-3419" login="ianli023">Ian Lind</Student>
+  <Student sid="910911-6039" login="ludph201">Ludwig Phomthong</Student>
+  <Student sid="931106-4662" login="davne989">David Neffling</Student>
+  <Student sid="880712-9427" login="frisa456">Frida Samelius</Student>
+  <Student sid="940612-8745" login="karla088">Karin Larsson</Student>
+  <Student sid="940621-6573" login="shatu895">Shahinaz Tunon</Student>
+  <Student sid="930106-8509" login="caruv817">Carl Uvesten</Student>
+  <Student sid="950109-4479" login="chajo836">Charles Johansson</Student>
+  <Student sid="900823-9106" login="davha592">David Hansson</Student>
+  <Student sid="941011-1877" login="adrri351">Adrian Ringertz</Student>
+  <Student sid="920810-1106" login="johdu960">Johanna Du Rietz</Student>
+  <Student sid="871121-4596" login="jonca157">Jonas Carlson</Student>
+  <Student sid="941215-9676" login="madst593">Madeleine Stenberg</Student>
+  <Student sid="961220-9313" login="stewi380">Stefan Wiksten</Student>
+  <Student sid="970703-6647" login="oskla451">Oskar Lannersten</Student>
+  <Student sid="910801-4862" login="marri584">Maria Ringertz</Student>
+  <Student sid="920128-5708" login="eskge872">Eskil Gellerman</Student>
+  <Student sid="860403-7831" login="johau002">Johanna Audouard</Student>
+  <Student sid="941002-1217" login="roybo810">Roy Bodin</Student>
+</Students>
+<Courses>
+  <Course cid="TJKS01">
+  Introduktion till kosmologi
+    <Part pid="TEN1">
+      <Examination date="2016-03-17">
+        <Result sid="921212-1363" grade="U" passed="false" />
+        <Result sid="910329-0129" grade="U" passed="false" />
+        <Result sid="930420-7914" grade="U" passed="false" />
+        <Result sid="930203-9558" grade="U" passed="false" />
+        <Result sid="910809-8915" grade="U" passed="false" />
+        <Result sid="900919-6396" grade="U" passed="false" />
+        <Result sid="961220-3944" grade="U" passed="false" />
+        <Result sid="701112-6583" grade="5" passed="true" />
+        <Result sid="791022-4455" grade="5" passed="true" />
+        <Result sid="951120-6048" grade="4" passed="true" />
+        <Result sid="910930-9121" grade="4" passed="true" />
+        <Result sid="931214-3648" grade="5" passed="true" />
+        <Result sid="880622-9897" grade="4" passed="true" />
+        <Result sid="920817-1521" grade="5" passed="true" />
+        <Result sid="970619-5790" grade="4" passed="true" />
+        <Result sid="940701-1619" grade="5" passed="true" />
+        <Result sid="760114-1752" grade="3" passed="true" />
+        <Result sid="910617-8545" grade="4" passed="true" />
+        <Result sid="930902-6012" grade="3" passed="true" />
+        <Result sid="921003-5961" grade="4" passed="true" />
+        <Result sid="950405-1070" grade="5" passed="true" />
+        <Result sid="891030-4552" grade="4" passed="true" />
+        <Result sid="920628-1496" grade="4" passed="true" />
+        <Result sid="881011-1552" grade="4" passed="true" />
+        <Result sid="890310-3599" grade="4" passed="true" />
+        <Result sid="940916-6106" grade="5" passed="true" />
+        <Result sid="950607-7321" grade="3" passed="true" />
+        <Result sid="760901-9273" grade="4" passed="true" />
+        <Result sid="970405-2860" grade="4" passed="true" />
+        <Result sid="901214-2379" grade="3" passed="true" />
+        <Result sid="910828-1719" grade="5" passed="true" />
+        <Result sid="950425-1837" grade="3" passed="true" />
+        <Result sid="941203-2535" grade="3" passed="true" />
+        <Result sid="940516-5623" grade="5" passed="true" />
+        <Result sid="961214-8164" grade="4" passed="true" />
+        <Result sid="910512-0720" grade="5" passed="true" />
+      </Examination>
+      <Examination date="2016-06-09">
+        <Result sid="930420-7914" grade="U" passed="false" />
+        <Result sid="930203-9558" grade="U" passed="false" />
+        <Result sid="931008-5023" grade="5" passed="true" />
+        <Result sid="910626-8692" grade="3" passed="true" />
+        <Result sid="950503-7409" grade="5" passed="true" />
+        <Result sid="901129-5673" grade="5" passed="true" />
+        <Result sid="921212-1363" grade="3" passed="true" />
+        <Result sid="910809-8915" grade="3" passed="true" />
+        <Result sid="900919-6396" grade="4" passed="true" />
+        <Result sid="961220-3944" grade="4" passed="true" />
+      </Examination>
+      <Examination date="2016-08-15">
+        <Result sid="930420-7914" grade="U" passed="false" />
+        <Result sid="910329-0129" grade="3" passed="true" />
+        <Result sid="930203-9558" grade="5" passed="true" />
+      </Examination>
+    </Part>
+    <Part pid="UPG1">
+      <Examination date="2016-03-10">
+        <Result sid="940916-6106" grade="U" passed="false" />
+        <Result sid="950405-1070" grade="U" passed="false" />
+        <Result sid="910512-0720" grade="U" passed="false" />
+        <Result sid="950425-1837" grade="U" passed="false" />
+        <Result sid="920817-1521" grade="U" passed="false" />
+        <Result sid="701112-6583" grade="G" passed="true" />
+        <Result sid="791022-4455" grade="G" passed="true" />
+        <Result sid="951120-6048" grade="G" passed="true" />
+        <Result sid="910930-9121" grade="G" passed="true" />
+        <Result sid="931214-3648" grade="G" passed="true" />
+        <Result sid="880622-9897" grade="G" passed="true" />
+        <Result sid="970619-5790" grade="G" passed="true" />
+        <Result sid="940701-1619" grade="G" passed="true" />
+        <Result sid="760114-1752" grade="G" passed="true" />
+        <Result sid="930902-6012" grade="G" passed="true" />
+        <Result sid="921003-5961" grade="G" passed="true" />
+        <Result sid="891030-4552" grade="G" passed="true" />
+        <Result sid="920628-1496" grade="G" passed="true" />
+        <Result sid="890310-3599" grade="G" passed="true" />
+        <Result sid="950607-7321" grade="G" passed="true" />
+        <Result sid="760901-9273" grade="G" passed="true" />
+        <Result sid="970405-2860" grade="G" passed="true" />
+        <Result sid="901214-2379" grade="G" passed="true" />
+        <Result sid="910828-1719" grade="G" passed="true" />
+        <Result sid="940516-5623" grade="G" passed="true" />
+        <Result sid="961214-8164" grade="G" passed="true" />
+      </Examination>
+    </Part>
+  </Course>
+  <Course cid="TJKS23">
+  Kosmologiska perspektiv
+    <Part pid="TEN1">
+      <Examination date="2016-03-19">
+        <Result sid="920628-1496" grade="U" passed="false" />
+        <Result sid="910828-1719" grade="U" passed="false" />
+        <Result sid="940916-6106" grade="U" passed="false" />
+        <Result sid="890310-3599" grade="U" passed="false" />
+        <Result sid="900823-9106" grade="U" passed="false" />
+        <Result sid="871121-4596" grade="U" passed="false" />
+        <Result sid="940612-8745" grade="U" passed="false" />
+        <Result sid="941011-1877" grade="U" passed="false" />
+        <Result sid="930420-7914" grade="U" passed="false" />
+        <Result sid="910617-8545" grade="5" passed="true" />
+        <Result sid="930902-6012" grade="5" passed="true" />
+        <Result sid="921003-5961" grade="4" passed="true" />
+        <Result sid="950405-1070" grade="3" passed="true" />
+        <Result sid="891030-4552" grade="5" passed="true" />
+        <Result sid="901129-5673" grade="4" passed="true" />
+        <Result sid="881011-1552" grade="5" passed="true" />
+        <Result sid="950607-7321" grade="4" passed="true" />
+        <Result sid="760901-9273" grade="5" passed="true" />
+        <Result sid="970405-2860" grade="4" passed="true" />
+        <Result sid="900919-6396" grade="3" passed="true" />
+        <Result sid="950425-1837" grade="4" passed="true" />
+        <Result sid="961220-3944" grade="3" passed="true" />
+        <Result sid="941203-2535" grade="5" passed="true" />
+        <Result sid="961214-8164" grade="4" passed="true" />
+        <Result sid="910512-0720" grade="4" passed="true" />
+        <Result sid="970706-3419" grade="4" passed="true" />
+        <Result sid="910911-6039" grade="4" passed="true" />
+        <Result sid="931106-4662" grade="4" passed="true" />
+        <Result sid="940621-6573" grade="5" passed="true" />
+        <Result sid="930106-8509" grade="3" passed="true" />
+        <Result sid="950109-4479" grade="5" passed="true" />
+        <Result sid="941215-9676" grade="4" passed="true" />
+        <Result sid="961220-9313" grade="5" passed="true" />
+        <Result sid="970703-6647" grade="3" passed="true" />
+        <Result sid="910801-4862" grade="5" passed="true" />
+        <Result sid="860403-7831" grade="5" passed="true" />
+        <Result sid="941002-1217" grade="5" passed="true" />
+      </Examination>
+      <Examination date="2016-06-07">
+        <Result sid="920128-5708" grade="U" passed="false" />
+        <Result sid="941011-1877" grade="U" passed="false" />
+        <Result sid="901214-2379" grade="U" passed="false" />
+        <Result sid="940516-5623" grade="4" passed="true" />
+        <Result sid="880712-9427" grade="4" passed="true" />
+        <Result sid="920810-1106" grade="4" passed="true" />
+        <Result sid="920628-1496" grade="4" passed="true" />
+        <Result sid="910828-1719" grade="4" passed="true" />
+        <Result sid="940916-6106" grade="4" passed="true" />
+        <Result sid="890310-3599" grade="5" passed="true" />
+        <Result sid="940612-8745" grade="5" passed="true" />
+        <Result sid="930420-7914" grade="4" passed="true" />
+      </Examination>
+      <Examination date="2016-08-19">
+        <Result sid="920128-5708" grade="U" passed="false" />
+        <Result sid="871121-4596" grade="4" passed="true" />
+        <Result sid="900823-9106" grade="5" passed="true" />
+        <Result sid="941011-1877" grade="3" passed="true" />
+      </Examination>
+    </Part>
+  </Course>
+  <Course cid="TJKS75">
+  Astronomiska programvaror
+    <Part pid="DAT1">
+      <Examination date="2016-03-14">
+        <Result sid="760114-1752" grade="U" passed="false" />
+        <Result sid="930420-7914" grade="U" passed="false" />
+        <Result sid="970405-2860" grade="U" passed="false" />
+        <Result sid="950425-1837" grade="U" passed="false" />
+        <Result sid="940516-5623" grade="U" passed="false" />
+        <Result sid="910930-9121" grade="U" passed="false" />
+        <Result sid="901129-5673" grade="U" passed="false" />
+        <Result sid="940916-6106" grade="U" passed="false" />
+        <Result sid="940701-1619" grade="U" passed="false" />
+        <Result sid="921003-5961" grade="U" passed="false" />
+        <Result sid="950503-7409" grade="U" passed="false" />
+        <Result sid="701112-6583" grade="5" passed="true" />
+        <Result sid="791022-4455" grade="5" passed="true" />
+        <Result sid="910626-8692" grade="4" passed="true" />
+        <Result sid="951120-6048" grade="5" passed="true" />
+        <Result sid="931008-5023" grade="4" passed="true" />
+        <Result sid="931214-3648" grade="4" passed="true" />
+        <Result sid="880622-9897" grade="3" passed="true" />
+        <Result sid="920817-1521" grade="4" passed="true" />
+        <Result sid="930203-9558" grade="5" passed="true" />
+        <Result sid="970619-5790" grade="4" passed="true" />
+        <Result sid="910329-0129" grade="4" passed="true" />
+        <Result sid="921212-1363" grade="4" passed="true" />
+        <Result sid="910617-8545" grade="5" passed="true" />
+        <Result sid="930902-6012" grade="5" passed="true" />
+        <Result sid="950405-1070" grade="5" passed="true" />
+        <Result sid="920628-1496" grade="5" passed="true" />
+        <Result sid="881011-1552" grade="4" passed="true" />
+        <Result sid="890310-3599" grade="5" passed="true" />
+        <Result sid="950607-7321" grade="3" passed="true" />
+        <Result sid="760901-9273" grade="5" passed="true" />
+        <Result sid="900919-6396" grade="5" passed="true" />
+        <Result sid="901214-2379" grade="5" passed="true" />
+        <Result sid="961220-3944" grade="4" passed="true" />
+        <Result sid="941203-2535" grade="4" passed="true" />
+        <Result sid="961214-8164" grade="4" passed="true" />
+      </Examination>
+      <Examination date="2016-06-08">
+        <Result sid="930420-7914" grade="U" passed="false" />
+        <Result sid="970405-2860" grade="U" passed="false" />
+        <Result sid="910512-0720" grade="U" passed="false" />
+        <Result sid="940701-1619" grade="U" passed="false" />
+        <Result sid="891030-4552" grade="4" passed="true" />
+        <Result sid="910809-8915" grade="4" passed="true" />
+        <Result sid="760114-1752" grade="5" passed="true" />
+        <Result sid="950425-1837" grade="3" passed="true" />
+        <Result sid="940516-5623" grade="3" passed="true" />
+        <Result sid="910930-9121" grade="3" passed="true" />
+        <Result sid="901129-5673" grade="3" passed="true" />
+        <Result sid="921003-5961" grade="5" passed="true" />
+        <Result sid="950503-7409" grade="5" passed="true" />
+      </Examination>
+      <Examination date="2016-08-20">
+        <Result sid="910828-1719" grade="U" passed="false" />
+        <Result sid="940701-1619" grade="U" passed="false" />
+        <Result sid="940916-6106" grade="4" passed="true" />
+        <Result sid="930420-7914" grade="3" passed="true" />
+        <Result sid="910512-0720" grade="4" passed="true" />
+      </Examination>
+    </Part>
+    <Part pid="LAB1">
+      <Examination date="2016-03-12">
+        <Result sid="890310-3599" grade="U" passed="false" />
+        <Result sid="920628-1496" grade="U" passed="false" />
+        <Result sid="760901-9273" grade="U" passed="false" />
+        <Result sid="950405-1070" grade="U" passed="false" />
+        <Result sid="930902-6012" grade="U" passed="false" />
+        <Result sid="791022-4455" grade="G" passed="true" />
+        <Result sid="951120-6048" grade="G" passed="true" />
+        <Result sid="920817-1521" grade="G" passed="true" />
+        <Result sid="930203-9558" grade="G" passed="true" />
+        <Result sid="970619-5790" grade="G" passed="true" />
+        <Result sid="910329-0129" grade="G" passed="true" />
+        <Result sid="910617-8545" grade="G" passed="true" />
+        <Result sid="881011-1552" grade="G" passed="true" />
+        <Result sid="950607-7321" grade="G" passed="true" />
+        <Result sid="900919-6396" grade="G" passed="true" />
+        <Result sid="901214-2379" grade="G" passed="true" />
+        <Result sid="961220-3944" grade="G" passed="true" />
+        <Result sid="941203-2535" grade="G" passed="true" />
+        <Result sid="961214-8164" grade="G" passed="true" />
+      </Examination>
+      <Examination date="2016-06-01">
+        <Result sid="950405-1070" grade="U" passed="false" />
+        <Result sid="910626-8692" grade="U" passed="false" />
+        <Result sid="921212-1363" grade="G" passed="true" />
+        <Result sid="880622-9897" grade="G" passed="true" />
+        <Result sid="701112-6583" grade="G" passed="true" />
+        <Result sid="931214-3648" grade="G" passed="true" />
+        <Result sid="890310-3599" grade="G" passed="true" />
+        <Result sid="760901-9273" grade="G" passed="true" />
+      </Examination>
+    </Part>
+  </Course>
+</Courses>
+</StudentRecords>

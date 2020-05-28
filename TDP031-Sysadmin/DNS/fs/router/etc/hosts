@@ -1,0 +1,9 @@
+127.0.0.1       localhost
+127.0.1.1       gw.student.ida.liu.se         gw
+# Add the line below (DNS)
+10.0.0.2        server.stduent.ida.liu.se     server
+
+# The following lines are desirable for IPv6 capable hosts
+::1     localhost ip6-localhost ip6-loopback
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters

@@ -1,0 +1,198 @@
+html, body, .App-Style {
+    background-color: #282c34;
+    color: white;
+    font-size: calc(10px + 2vmin);
+}
+
+.App-Menu-Style {
+    background-color: black;
+    color: white;
+}
+
+.App-Fragment-Style {
+    background-color: inherit;
+}
+
+.App-Logo-Style {
+}
+
+.App-Link-Style {
+    color: #09d3ac;
+}
+
+.App-FormView {
+    float: left;
+}
+.App-FormView-Fixed {
+    width: 292px;
+}
+.App-Form-Style {
+    height: 100%;
+    max-width: 400px;
+    background: #fff;
+    border-radius: 2px;
+    padding: 20px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+.App-Form-Style h1 {
+    display: block;
+    text-align: center;
+    padding: 0;
+    margin: 0px 0px 20px 0px;
+    color: #5C5C5C;
+    font-size: x-large;
+}
+.App-Form-Style h3 {
+    display: block;
+    text-align: center;
+    padding: 0;
+    margin: 0px 0px 20px 0px;
+    color: #5C5C5C;
+    font-size: x-large;
+}
+.App-Form-Style ul {
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.App-Form-Style li {
+    display: block;
+    padding: 9px;
+    border: 1px solid #DDDDDD;
+    margin-bottom: 30px;
+    border-radius: 3px;
+}
+.App-Form-Style li:last-child {
+    border: none;
+    text-align: center;
+}
+.App-Form-Style li > label {
+    display: block;
+    float: left;
+    margin-top: -19px;
+    background: #FFFFFF;
+    height: 14px;
+    padding: 2px 5px 2px 5px;
+    color: #B9B9B9;
+    font-size: 14px;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.App-Form-Style input[type="text"],
+.App-Form-Style input[type="date"],
+.App-Form-Style input[type="datetime"],
+.App-Form-Style input[type="email"],
+.App-Form-Style input[type="number"],
+.App-Form-Style input[type="search"],
+.App-Form-Style input[type="time"],
+.App-Form-Style input[type="url"],
+.App-Form-Style input[type="password"],
+.App-Form-Style textarea,
+.App-Form-Style select {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width: 100%;
+    display: block;
+    outline: none;
+    border: none;
+    height: 25px;
+    line-height: 25px;
+    font-size: 16px;
+    padding: 0;
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+.App-Form-Style input[type="text"]:focus,
+.App-Form-Style input[type="date"]:focus,
+.App-Form-Style input[type="datetime"]:focus,
+.App-Form-Style input[type="email"]:focus,
+.App-Form-Style input[type="number"]:focus,
+.App-Form-Style input[type="search"]:focus,
+.App-Form-Style input[type="time"]:focus,
+.App-Form-Style input[type="url"]:focus,
+.App-Form-Style input[type="password"]:focus,
+.App-Form-Style textarea:focus,
+.App-Form-Style select:focus {
+
+}
+.App-Form-Style li > span {
+    background: #F3F3F3;
+    display: block;
+    padding: 3px;
+    margin: 0 -9px -9px -9px;
+    text-align: center;
+    color: #C0C0C0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+}
+.App-Form-Style textarea {
+    resize: none;
+}
+.App-Form-Style p {
+    color: black;
+}
+
+.App-DataView {
+    margin-left: 300px;
+}
+.App-DataView-Style {
+    display: inline-block;
+}
+
+.App-FullView-Style {
+    background-color: rgb(255, 255, 255);
+}
+.App-FullView-Style ul {
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.App-FullView-Style li {
+    display: block;
+    padding: 9px;
+    border: 1px solid #DDDDDD;
+    margin-bottom: 30px;
+    border-radius: 3px;
+}
+.App-FullView-Style li:last-child {
+    border: none;
+    margin-bottom: 0px;
+    text-align: center;
+}
+.App-FullView-List {
+    color: rgb(51, 51, 51);
+    width: 100;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: calc(10px + 1vmin);
+}
+
+.App-LoginForm {
+    position: fixed;
+    width: 300;
+    height: auto;
+    top: calc(50% - 150px);
+    left: calc(50% - 150px);
+    text-align: center;
+}
+
+button,input[type="submit"] {
+    background-color: #2dabf9;
+    border-radius: 28px;
+    border: 1px solid #0b0e07;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 17px;
+    padding: 16px 31px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #263666;
+}
+button:hover,input[type="submit"]:hover {
+    background-color:#0688fa;
+}
+button:active,input[type="submit"]:active {
+    position:relative;
+}

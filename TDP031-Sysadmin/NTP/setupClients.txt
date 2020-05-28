@@ -1,0 +1,21 @@
+// Install
+sudo apt-get install ntpdate
+
+// Add gw (NTP server to hosts)
+nano /etc/hosts
+
+// Check if client is synced to server
+ntpdate 10.0.0.1
+
+// Disable systemd timesyncd
+sudo timedatectl set-ntp off
+
+// Install NTP
+apt-get install ntp
+
+// Configure /etc/ntp.conf to use server as NTP-server
+Add line: server 10.0.0.1 prefer iburst
+
+
+// Restart NTP service
+service ntp restart

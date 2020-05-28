@@ -1,0 +1,94 @@
+Epic: Simpel presentation
+-Som användare vill jag inte mötas av en överväldigande mängd val när jag först besöker söksidan
+-Ädel Epic
+
+
+Epic: Backend stay alive
+Som backend vill jag inte bryta ihopp av mina klienters request, så att jag kan forsätta leva
+-Ädel Epic
+
+
+Epic: Backend
+-Som frontend vill jag ha en bra backend att samarbeta med.
+-Nedbruten till flera storries
+
+
+Epic: Frontend
+-Epic: Frontend
+-Nedbruten till flera storries
+
+
+Story: Dokumentation för sprint 2 systemet
+Skriv dokumentation för system
+-2 timmar
+
+
+Task: Uppdatera kodstandard
+-Som programmerare vill jag veta hur jag ska skriva koden
+-2 timmar
+
+
+Story: SEO-värde
+-Som företag vill vi att vår hemsida ska få högt SEO-värde
+-2 timmar
+
+
+Task: Hämta inte sökningen efter varje knapp tryck
+-Task: Hämta inte sökningen efter varje knapp tryck
+-2 timmar
+
+
+Story: Backend lyssna på zoezi
+-Som företag vill vi att backend lyssnar på serverns websocket för enskilda
+uppdateringar
+-2 timmar
+
+
+Story: Backend lagra data en månad framåt
+-Som företag vill vi att backend lagrar info för en månad fram i tiden.
+-1 timmar
+
+
+Story: Uppdatera data dagligen
+-Som företag vill vi att data uppdateras dagligen så att framförhållningen är densamma.
+-2 timmar
+
+
+Story: Produktsida
+-Jag som kund vill från sökresultat klicka mig vidare till en separat sida med utökad information om produkten jag klickat på.
+-Nedbruten i tasks
+
+
+Story: Navigering söksida
+-som klient vill jag kunna klicka runt på sidan (samt använda "bakåt" knapp)
+-3 timmar
+
+
+Task: Navigering till bokningssystem
+-Jag som kund vill från separat produktsida ha möjlighet att navigera till system där jag kan boka / köpa / beställa produkt
+-1/2 timmar
+
+
+Story: Håll klient uppdaterad
+-Jag som klient vill bli notifierad om ändringar på backend (Framförallt antal lediga platser på ett pass)
+-3 timmar
+
+
+Story: Sökförslag
+-Som kund vill jag att efter 2-3 inmatade bokstäver få sök/rättstavnings-förslag medans jag skriver min sökning.
+-5 timmar
+
+
+Task: Gör server till en klass
+-Som server vill jag ha klass!
+-2 timmar
+
+
+Task: Designa layouten produkt sida
+-Som klient vill jag välkomnas av en tydlig produkt sida.
+-3 timmar
+
+
+# Summa alla lappar #
+2+2+2+2+2+1+2+3+1/2+3+5+2+3
+=29,5

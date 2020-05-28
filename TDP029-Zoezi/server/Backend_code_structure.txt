@@ -1,0 +1,22 @@
+#### Design filosofy: ####
+;;;; Midleware
+hantera paths
+kontrolera att req argument är korekta (om inte fel-status)
+paketering av server res
+uppacketera arg
+kontrolera permission
+midleware validate the existance of corect arguments
+midleware validate if user authorized
+
+;;;Server code
+håll i huvudsakligt flow
+kalla på relevanta funktioner i #_api
+server validate if arguments have corect format
+
+;; #_api
+funktions specifik funktionalitet mot db
+
+; #_db
+hantera all interakrion med db
+ta emot python object
+returnera python object

@@ -1,0 +1,18 @@
+Type words to gain ammunition
+
+Your duck quacks automatically
+
+Quack enough at a human to collect their breadcrumbs.
+
+Upgrade your duck to your liking
+	* (buy many upgrades)
+	* Fast quacking
+	* Heavy hitting
+
+Collect powerful powerups
+	* Show 100x fire rate
+
+Scale infinitely
+
+Win
+	* cliffhanger on click

@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Fri Oct 04 18:29:53 CEST 2019:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-016d-979b-31cd-000074e79028 
+on database directory memory:/home/antsk320/Desktop/tdp024---enterprise-systems/Lab3-SOA/account-project/bank-logic/dataPU_embedded with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@42a57993 
+Loaded from file:/home/antsk320/.m2/repository/org/apache/derby/derby/10.14.2.0/derby-10.14.2.0.jar
+java.vendor=Ubuntu
+java.runtime.version=11.0.4+11-post-Ubuntu-1ubuntu218.04.3
+user.dir=/home/antsk320/Desktop/tdp024---enterprise-systems/Lab3-SOA/account-project/bank-logic
+os.name=Linux
+os.arch=amd64
+os.version=4.15.0-65-generic
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''

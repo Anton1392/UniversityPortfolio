@@ -1,0 +1,251 @@
+                                                   ##########################
+                                                   ####Granskning av RuPi####
+                                                   ##########################
+┌────────────────────────┐
+│Det skapade datorspråket│
+└────────────────────────┘
+  * Verkar språket uppfylla de krav som språket är tänkt att användas till?
+    Ja. Språket skapades som ett DSL-språk för kontroll över Raspberry PIs GPIO-funktioner.
+    Styrning sker genom wiringpi2 ruby-gemet.
+    Vi hade inte möjlighet att testa dessa funktioner pga. att vi inte äger Raspberry PIs.
+
+  * Egna synpunkter på språket. Dess syntax och semantik.
+    Syntax är väldigt lätt att förstå sig på, särskilt om man har programmerat i C-liknande språk innan.
+    for/for_each/while-ekvivalenter finns med, och har fin syntax med iterationsvariabeln.
+    Att parentes krävs i while-loopen medans den utelämnas i each/for looparna är lite skumt, kanske.
+
+    Jag tycker att understreck före variabelnamn gör koden lite kluddigare att läsa, men det blir ju såklart konsekvent, man ser enkelt skillnad på språkets olika strukturer.
+
+    Att for (antaglien alla lopar) + if_else stmts introducerar ett nytt scope känns bakvänt
+    Speciellt om man som nybörjare skriver detta :P
+      int _a = 1; if (1==1) { int _a = 2;};
+      _a = 1, men man får inget error
+
+      int _a = 1; if (1==1) { _a = 2;};
+      Är ok!
+
+    Men om man vill göra:
+      if (1==1) { int _b = 2;};
+      så skapas inte _b alls (vilket man förväntar sig från andra språk eg. Ruby)
+    Samma med lopar:
+      for 0,1 with _i {int _g = 1; };
+
+    Efter att ha programerat i Ruby och Python så förväntar man att:
+      #RUBY
+      def foo()
+        a = 2
+      end
+      a= 1
+      foo()
+      puts a
+
+      #PYTHON
+      def foo():
+        a = 2
+      a=1
+      foo()
+      print(a)
+
+      #Rupi
+      func BAR() { _a = 2;};
+      int _a = 1;
+      FOO()
+      print(_a);
+
+      Alla ska Printa 1
+      Men det gör inte rupy
+
+  * Användarhandledningen. Är det möjligt att förstå hur språket fungerar och kan man enkelt lära sig det genom att läsa manualen? Finns bra exempel?
+    Användarhandledningen är väldigt utförlig och förklarar språkets grunder på ett bra sätt.
+    Raspberry's GPIO-pinnar förklaras i detalj, med fina tabeller som visar stiftnummer, volt, namn, med mera.
+    Tar dock inte upp hur man ska skriva stmts i manualen (man kan se det i BNF:en och exemplena), skulle behövas adresseras i manualen dock
+    Inga kod exempel på hur array hanteras
+    return och print adresseras inte
+
+    Installationsmanualen är bra, men den kan förenklas en del. Istället för att ha 3st terminalkommandon som laddar ner wiringpi2,
+    skulle man kanske flytta wiringpi2 från Ruby's gem-mapp till er projektmapp, och inkludera gemet direkt där? Installation blir rätt mycket smidigare då.
+
+####################################################################################################
+
+┌────────────────────────────────┐
+│Språkbeskrivningen med grammatik│
+└────────────────────────────────┘
+  * Grammatiken. Verkar den vara korrekt, välskriven och ha korrekta benämningar på de olika språkkonstruktionerna?
+    Grammatiken stämmer. Den är identisk till implementationen i RupiParse.rb och skriven i perfekt BNF.
+
+    Dock var vissa matchnngar onödiga:
+      match('print', '(', :atom, ')') i :general_stmt är onödig då :expr ändå når :atom
+      match(:func_call_stmt) & match(:func_call_var_stmt) i :stmt onödigt, då expression till slut når det ändå
+
+
+  * Överensstämmer beskrivningen av språket med grammatiken?
+    Ja.
+
+  * Finns det konstruktioner i språket som grammatiken ej verkar ta upp, eller beskriver grammatiken möjliga konstruktioner, som språket ej verkar kunna hantera.
+    Nej, grammatiken verkar identisk mot implementationen.
+
+  * Ger systembeskrivningen en bra bild på hur implementeringen ser ut?
+    En perfekt bild.
+
+####################################################################################################
+┌─────────────────────────────────────────────────────────────────┐
+│Implementering av verktyg eller användning av verktyg för språket│
+└─────────────────────────────────────────────────────────────────┘
+  * Det implementerade systemet (interpretator, kompilator, översättare av notation mm). Verkar det vara en bra modell?
+    Implementering bygger upp en klass-struktur under parsning som sedan evalueras i slutändan.
+    Detta verkar vara ett vanligt sätt att implementera våra programspåk på, vi har använt samma metod.
+    Modellen verkar bra, det verkar krävas att någon slags trädstruktur skapas i interpreterade språk.
+
+  * Implementering av egna eller användning av existerande verktyg (lexer/parser etc). Verkar verktyget lämpat för uppgiften? Är verktyget använt på ett bra sätt? Finns det begränsningar i verktyget, som gör det svårt att implementera datorspråket?
+    rdparse.rb används för parsning, och verktyget är garanterat lämpat för uppgiften. Verktyget accepterar nästan ren BNF och parsar det på ett bra sätt.
+    Vi har inte stött på några stora begränsningar med verktyget.
+
+####################################################################################################
+┌──────────────────────┐
+│Metoder och algoritmer│
+└──────────────────────┘
+  * Synpunkter på valda metoder och algoritmer, verkar de vara bra val? Kan det bli mycket ineffektivt? Finns det alternativ, som hade blivit bättre?
+    Har inte hittat några oeffektiva kod-delar.
+
+####################################################################################################
+┌─────────────────────────────────┐
+│Koden för implementeringen i Ruby│
+└─────────────────────────────────┘
+  * Är koden bra modulariserad? Kan man särskilja de olika delarna som programmet består utav och de olika algoritmerna.
+    Koden är bra modulariserad. Namn-konventionen för .rb-filerna kanske bör justeras något.
+    Det finns 10 filer som börjar på "Rupi", 7 av dem innehåller klasser, 1 innehåller parse-grammatik, 1 innehåller tester, 1 är en "kör"-fil.
+    De tre sista filerna är något svåra att särskilja från klass-filerna.
+
+  * Finns det en överensstämmelse mellan hur grammatiken är beskriven och motsvarande strukturer och kod i programmet.
+    Nej. Grammatiken beskriver endast parse-grammatik, den tar inte upp implementationen av strukturerna. Jag tror dock inte detta ska behövas.
+
+  * Är koden läsbar och förståelig för dig som läsare? Val av namn på olika storheter (identifierare för variabler, klasser, metoder/funktioner/procedurer mm).
+    I allmänhet så är koden väldigt läsbar och förståelig. Variabelnamn är bra, klassnamn är självförklarande.
+    Det finns massvis med YARD-formaterade kommentarer som förklarar vad vissa delar av språket gör.(vilket stör lite)
+
+  * Ta gärna ut en del som du tycker var dåligt / som du inte alls enkelt kan förstå och motivera varför.
+    declare_var i RupiContainer.rb rad 74. Det är svårt att förstå vad metoden gör om man inte är insatt i resten av implementationen.
+    Inuti metoden används convert_obj()-metoden, vilket inte har ett självförklarande namn.
+    declare_var verkar också repetera mycket kod, det ser rätt så klumpigt ut helt enkelt.
+
+    Att if_class och Else_clase, gjorde samma sak, förutom att else hade en förlängning skulle vi motivera är duplicerad kod.
+
+  * Har Ruby använts på ett bra sätt? Har ni alternativa förslag på hur man kan använda andra Ruby-konstruktioner.
+    Ja. Objektorientering/Arv har använts i koden. Inbyggda metoder för arrays/hashes/klasser har använts rejält.
+
+####################################################################################################
+┌─────────────────────────────────────────────┐
+│Code complete-boken eller andra kodstandarder│
+└─────────────────────────────────────────────┘
+  * Verkar programmerarna ha följt en egen kodstandard?
+    Kodstandarden verkar mestadels konsekvent. Klasser börjar med versaler, variabelnamn delas upp med _ istället för camelCase.
+    Placeringen av end, eller |lhs, op, rhs|-delar är något okonsekvent.
+
+    match(:comp_expr, :comp_op, :atom) do |lhs, op, rhs|
+          Comp_class.new(lhs,op,rhs) end
+
+    Ovan så är end placerat på ett rätt obekvämt stället, jämfört med hur andra do-end, if-else-ends är formaterade.
+
+    match(:arguments, ',', :argument) do
+          |args, _, arg|
+          if args.instance_of? Array
+            args<<arg
+          else
+            [args]<<arg
+            end
+    end
+
+    Ovan så är |args, _, arg| placerat en rad nedanför do, vilket skiljer sig mellan olika do-s.
+
+    Call_Func och Declare_channel_class är formaterade på två olika sätt, finns flera av dessa fall.
+
+    Tabbredden verkar vara konsekvent 4 spaces per tabb, men detta bryts något under :type-matchningen i RupiParse.rb.
+
+    Detta är främst personlig smak, men i block av kod i språket så finns det nästan inga tomrader som "logiska uppdelare".
+    Som det är nu blir det rätt likt en "wall-of-text" på vissa ställen.
+
+    Klasser är sorterade efter roll i olika filer på ett fint sätt.
+
+  * Försök att finna någon aspekt i den kod ni granskar för att se hur den uppfyller synpunkterna/kraven som boken eller andra standarder ställer. Ni kan inte vara heltäckande. Ange var ni hittar motsvarande aspekter på kod i boken.
+    Det finns ingen officiell Ruby-standard, så som Python's PEP-8. Detta gör jämförelse lite klurigt.
+    Kodstandarden verkar passa Ruby's generella stil mest. Klasser har stor bokstav, underscore_case används framför camelCase.
+
+####################################################################################################
+┌──────────────────────┐
+│Testkörning av språket│
+└──────────────────────┘
+  * Var det lätt att komma igång med systemet?
+    På Windows så fungerade inte "gem install wiringpi2" direkt. Den klagade över MSYS2 could not be found. Please run 'ridk install'.
+    Detta felmeddelande gjorde mig lat, så jag kommenterade ut alla require 'wiringpi2' eftersom jag tänkte att det inte behövdes för testning.
+    Om wiringpi2 inkluderades i projektmappen skulle installation vara mycket enklare, man får filerna direkt istället för att installera massor dependencies på sidan om.
+
+    Körning av RupiRun.rb var väldigt häftigt, en meny med alternativ öppnades där man kunde välja körläge.
+    Här upptäckte jag alternativ 1, vilket öppnar en live-terminal-kör-grej där man direkt kan skriva kod!
+    Ett extra alternativ skulle vara fint, terminal with no debug mode, likt alternativ 5.
+
+  * Är det lätt att skriva program i språket? Ger användarhandledningen stöd för detta?
+    Det är väldigt enkelt att skriva program. Användarhandledningen tar upp exempel för många funktioner i språket, och förklarar dem väl.
+    Under kodandets gång saknade jag dokumentation för wait(), främst för den andra parametern.
+    Jag granskade källkoden och såg alternativen 'ms', 's', 'min', 'hour'. Detta bör nog framgå i dokumentationen.
+
+  * Visade egna testkörningar på några problem? Felaktigheter uppstår vid felaktig kod i datorspråket.
+    Språket tillät 'int _a = "hej";' utan att krasha. _a blev då tilldelad 0, kanske bör något felmeddelande visas?
+    Variabler kunde inte användas i for-loopar, även om det lagras ett heltal i dem.
+    Detta är just nu en begränsning av grammatiken, så inte direkt en felaktighet.
+    Automatisk konvertering mellan variabler finns något.
+    string _a = 5; ger en String_class med @value = "5".
+    int _a = "10"; ger en Int_class med @value = 10.
+
+    string _a = TRUE; ger dock en String_class med @value = "true".
+    Jag skulle förvänta @value att bli "TRUE" i detta fall.
+
+    Funktionskallningar fungerar inte som väntat/enligt dokumentationen:
+      func My_Fun(int _a){
+        print(_a);
+      };
+      My_Fun(5);
+      My_Fun(4);
+
+    Koden ovan är inte godkänd av parsern. Den klagar på ";" som kommer efter den första funktionskallningen.
+      func My_Fun(int _a){
+        print(_a);
+      };
+      My_Fun(5)
+      My_Fun(4)
+    Koden ovan godkänns och fungerar som förväntat, en utskrift av 5 och 4.
+    // Snarare det näms inte i Dockumentationen, men det skrivs i BNF:en att det är så.
+    // Hursomhellst borde det upmärksammas i dockumentationen
+
+    Dokumentationen säger att kodblocken inuti loopar/if-satser/funktioner har valfri längd.
+    En längd av 0 fungerar dock inte, tomma block ger parse-error.
+
+  * Finns oklarheter i konstruktioner, vad som borde hända?
+    For-loopar stämmer inte helt överens med dokumentationen. Dokumentationen säger att:
+      for 0,5 with _i { print(_i); };
+    ska loopa 5 gånger, den loopar egentligen 6 gånger och skriver ut 0,1,2,3,4,5.
+
+      for 0,0 with _i {print(_i);};
+    loopar 1 gång och skriver ut 0.
+
+
+    Att return fungerade rätt var nice:
+     func BAD() { if (1==1) {return TRUE;}; return FALSE;}; print(BAD());
+
+   Att man kan skriva "return 1;" och inget händer i terminalen är både bra och dåligt.
+
+   Att funktioner inte sparas i scope kanske inte är det bästa designvalet?:
+     func BAR() { func ARA() { return 1;};};
+     #när BAR() kallas skapas funktionen ARA()
+
+   Standardargumetn adresseras inte hur de fungerar
+   Detta fungerar:
+     func BAR(int _x, int _y = _x) {return _y; }; int _c = BAR(1); # referera till en tidigare parameter
+     func BAR(bool _x, int _y = _x) {return _y; }; bool _c = BAR(FALSE); #blir TRUE
+
+   fungerar inte:
+     bool _var = ! TRUE;
+     ! TRUE    gör dock det
+
+    Annars verkar konstruktioner fungera som förväntat.
+
+  Notera att vi inte hade möjlighet att testa Raspberry PI-funktionerna, men de fungerar säkert utmärkt!

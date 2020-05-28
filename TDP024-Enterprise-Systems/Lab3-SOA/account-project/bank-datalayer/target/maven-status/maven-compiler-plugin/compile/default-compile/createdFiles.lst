@@ -1,0 +1,7 @@
+se/liu/ida/tdp024/bank/data/impl/db/entity/BankDB.class
+se/liu/ida/tdp024/bank/data/impl/db/util/StorageFacadeDB.class
+se/liu/ida/tdp024/bank/data/api/util/StorageFacade.class
+se/liu/ida/tdp024/bank/data/api/facade/BankEntityFacade.class
+se/liu/ida/tdp024/bank/data/impl/db/facade/BankEntityFacadeDB.class
+se/liu/ida/tdp024/bank/data/api/entity/Bank.class
+se/liu/ida/tdp024/bank/data/impl/db/util/EMF.class

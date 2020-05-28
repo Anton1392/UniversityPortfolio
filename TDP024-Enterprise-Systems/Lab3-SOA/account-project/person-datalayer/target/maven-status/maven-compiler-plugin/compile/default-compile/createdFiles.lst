@@ -1,0 +1,7 @@
+se/liu/ida/tdp024/person/data/api/entity/Person.class
+se/liu/ida/tdp024/person/data/impl/db/util/StorageFacadeDB.class
+se/liu/ida/tdp024/person/data/api/util/StorageFacade.class
+se/liu/ida/tdp024/person/data/api/facade/PersonEntityFacade.class
+se/liu/ida/tdp024/person/data/impl/db/entity/PersonDB.class
+se/liu/ida/tdp024/person/data/impl/db/util/EMF.class
+se/liu/ida/tdp024/person/data/impl/db/facade/PersonEntityFacadeDB.class

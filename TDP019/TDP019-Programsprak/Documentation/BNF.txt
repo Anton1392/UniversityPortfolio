@@ -1,0 +1,240 @@
+####################################################################################################
+BNF-syntax:
+::=   Definieras som
+|     Eller
+<>    Kategorinamn
+""    Sträng ska vara i matchningen t.ex "{" eller "}"
+
+
+KOMMENTARER:
+Desto närmare slutet av en grenen, desto högre "prioritet" har "operationen"
+Som det är skrivet nu, så desto längre ned i dockumentet destro högre prio har operationen
+
+####################################################################################################
+<program> ::= <stmt_list>
+
+<stmt_list> ::= <stmt> <end_stmt> <stmt>
+              | <stmt> <end_stmt>
+              | <stmt>
+
+<end_stmt> ::= ";"
+
+<stmt> ::= <func_def>                  # Make some of these standard functions
+         | <return_stmt>               # that can be called like any other function
+         | <assignment_stmt>
+         | <augmented_assignment_stmt>
+         | <sleep_stmt>
+         | <if_stmt>
+         | <loop_stmt>
+         | <print_stmt>
+         | <send_stmt>
+         | <mouse_move_stmt>
+         | <mouse_click_stmt>
+         | <mouse_down_stmt>
+         | <mouse_up_stmt>
+         | <key_down_stmt>
+         | <key_up_stmt>
+         | <key_stroke_stmt>
+         | <expression_stmt>
+
+<func_def> ::= "fun" " " <func_name> "(" <parameter_list> ")" "{" <stmt_list> "}"
+             | "fun" " " <func_name> "(" ")" "{" <stmt_list> "}"
+
+
+<parameter_list> ::= <def_parameter> "," <parameter_list>
+                   | <def_parameter>
+
+
+<def_parameter> ::= <parameter> "=" <expression>
+                  | <parameter>
+
+
+<parameter> ::= <identifier>
+
+
+<func_name> ::= <identifier>
+
+
+<print> ::= "Print" "(" <string> ")"
+          | "Print" "(" <identifier> ")"
+
+
+<send> ::= "Send" "(" <string> ")"
+				::= "Send" "(" <identifier> ")"
+
+
+<mouse_move> ::= "Move" "(" <a_expr> "," <a_expr> ")"
+
+
+<mouse_click> ::= "Click" "(" ")"
+							::= "RightClick" "(" ")"
+							::= "MiddleClick" "(" ")"
+							::= "DoubleClick" "(" ")"
+
+
+<mouse_down> ::= "MouseDown" "(" <string> ")"
+						 ::= "MouseDown" "(" <identifier> ")"
+
+
+<mouse_up> ::= "MouseUp" "(" <string> ")"
+						 ::= "MouseUp" "(" <identifier> ")"
+
+
+<key_down> ::= "KeyDown" "(" <string> ")"
+           ::= "KeyDown" "(" <identifier> ")"
+
+
+<key_up> ::= "KeyUp" "(" <string> ")"
+				 ::= "KeyUp" "(" <identifier> ")"
+
+
+<key_stroke> ::= "KeyStroke" "(" <string> ")"
+				 		 ::= "KeyStroke" "(" <identifier> ")"
+
+
+<if_stmt> ::= "if" <expression> "{" <stmt_list> "}"  "else " "{" <stmt_list> "}"
+            | "if" <expression> "{" <stmt_list> "}"
+
+
+<loop_stmt> ::= "loop" <expression> "{" <stmt_list> "}"
+
+
+
+
+<sleep_stmt> ::= "sleep" ( <expression> )
+
+
+<return_stmt> ::= "return"
+                | "return" <expression_list>
+
+
+<augmented_assignment_stmt> ::= <target_list> <aug_op> <expression_list>
+
+
+<aug_op> ::= "-="
+           | "+="
+           | "*="
+           | "/="
+           | "&="
+           | "//="
+           | "%="
+
+
+<assignment_stmt> ::= <target_list> "=" <expression_list>
+
+
+<target_list> ::= <target_list> "," <target>
+                | <target>
+
+
+<target> ::= <identifier>
+
+
+<expression_stmt> ::= <expression_list>
+
+
+<expression_list> ::= <expression>
+                    | <expression_list> "," <expression>
+
+
+<expression> ::= <conditional_expression>
+
+
+<conditional_expression> ::= <or_test>
+                           | <or_test> "if" <or_test> "else" <expression>
+
+
+<or_test> ::= <and_test>
+            | <or_test> "or" <and_test>
+
+
+<and_test> ::= <not_test>
+             | <and_test> "and" <not_test>
+
+
+<not_test> ::= <comparison>
+             | "not" <not_test>
+
+
+<comparison> ::= <a_expr>
+               | <a_expr> <comp_operator> <a_expr>
+
+
+<comp_operator> ::= "<"
+                  | ">"
+                  | "<="
+                  | ">="
+                  | "=="
+                  | "!="
+
+
+
+
+
+<a_expr> ::= <math_term>
+           | <a_expr> "-" <m_expr>
+           | <a_expr> "+" <m_expr>
+
+
+<m_expr> ::= <power>
+           | <m_expr> "/" <power>
+           | <m_expr> "*" <power>
+           | <m_expr> "%" <power>
+           | <m_expr> "//" <power>
+
+
+<power> ::= <self_mod> "^" <power>
+          | <self_mod>
+
+
+<self_mod> ::= <atom> <self_mod_op>
+             | <atom>
+
+
+<self_mod_op> ::= "++"
+                | "--"
+                | "**"
+                | "^^"
+
+
+<primary> ::= <func_call>
+            | <atom>
+
+<func_call> ::= <primary> "(" <argument_list> ")"
+              | <primary> "(" ")"
+
+<argument_list> ::= <positional_arguments> "," <argument_list>
+                  | <positional_arguments>
+
+
+<positional_arguments> ::= <expression>
+
+
+
+<atom> ::= <mouse_pos>  # DECRIBE
+         | <literal>
+         | <enclosure>
+         | <variable>
+
+
+<variable> ::= <identifier>
+
+<identifier> ::= "/a-zA-Z/"
+
+<enclosure> ::= "(" <expression_list> ")"
+
+<literal> ::= <bool>
+            | <string>
+            | <float>
+            | <integer>
+
+<bool> ::= True
+         | False
+
+<string> ::= """ ANNY LETTER """
+
+<float> ::= <integer> "." <integer>
+          | "-" <float>
+
+<integer> ::= Integer
+            | "-" Integer

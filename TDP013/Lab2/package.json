@@ -1,0 +1,19 @@
+{
+  "name": "lab2",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha --reporter dot --exit",
+    "coverage": "nyc --reporter html --reporter text npm test"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3",
+    "mongodb": "^3.1.4"
+  },
+  "devDependencies": {
+    "istanbul": "^0.4.5"
+  },
+  "description": ""
+}

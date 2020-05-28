@@ -1,0 +1,21 @@
+Scrum master leder mötet och fördelar ordet.
+
+Grupp:
+ Varje gruppmedlem besvarar kortfattat tre frågor:
+  1) Vad har jag gjort sedan förra mötet?
+  2) Vad åtar jag mig att göra till nästa planerad scrum möte?
+  3) Finns det något som hindrar mig i mitt åtagande (behöver jag hjälp med något)?
+
+Grupp:
+ Alla gruppmedlemmar uppdaterar tidsuppskattningarna av de tasks de jobbar med.
+ Om en task är färdig flyttas den till kolumnen Done.
+ Om alla tasks för en user story är klara flyttas lappen med storyn till kolumnen Ready for Review.
+
+
+Scrum master:
+ Uppdaterar burn-down chart så att den stämmer med de nya återstående tiderna.
+
+Scrum master:
+ Om aktuell status i burn-down chart avviker väsentligt från ideallinjen, ska kunden kontaktas och informeras om läget.
+ Tänkbara resultat från denna kontakt kan t.ex. vara att en eller flera user stories tas bort från denna sprint (eller läggs till om utvecklingen gått bättre än förväntat).
+ Om så är fallet ska burn-down chart uppdateras så att den speglar det nya läget.

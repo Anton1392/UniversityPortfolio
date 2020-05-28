@@ -1,0 +1,76 @@
+TDP019 - Språkdagbok/Efarenheter
+Anton Sköld (antsk320)
+
+Denna språkdagbok/dessa observationer är en sammanställning från TDP007's duggor, erfarenheterna under språkutvecklingen i TDP019, och allmänna tankar om språken jag har erfarenhet av.
+
+I allmänhet är det rätt enkelt att lära sig ett språk om det tillhör samma paradigm som andra språk man kan.
+	* Ruby liknar Python-syntax, men med med objektorientering.
+	* Ruby har utmärkt dokumentation, vilket man enkelt kan hitta med t.ex Google.
+
+Loop-stilar:
+	* Loopar med C-stil (for (int i = 0; i < 5; i++)) är vanliga, men Ruby har inte sådana.
+	* Ruby använder främst <iterable>.each do, eller <integer>.times do.
+	* Python använder främst for <item> in <iterable>, syntax. Det är nästan exakt som foreach-loopar i C-stil.
+	* Av dessa föredrar jag Python's stil. Det är mycket mindre kluddigt än C-stilen. Det fungerar på varenda itererbara objekt i Python. Det ger också stor frihet om man vill iterera med index istället för objekten i det itererbara.
+
+Block-stil:
+	* En vanlig konstruktion är måsvingar {} för att definiera block, Java/C#/C++/JavaScript mm. använder detta.
+	* Ruby använder <block-start> <block-content> "end", för att avgöra när block börjar och slutar.
+	* Python bryr sig om och använder intendering för att definiera block:
+		for x in range(0, 3):
+			do_stuff()
+	* Av dessa föredrar jag starkt måsvingar. Det är solklart var block börjar och slutar, man är inte låst till Python's indenteringsregler, och koden kluddas inte upp av Ruby's "end"-text.
+
+Skiljetecken mellan uttryck:
+	* Ruby använder nyrad, eller ";" om det finns flera uttryck på en enda rad.
+	* Python använder nyrad. Flera uttryck på en rad stödjs ej.
+	* C++/Java mm. använder ";" efter varje uttryck, full frihet i hur många uttryck per rad man använder.
+	* Av dessa föredrar jag Ruby's stil. Den accepterar ett uttryck per rad, och ger även friheten att rada upp dem
+
+Return-statements:
+	* I Ruby så kan return utelämnas, funktioner returnerar som standard det senaste evaluerade uttrycket. Detta beteende tycker jag inte mycket om. Det gör det oklart om en funktion är menad att returnera ett värde eller inte.
+	* I Python och C++ så måste man specifiera Return för att funktioner ska returnera grejor. Det är solklart om funktioner är menade att returnera data eller inte.
+
+Dynamiskt/Statiskt typat:
+	* Dynamiskt typat innebär att man inte behöver skriva datatyper innan variabler för att specifiera vad de är. i = 1; är ett exempel.
+	* Dynamiskt typat kan vara lite "osäkrare", eftersom man inte kan vara 100% säker på att parametrarna man tar in i metoder är av korrekt datatyp.
+	* Dynamiskt typat är enklare och snabbare att skriva.
+	* Python & Ruby är dynamiskt typat.
+	* Statiskt typat innebär att man måste skriva datatyper innan variabler. int i = 1; är ett exempel.
+	* I statiskt typade språk har man full kontroll över datatyper i parametrar.
+	* C++/Java är exempel på statiskt typade språk.
+
+	* För mindre applikationer föredrar jag dynamiskt typat, det går snabbt och enkelt att slänga ihop ett program så det fungerar.
+	* För mer seriösa applikationer föredrar jag statiskt typat, främst för den inbyggda "felkontrollen" då man inte kan mata in vilken data som helst.
+
+Svagt/Starkt typat:
+	* Svagt typat innebär att det finns stor frihet i hur man skriver syntax. Man kan göra kontrollsatser till enradare, indentering spelar ingen roll, med mera.
+	* Starkt typat innebär att det finns liten frihet i hur saker är skrivna. Fördelen med detta är att kodstilen blir konsekvent, förstår man en del förstår man alla liknande delar.
+	* Jag är osäker på om jag tycker om svagt eller starkt typade språk mest. Jag lutar nog lite mer åt de svagt typade språkens håll.
+
+Fördelar med vissa språk:
+	* Ruby
+		* Väldigt bra stöd för objektorientering.
+		* Rätt enkel och flexibel syntax, likt Python.
+		* Allting är objekt, kan enkelt utöka inbyggda typer.
+	
+	* Python
+		* Enkel och flexibel syntax
+		* Extremt kraftfulla inbyggda imports.
+	
+	* C++
+		* Väldigt effektivt
+		* Väldigt minutiös kontroll över referenser/pekare med mera.
+		* Väldigt konkret och strukturerat.
+
+Nackdelar med vissa språk:
+	* Ruby
+		* Inte kompilerat, måste ha Ruby installerat för att utföra Ruby-grejor.
+
+	* Python
+		* Inte kompilerat, måste ha Python installerat för att utföra Ruby-grejor.
+		* Svagt stöd för objektorientering, detta är vad jag stör mig mest på i Python.
+	
+	* C++
+		* Svårt att lära sig
+		* Tar längre tid att se resultat jämfört med Python/Ruby.

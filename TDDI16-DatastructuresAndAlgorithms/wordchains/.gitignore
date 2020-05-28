@@ -1,0 +1,6 @@
+*.o
+*~
+\#*#
+a.out
+wordchain
+wordchain.exe

@@ -1,0 +1,3 @@
+#1 Week attribute added to flight for identification
+
+#2 Divided RM of reservation to passanger and flight & added relation between reservation and booking

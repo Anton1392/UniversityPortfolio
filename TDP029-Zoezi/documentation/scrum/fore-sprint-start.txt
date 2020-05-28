@@ -1,0 +1,12 @@
+Scrum master:
+ Uppdatera backlog (justera och lägg tillbaka stories som fått fail).
+
+Scrum master:
+ Se till att material finns på plats (pennor, post-its, etc).
+
+Kund:
+ Förbered nya user stories (vid behov) och lägg dem i Backlog.
+ Gör en prioritering av alla user stories i Backlog.
+
+Grupp:
+ Tidsestimera alla user stories i Backlog i prioritetsordning.

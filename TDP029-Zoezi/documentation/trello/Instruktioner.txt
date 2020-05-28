@@ -1,0 +1,43 @@
+### Definitioner
+lapp = ett inlägg på scrum boarden
+###
+
+
+Om man utvecklar en lapp, och märker att den är beroende av någon annan lapp etc.
+Så markeras den med en svart tag.
+Man ska även kommentera varför den är beroende av en annan lapp, samt lägger in en länk till den lapp som den är beroende av (om finns).
+Om den beroende inte finns beskriven i en lapp skapas den linkande hur tasks skapas.
+
+Description används för att beskriva mer specifikt vad som ska göras i den lappen
+
+
+Om en bugg uptäcks, som inte återgärdas direkt. Skapas en ny Uppgifts-lapp som läggs i:
+ "Sprint backlog" (om den måste fixas denna sprint)
+ "Backlog" (Om den inte nödvändigtvis behövs fixas denna sprint)
+ Buggen, ska även länka lappen den härstammar ifrån.
+ Samt att en kommentar i lappen buggen härstamma ifrån med beskrivning samt länk till bugfixen.
+
+
+När en story bryts ned i tasks:
+ Ska ett checklist inlägg skapas i Förälder-storyn, innehållande en kort beskrivning (3-4 ord) samt en länk till tasken skrivas.
+ I den nya tasken ska en länk till föräldern läggas i beskrivningen.
+
+
+En task får INTE flyttas till "Done", utan flyttas till "Ready for customer to accept"
+En story får INTE flyttas till "Done", utan flyttas till "Ready for customer to accept"
+En övrig lapp får flyttas till "Done" efter intern review.
+
+-Om en lapp börjar med "ALLA ..." så bertyder det att alla gruppmedlemar ska kolla igenom den.
+
+
+Namngivning:
+-En story ska döpas: "Story: ...
+-En epic ska döpas:   "Epic: ..."
+-En task ska döpas:   "Task: ..."
+-Alla andra logistik etc ska inte ha någon benämning.
+
+
+När en lapp sätts i testing måste minst 2 personer (programmerare, inte programmeringspar) kommentera sitt godkännande för att den ska kunna flyttas vidare.
+
+
+Saker som ligger i internal review ska tas direkt efter scrummöten för att bedömas om det är klara att flyta vidare.

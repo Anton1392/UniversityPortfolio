@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">The Alarming App</string>
+
+    <!-- Facebook application ID and custom URL scheme (app ID prefixed by 'fb'). -->
+    <string name="facebook_application_id" translatable="false">251048738919430</string>
+    <string name="facebook_login_protocol_scheme" translatable="false">fb251048738919430</string>
+
+    <!-- activity_add_alarm.xml -->
+    <string name="welcome">Hello, %1$s!\nDiscipline points: %2$d.</string>
+    <string name="welcome_not_logged_in">Welcome.\nPlease sign in to collect points!</string>
+
+    <!-- activity_add_alarm.xml -->
+    <string name="button_add_alarm" translatable="false">+</string>
+    <string name="add_alarm">Add alarm</string>
+
+    <!-- activity_alarm_sound.xml -->
+    <string name="stop_alarm">Stop!</string>
+    <string name="snooze">Snooze (5min)\n-1 discipline points</string>
+    <string name="wake_up_greeting">Good morning, beautiful!\nThe time is:</string>
+
+    <!-- Notifications -->
+    <string name="notification_ticker">Alarm set</string>
+    <string name="notification_active_alarm">Alarm set for:</string>
+
+    <!-- Debug stuff -->
+    <string name="debug">debug</string>
+    <string name="test_alarm_sound">Test alarm sound</string>
+    <string name="test_sign_out">Test sign out</string>
+
+    <!-- Toolbar -->
+    <string name="sign_in">Sign in</string>
+    <string name="sign_out">Sign out</string>
+</resources>

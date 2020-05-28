@@ -1,0 +1,49 @@
+Hur har ni gått till väga för att lära sig ett nytt språk(Ruby):
+
+Vi har använt google mycket och framförallt Ruby dokumentationen. Vi har även kollat på slides från föreläsningarna.
+
+Vilka fel och misstag har ni gjort under tiden?
+
+
+Vi har råkat blanda in c++ syntax i och med att kurserna innan har varit i c++ så är det lätt att skriva fel. I början förstod vi inte riktigt hur metoderna i ruby bestämmer vad som ska returneras så många problem som vi stött på har berott på att våra metoder returnerat fel.
+I bland har vi jämfört olika datatyper och därför fått fel. Det verkar vara lätt hänt i ett språk där variablerna inte är datatyps känsliga
+
+
+
+Vad finns det för nya konstruktioner i Ruby som ni inte sett förut?
+
+
+Allt är ett objekt i Ruby vilket är något som ingen av oss tidigare stött på i andra språk. Att skicka in funktioner och block till metoder är mycket enklare än i många andra språk.
+
+Vad finns det för konstruktioner som ni känner igen men som ser lite annorlunda ut?
+
+Konstruktorer känner vi igen men syntaxen skiljer en del tillexempel att konstruktorn kallar på "initialize()"  och att man kallar på klassen som ligger över i arvshierarkin med "super()".
+
+
+Finns det något som ni irriterar er på eller tycker om i Ruby?
+
+
+Att block avslutas med "end" har varit irriterande framförallt eftersom att syntaxen påminner om python och att man då tänker att det räcker med indentering för att markera var block startar och slutar.
+Vi tror mest att det är en vanesak.
+
+Reflektioner kring de olika tekniker som ni stöter på:
+Att datatyper kan utökas med ny funktionallitet tror vi är väldigt användbart. Det var väldigt enkelt att lägga till funktioner till datatyper.
+
+
+Har ni hittat alternativa källor för att ta reda på nya saker?
+Vi har användt stackoverflow en hel del för att utöka våra kunskaper.
+
+Vad arbetade ni med (i grova drag) vid varje labbpass?
+På det första labpasset löste vi två uppgifter på varje avsnitt förutom den sista som vi sparade tills det andra labbpasset.
+
+
+Avnsitt 1:
+
+    Vi tolkade uppgiften som att vi skulle skriva en funktion som repeterade ett block så många gånger som man anger när man kallar på funktionen. Uppgiften var i det stora hela enkel. Vi stötte på problem eftersom att vi hade lagt till ett mellanslag mellan funktionsnamnet och argumentet när vi anropade funktionen "upto()". Det framgick inte tydligt av felmeddelandet att det var mellanslaget som var felet. Det gjorde det lite svårt att felsöka men vi hittade ett kodexempel på stackowerflow där det inte var mellanslag. Vi testade utan mellanslag och det fungerade.
+
+Avsnitt 2:
+Vi tolkade uppgiften som att fulllname inte skulle vara en egen variabel utan en sammansättning av name och surname.
+När vi skulle göra en setter till fullname så överlagrade vi först en metod med namnet fullname. Det ena tog inte in något värde och skulle därför vara vår getter. Den andra tog in en sträng och skulle användas som setter. Det visade sig att det inte fungerade att göra så eftersom att metodens signatur skrevs över. Iställlet så hittade vi på nätet att metodnamnet ska följas av ett "=" tecken. Vi hade inte stött på det här problemet om vi hade läst instruktionen nogrannare eftersom att det står att settern ska heta "fullname=".
+
+Avsnitt 4:
+Avsnitt 4 var lite klurigt eftersom att ingen av oss har hållt på med regulära uttryck särskilt mycket. Ofta kom vi på lösningar där vi kombinerade att använda regex för att få fram något ord eller liknande ifrån en mening och ruby kod för att validera så att inmatningen var korrekt. Det tog lite tid att komma på sätt att kollla allt med regex.

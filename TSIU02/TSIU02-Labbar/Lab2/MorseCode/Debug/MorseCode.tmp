@@ -1,0 +1,45 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.7</VERSION>
+ <DEVICE>"ATmega16"</DEVICE>
+ <WORKING_DIR>C:\Users\Anton\Desktop\Edu\TSIU02\TSIU02-Labbar\Lab2\MorseCode\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>D:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\avrasm\inc</DIR>
+  <DIR>D:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\Anton\Desktop\Edu\TSIU02\TSIU02-Labbar\Lab2\MorseCode\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>D:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\avrasm\inc\m16def.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\Anton\Desktop\Edu\TSIU02\TSIU02-Labbar\Lab2\MorseCode\Debug\MorseCode.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>MorseCode.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>MorseCode.map</FILE>
+  <FILE>MorseCode.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <INIT><FILE>C:\Users\Anton\Desktop\Edu\TSIU02\TSIU02-Labbar\Lab2\MorseCode\main.asm</FILE><LINE>8</LINE></INIT>
+  <START><FILE>C:\Users\Anton\Desktop\Edu\TSIU02\TSIU02-Labbar\Lab2\MorseCode\main.asm</FILE><LINE>65</LINE></START>
+  <DTAB><FILE>C:\Users\Anton\Desktop\Edu\TSIU02\TSIU02-Labbar\Lab2\MorseCode\main.asm</FILE><LINE>33</LINE></DTAB>
+  <MESSAGE><FILE>C:\Users\Anton\Desktop\Edu\TSIU02\TSIU02-Labbar\Lab2\MorseCode\main.asm</FILE><LINE>63</LINE></MESSAGE>
+  <MORSE><FILE>C:\Users\Anton\Desktop\Edu\TSIU02\TSIU02-Labbar\Lab2\MorseCode\main.asm</FILE><LINE>72</LINE></MORSE>
+  <GET_CHAR><FILE>C:\Users\Anton\Desktop\Edu\TSIU02\TSIU02-Labbar\Lab2\MorseCode\main.asm</FILE><LINE>83</LINE></GET_CHAR>
+  <WHILE_CHAR><FILE>C:\Users\Anton\Desktop\Edu\TSIU02\TSIU02-Labbar\Lab2\MorseCode\main.asm</FILE><LINE>87</LINE></WHILE_CHAR>
+  <NORMAL_CHAR><FILE>C:\Users\Anton\Desktop\Edu\TSIU02\TSIU02-Labbar\Lab2\MorseCode\main.asm</FILE><LINE>93</LINE></NORMAL_CHAR>
+  <NOBEEP><FILE>C:\Users\Anton\Desktop\Edu\TSIU02\TSIU02-Labbar\Lab2\MorseCode\main.asm</FILE><LINE>163</LINE></NOBEEP>
+  <NEXT_CHAR><FILE>C:\Users\Anton\Desktop\Edu\TSIU02\TSIU02-Labbar\Lab2\MorseCode\main.asm</FILE><LINE>98</LINE></NEXT_CHAR>
+  <LOOKUP><FILE>C:\Users\Anton\Desktop\Edu\TSIU02\TSIU02-Labbar\Lab2\MorseCode\main.asm</FILE><LINE>132</LINE></LOOKUP>
+  <SEND><FILE>C:\Users\Anton\Desktop\Edu\TSIU02\TSIU02-Labbar\Lab2\MorseCode\main.asm</FILE><LINE>104</LINE></SEND>
+  <NO_RET><FILE>C:\Users\Anton\Desktop\Edu\TSIU02\TSIU02-Labbar\Lab2\MorseCode\main.asm</FILE><LINE>113</LINE></NO_RET>
+  <BEEP><FILE>C:\Users\Anton\Desktop\Edu\TSIU02\TSIU02-Labbar\Lab2\MorseCode\main.asm</FILE><LINE>155</LINE></BEEP>
+  <LOOKUP_LOOP><FILE>C:\Users\Anton\Desktop\Edu\TSIU02\TSIU02-Labbar\Lab2\MorseCode\main.asm</FILE><LINE>139</LINE></LOOKUP_LOOP>
+  <DELAYX><FILE>C:\Users\Anton\Desktop\Edu\TSIU02\TSIU02-Labbar\Lab2\MorseCode\main.asm</FILE><LINE>170</LINE></DELAYX>
+  <DELAY><FILE>C:\Users\Anton\Desktop\Edu\TSIU02\TSIU02-Labbar\Lab2\MorseCode\main.asm</FILE><LINE>177</LINE></DELAY>
+  <delayYttreLoop><FILE>C:\Users\Anton\Desktop\Edu\TSIU02\TSIU02-Labbar\Lab2\MorseCode\main.asm</FILE><LINE>181</LINE></delayYttreLoop>
+  <delayInreLoop><FILE>C:\Users\Anton\Desktop\Edu\TSIU02\TSIU02-Labbar\Lab2\MorseCode\main.asm</FILE><LINE>183</LINE></delayInreLoop>
+ </LABELS>
+</ASSEMBLER_INFO>

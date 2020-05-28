@@ -1,0 +1,37 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.7</VERSION>
+ <DEVICE>"ATmega16"</DEVICE>
+ <WORKING_DIR>C:\Users\Anton\Desktop\Edu\TSIU02\TSIU02-Labbar\Lab1\Lab1\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>D:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\avrasm\inc</DIR>
+  <DIR>D:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\Anton\Desktop\Edu\TSIU02\TSIU02-Labbar\Lab1\Lab1\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>D:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\avrasm\inc\m16def.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\Anton\Desktop\Edu\TSIU02\TSIU02-Labbar\Lab1\Lab1\Debug\Lab1.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>Lab1.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>Lab1.map</FILE>
+  <FILE>Lab1.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <START><FILE>C:\Users\Anton\Desktop\Edu\TSIU02\TSIU02-Labbar\Lab1\Lab1\main.asm</FILE><LINE>21</LINE></START>
+  <MAIN><FILE>C:\Users\Anton\Desktop\Edu\TSIU02\TSIU02-Labbar\Lab1\Lab1\main.asm</FILE><LINE>40</LINE></MAIN>
+  <GETSTARTBIT><FILE>C:\Users\Anton\Desktop\Edu\TSIU02\TSIU02-Labbar\Lab1\Lab1\main.asm</FILE><LINE>51</LINE></GETSTARTBIT>
+  <GETDATABITS><FILE>C:\Users\Anton\Desktop\Edu\TSIU02\TSIU02-Labbar\Lab1\Lab1\main.asm</FILE><LINE>69</LINE></GETDATABITS>
+  <DELAY><FILE>C:\Users\Anton\Desktop\Edu\TSIU02\TSIU02-Labbar\Lab1\Lab1\main.asm</FILE><LINE>140</LINE></DELAY>
+  <P0><FILE>C:\Users\Anton\Desktop\Edu\TSIU02\TSIU02-Labbar\Lab1\Lab1\main.asm</FILE><LINE>82</LINE></P0>
+  <P1><FILE>C:\Users\Anton\Desktop\Edu\TSIU02\TSIU02-Labbar\Lab1\Lab1\main.asm</FILE><LINE>93</LINE></P1>
+  <P2><FILE>C:\Users\Anton\Desktop\Edu\TSIU02\TSIU02-Labbar\Lab1\Lab1\main.asm</FILE><LINE>104</LINE></P2>
+  <P3><FILE>C:\Users\Anton\Desktop\Edu\TSIU02\TSIU02-Labbar\Lab1\Lab1\main.asm</FILE><LINE>115</LINE></P3>
+  <delayYttreLoop><FILE>C:\Users\Anton\Desktop\Edu\TSIU02\TSIU02-Labbar\Lab1\Lab1\main.asm</FILE><LINE>144</LINE></delayYttreLoop>
+  <delayInreLoop><FILE>C:\Users\Anton\Desktop\Edu\TSIU02\TSIU02-Labbar\Lab1\Lab1\main.asm</FILE><LINE>147</LINE></delayInreLoop>
+ </LABELS>
+</ASSEMBLER_INFO>

@@ -1,0 +1,341 @@
+Systemdokumentation:
+
+
+### ÖVERSIKTLIG BESKRIVNING AV ERT SYSTEM: ###
+Språket Automato använder sig av parsen rdparse, denna och implementationen av språket är skrivet i Ruby.
+Automatos syntax är inspererat av Ruby,Python och C++. Men implementationen/beteendet liknar mer Ruby och Python. Automato har även några unika beteenden, bestämda av skaparn, för att försöka underlätta användningen av språket.
+
+Automatos kodbibliotek består av 7 ??? filer:
+-Parsen (rdparse.rb)
+-Syntaxreglerna (automato.rb)
+-3 implementations filer (Assignment.rb, classes.rb, Func_call.rb)
+-Interface filen för windows(Ruby) kodbiblioteket auto_click (auto_click.rb)
+-Testfil för att se så att de lovade funktionerna fungerar (tests.rb)
+
+
+
+### GRAMMATIKEN FÖR SPRÅKET: ###
+Användare reffereras till bifogad textfil, BNF.txt, för beskrivning av Automatos gramatik.
+
+
+
+### VILKA DELAR DET BESTÅR UTAV, T EX LEXIKALISK ANALYS, PARSING, ÖVERSÄTTNING, EVALUERING ###
+
+Lexisk analys
+Parsen rdparse kommer med en tokeniser, vilket är den lexikaliska funktion Automato anvämnder.
+Rdparses "token()" funktion, använder sig av regulära utryck, för strukturera en given sträng till tokens som parsen använda.
+
+// besriva alla token() regexes och vad de matchar?
+
+
+Parsning:
+Parsen använder sig utav den givna sekvensen av tokens, för att matcha enligt alla Automatos regler. Av dessa matchningar skapas ett Abstrakt syntaxträd. Nästan varje matchning i skaper en egen nod i detta abstrakta syntaxträd. Vissa regler är dock bara i språket för att förtydliga strukturen. Matchnings gramatiken är skriven i BNF struktur, och är dockumenterat i BNF.txt.
+
+
+Evaluering:
+När hela token sekvensen har matchat korrekt, och det abstrakta syntaxträdet är klart, evalueras det.
+I evaluering evalueras det givna syntaxträdet, här beräknas, sparas och skapas de beskrivna statmentsen, varabeldeklarationerna, funcktionsdeffinitionerna.
+
+Instalation:
+....
+
+### ETC: ###
+Variabler är sparade i listade hashtabeller
+Funktioner är sparare i listade hashtabeller
+
+
+-val av representation av t ex tokens, syntaxträd
+
+### KODSTANDARD: ###
+T ex för hur koden skrivs på rader och identering, namn på identifierare etc.
+
+
+
+
+
+
+### Advanserad användar manual ###
+
+:::Datatyper:::
+Bool
+Intar
+Floatar
+Strängar
+Nilclass
+
+:::Aretmetiska uträkningar:::
+Dessa utförs sist:
+ x + y
+ x - y
+
+Dessa utförs mitt imelan:
+ x / y
+ x * y
+ x % y
+ x // y
+
+Detta prioriteras och evalueras först:
+ x ^ y
+
+x^y^z = x^(y^z)
+
+
+:::Paranteser ():::
+Parenteser prioriteras över power och beräknas först.
+Som parantes(enclosure) är implementerat nu, så tillåter det att ett helt nytt statment skrivs inanför,
+vilket gör saker som detta tillåtna "a=1+(if 2>1 {2} else {1})".
+
+
+
+
+:::Variabeloperationer:::
+(Då x är en variabel, y är ett :expression)
+
+För basic, tildelning,behöver inte x existera innan
+x = y
+
+För mera advanserade variabel modifiering, behöver x existera innan
+x += y
+x -= y
+x *= y
+x /= y
+x ^= y
+x %= y
+x //= y
+
+
+
+ x++
+ x--
+ x**
+ x^^
+Dessa ovanstående fyra operationerna, kallas selfmod. Dessa modifierar existerande variabler.
+Selfmod evalueras före alla andra mattematiska operationer,
+
+Selfmod operationer måste skrivas direkt bredvid en variabel,
+som exempel så kan man inte skriva: (a)++
+
+
+
+
+bolisk logik
+ x or y
+
+ x and y
+
+ not x
+
+"not" evalueras först, sedan "and", sist "or"
+:::comparitors:::
+
+ >
+ <
+ =>
+ <=
+ ==
+ !=
+
+dessa evalueras före bolisk logik
+
+
+:::kontrollsatser:::
+
+"if expr {...}"
+"if expr {...} else {...}"
+
+
+
+:::loopar:::
+
+loop expr {}
+
+expr kan vara en int eller ett boliskt utryck
+
+Även om inte Automato har en inbyggd for loop kan man skriva en sådan,
+dock kommer inte for-lopen fungera som vanliga for-lopar:
+Ta detta exemplet:
+"a = 0; loop a++ < 5 {Print(a)}"
+Den 'förväntade' beteendet skulle vara i denna stil:
+1
+2
+3
+4
+5
+Men i Automato blir det:
+2
+3
+4
+Detta beror på hur implementationen av loop (mera specific boliska loopen),
+Loop klassen evaluerar först "a++ < 5" för att se vilken typ av loop det är,(här ökas "a" med 1)
+Loopen körs tre gånger
+I fjärde varvet, i fjäre evalueringen så blir "a++ < 5" sant, och lopen bryts.
+
+Dock kommer a att ha fått värdet 5
+
+Beroende om scope för loopar är på så kommer den existerande a att förbli 0 (om scope för lopar är på), eller ändras till 5 (om scope för lopar är av)
+
+
+
+:::funktioner/metoder::::
+"fun :fun_name () {...}"
+"fun :fun_name (:param_list) {...}"
+
+:param list kan vara "x" eller "x=2"
+
+ #standardvärden
+x=(kan vara en utomstående variable)
+x=(kan vara ett funktionskall(som bara returnerar en sak))
+
+:::kallning:::
+"fun :fun_name ()
+"fun :fun_name (:param_list)
+om funktionern tar emot 2 parametrar, så MÅSTE, den kallas med två parametrar
+för att använda standardvärden skickar användaren med Nil, som argument så vet funktionen att den ska använda standard
+
+Funktioner returnerar naturligt det som evaluerades sist, kan vara nil
+
+
+Funktioner kan kalla sig själva! (recursion)
+
+
+:::Return:::
+Return statmentet har som i huvudupgift att returnera saker från funktioner.
+Return som det är implementerat nu har vissa svagheter.
+Till exempel: om return i en funktion är skriven inuti en if_else eller en loop, så returneras inte något (eller att funktionen avslutas).
+
+Om if_else (eller loopar) har scope på, så kommer inte "Return" att returnera något.
+
+Return skrivit i något annat scope än 0 (kallas return i scope noll så ges error), kommer ändast att förhindra statments efter "Return statmentet" att köras att köras??
+
+Till exempel detta:
+"loop a++ < 5 {Return 1;Print(a)}"
+Return här kommer förhindra printen från att evalueras.
+
+
+
+
+
+:::Assignments:::
+"Vanliga" assignments (=) har inget krav på att :target (vad som blir tildelat) måste existera
+Augmented assign och self mod, kräver dock att :target finns.
+
+Efetrsom Automato inte har listor, så har assignment fått detta beteende i parralel asignment
+Nedan följer några exempel:
+
+x,y = 1,2
+
+
+x,y = 1,x+1
+x behöver inte existera i variabel listan för att y (i detta fallet) ska kunna asignas det. Assign kommer nämligen att kunna använda sig av temporära variabler i assignmentet.
+
+Dock om y redan finns i det variabel listan, så kommer detta värde att användas, dvs om globala värden på variabler existerar kommer dessa värden att användas i assignmentet
+
+(Variabel listan = variabler som koden kan nå från sin nuvarande position/scope)
+
+
+x,y = foo()
+# detta fungerar bara om foo() returnerar två värden.
+# detta kan utvecklas med flera funktions kall:
+x,y,z,w = foo(), bar()
+# foo() och bar() måste sammanlagt returnera fyra värden, men minst ett vardera, Så foo() kan returnera (1,2,3) och bar() returnerar (4)
+
+
+Detta kan såklart kombineras:
+"a=0"
+"fun(var){var+2}"
+"a,b,c = 1,a+1,foo(a+1)" #=> a=1,b=2,c=3
+
+:::Scope:::
+Scopet i Automato är lite speciellt, då variabler kan hämtas från ALLA tidigare scope, det betyder att en funktion kan använda sig av variabler från det scope den kallades från.
+Dock så kan variabler bara sättas i nuvarende scope, dvs en funktion kan inte ändra en variabel från ett tidigare scope, den kan dock returnera ett värde som blir asiignat i det tidigare scopet
+
+Automato, har möjliighet att ställa in om scope ska finnas.
+Som defult är $use_scope = true, $use_scope_functions = true
+$use_scope_if_else = false, $use_scope_loop = false
+
+Men detta kan ändras om den nu så vill.
+
+Om $use_scope säts till false, så kommer scope stängas av för allt, oavsettt vad de andra variablerna är.
+Om $use_scope = false, så kommer allt scope bli globalt.
+
+Att kunna ställa in scope är mer en experimentell möjlighet som Automato kommer med. Vi rekomenderar att man behåller defult inställningar, men användare är välkomna att experimentera med scope, för att se vilka olika beteenden som kan upstå.
+
+Vi rekomenderar att inte scope byts på och av flera gånger i samma program, det kan orsaka skumma beteenden.
+Vi förbjuder det dock inte, om användare vill exprimentera.
+
+:::Att skriva statments:::
+Statments kan skrivas på tre sätt
+stmt
+stmt;
+stmt; stmt_list
+
+statment skrivning är oberoende av radbrytning, om användare vill så kan den skriva:
+if
+a
+>
+1
+{
+Print
+(
+1
+)
+}
+
+
+
+
+
+:::NOTES:::
+Den enda gången som man får skriva tomma parangteser (), är vid funktionskall
+
+Hakparanteser {}, måste dock alltid inehålla minst ett statment
+
+
+Automato har inget (som nuvarande) inbygt kontrollsystem för att kontrolera att inkompatibla typer försöks kombineras, exempel av detta är " 'hej'+1 ", detta kommer att kracha språket.
+
+Om en variabel inte finns, så kommer nil att returneras, som exempel "a=b", här existerar inte b så a blir lika med nil ({a=>nil})
+
+
+I ett asignment, kan inte funktioner kallas med temporära värden, kommer resultera i en krach
+eg: "a,b = 1,foo(a+1)"
+Detta kommer kracha om inte a existerar
+
+
+Om man skriver:
+"loop a < 10{a++}"
+och variabeln a inte existerar, så kommer programmer kracha
+
+
+--------------------
+Ta denna kod:
+"a,b,c = 1,1,d"
+
+Som Automato fungerar så kommer följande att ske:
+a,b blir asignat 1.
+Ett error medelande att d inte fins skrivs ut.
+Då d inte finns, kommer d att returnera nil, så att c blir asignat nil
+global_varibles kommer då att se ut : [{a=>1,b=>1,c=>nil}]
+
+Sedan skrivs detta:
+"a,b  += 2,c"
+a blir asignat a+2.
+c som finns men är asignat nil, kommer ge att ett eror medelande skrivs ut.
+Detta medelande kommer dock säga att c inte finns, vilket i sig inte är sant.
+(Automato har inget sätt att särskilja om en variabel inte finns, eller om den är satt till nil)
+
+
+Automato fungerar så att, om en target inte finns, så kommer inget bli (om inte target inte måste existera innan) asignat.
+
+Om target, finns men blir asignat nåt som inte finns, så kommer target att inte förändras.
+
+
+
+--------------------
+
+
+I funktionskallningar så kan man inte referera mot tidigare parametrar.
+"fun foo(a,b=a){...}; foo(1,Nil)"
+Detta kommer att skriva ut ett error, då a ännu inte finns för b att referera till.
+
+
+Kolla i test.rb för att se exempel på olika sätt man kan skriva kod i Automato

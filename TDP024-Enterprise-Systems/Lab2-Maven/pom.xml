@@ -1,0 +1,12 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>AntonWilliam</groupId>
+  <artifactId>HelloMaven</artifactId>
+  <packaging>pom</packaging>
+  <version>1</version>
+
+  <modules>
+    <module>GoServer</module>
+    <module>JavaClient</module>
+  </modules>
+</project>

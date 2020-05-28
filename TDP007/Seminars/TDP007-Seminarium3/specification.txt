@@ -1,0 +1,10 @@
+VALID ::= ASSIGN
+VALID ::= EXPR
+ASSIGN ::= '(' 'set' VAR EXPR')'     <-- Tilldelning av variabel
+EXPR ::= '(' 'or' EXPR EXPR ')'
+EXPR ::= '(' 'and' EXPR EXPR ')'
+EXPR ::= '(' 'not' EXPR ')'
+EXPR ::= TERM
+TERM ::= VAR                         <-- Variabel
+TERM ::= 'true'
+TERM ::= 'false'

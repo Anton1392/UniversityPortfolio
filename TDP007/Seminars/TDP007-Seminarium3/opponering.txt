@@ -1,0 +1,28 @@
+Uppgift 1
+Alla regler är listade tillsammans i policy.rb. Kanske skulle ha varit bra att ha information i policy.rb som talar om vad värdet ska användas till (addition eller multiplikation), annars behövs extra information om policyn för att kunna använda den.
+
+Enkelt för den som skriver policy.rb. Däremot ganska mycket kod för att evaluera, och dessutom två hårdkodade specialfall. Evalueringskoden är egentligen skriven med additionsreglerna i åtanke.
+
+Bra Ruby-tänk dock att låta Policy-klassen ärva av Array och ha en metod (Policy.load) som returnerar en instans av sig själv.
+
+De har en klass Person som innehåller all relevant statistik för poängsättning. Person har evaluate policy som laddar in en policy och lagrar i en instansvariabel.
+
+Person har därefter en metod calc-points som räknar ut alla poäng som personen har. Denna lösning hanterar bara addition, och de 2 multiplikationsfallen är hårdkodade.
+
+Bra att definiera två olika tester när det är två helt olika testfall. Det hade inte vi gjort.
+
+Uppgift 2
+Man har en :rule atom. Antagligen kvar från exempelkoden? Vad ska man ha integers till i exemplet?
+
+I de logiska uttrycken så kan mata in de inbyggda integers, men det verkar inte ge något rimligt svar. (and 5 6) ger 6, (and 6 5) ger 5. And verkar returnera högra variabeln hela tiden, och or verkar ge den vänstra.
+
+Har en match för att hämta värdet av en variabel (get variable_name). Kanske för att lösa problemet med att få parsern att veta om den ska tolka en variabel som variabelnamnet eller hämta värdet. Vi löste det istället genom att låta värdet hämtas bara om variabeln matchas som en :term.
+
+Man har också en expr för addition. Onödigt? Kvar sedan exemplet? Enligt grammatiken kan man addera true och false, men försöker man med det så kastar Ruby en exception. Eventuell lösning är att bryta upp “term” i några undertyper, t.ex att term hanterar heltal, och en ny typ “bool” hanterar sant/falskt.
+
+Enhetstesterna är lite få och man testar inte alla funktioner var för sig utan har slagit ihop flera av testerna. Not testas inte, addition testas inte, och heltalen som följdes med i språket testas inte.
+
+
+Utvecklardagbok
+Inte så mycket specifik info om problem i utvecklardagboken. Håller med om att uppgift två var bra som förberedelse inför projektet.
+

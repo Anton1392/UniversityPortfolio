@@ -1,0 +1,27 @@
+---Reflektioner kring Ruby---
+
+Det är intressant att lära sig ett nytt språk. Det största hindret är nog att lära sig all syntax som språket använder sig av. Ruby verkar ha väldigt lös syntax “svagt skrivet språk”, som skiljer sig mycket från de andra språk vi har lärt oss (Python & C++) som har mer konkret syntax.
+Programmeringslogiken översätts dock väl mellan språk, språken har väldigt ofta lika kontrollstrukturer och logik.
+Innan kursen började så förinstallerade jag Ruby och kollade på en introduktionsvideo till språket. Detta gav mig en rätt så bra kunskapsbas inför de första föreläsningarna.
+Några nya konstruktioner med Ruby är att allting är objekt och har massvis med inbyggda metoder. “5.times do { } end” var väldigt häftigt när vi först stötte på det.
+Objektet Hash i Ruby har ett lite annorlunda namn jämfört med andra språk där de har kallats Map eller Table. Funktionellt verkar de väldigt likadana dock.
+Det största irritationsmomentet jag har stött på än så länge är att jag råkade felstava Initialize jättelite i en klass, vilket gjorde den till en helt annan metod. Konstruktorn på mitt objekt fungerade då inte som den skulle och jag fick ArgumentError då jag försökte mata in parametrar. Ingenting visade på att konstruktorn var felstavad. I C++ så har konstruktorn samma namn som klassen, och inte samma formatering som vanliga metoder, det är då enklare att se vad som är problemet.
+Något som känns ovant för mig är att man inte måste skriva “return” utan funktionen alltid kommer returnera det senast evaluerade uttrycket. Om man vill explicit returnera ett värde så skriver man “return”, och man kan också använda det om man vill där det egentligen inte behövs. Standard verkar dock vara att inte använda det i onödan. Jag tycker det kan göra koden svårare att läsa.
+
+
+
+
+---Reflektioner kring de olika tekniker vi stött på---
+
+Ruby verkar ha ersatt det vanliga public/private/protected med attr_reader/attr_writer/attr_accessor. Detta system verkar väldigt smidigt. Det blir enkelt att automatiskt generera getters och setters och att lägga till logik i dem.
+Denna teknik tillåter “virtuella attribut”, där klassmedlemmen ser ut som en vanlig variabel, men det är egentligen en metod som ser ut som en variabel och har logik bakom sig. I andra språk krävs parenteser () efter metod-kallningar, men i Ruby är de inte nödvändiga och därför kan de se ut som vanliga variabler.
+Utökning av klasser och inbyggda klasser är också väldigt häftigt. Istället för att ha små metoder spridda här och var i koden så kan man sätta dem i de inbyggda objekten. Jag tycker att det blir finare struktur på koden då, men detta är såklart subjektivt.
+
+
+
+
+---Hur vi har tänkt när vi arbetat fram lösningarna---
+
+Uppgifterna vi fick inför Seminarie 1 var relativt enkla, och inte så stora heller. De handlade främst om att bli bekväm med vissa funktioner inom Ruby som reguljära uttryck, utökning av klasser, åtkomst, och iteratorer.
+Det var enkelt att söka information om dessa funktioner via Google. Detta gjorde att vi kunde göra uppgifterna på några timmar hemifrån. Det svåraste var nog att greppa åtkomst-syntaxen för klasser eftersom attr_accessor, @variable etc. är lite nytänkande jämfört med de gamla språken. Det var också till en början svårt att greppa konceptet att skicka block som parametrar eftersom vi inte använt det på samma sätt i andra språk. Det liknar lambda-funktioner i till exempel C++ och Python, men det verkar användas i större utsträckning i Ruby.
+

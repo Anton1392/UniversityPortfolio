@@ -1,0 +1,31 @@
+#################
+# Organisering: #
+#################
+Vi har lika stort ansvar för utveckling. Utvecklingen kan delas in i mindre delar, som sedan kan distribueras rätt jämnt. Man kan ta lite kniviga problem tillsammans om det behövs.
+
+
+#####################
+# Kompetenshöjning: #
+#####################
+Tillbakablick till föreläsningar.
+Studering av BNF syntax och RDparse.
+Google för generella ruby-problem.
+
+
+##################
+# Målsättningar: #
+##################
+* Konkret BNF-syntax
+* Implementerad BNF-syntax
+   * implementera if-satser
+   * implementera loopar
+   * implementera funktioner
+   * implementera klasser?
+   * implementera datatyper
+      * booleans
+      * integers
+      * strings
+* Ha syntaxen faktiskt göra saker, ha den funktionell
+* Implementerade "inbyggda" funktioner te.x:
+   * musrörelse
+   * Översättning mellan strängar och knapptryckningar m.m

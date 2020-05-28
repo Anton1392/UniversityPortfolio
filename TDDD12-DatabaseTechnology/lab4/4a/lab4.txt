@@ -1,0 +1,52 @@
+- - - 
+"Route" is not in BCNF due to memory optimization and a clearer model
+where only one attribute is needed to identify each route from other relations.
+Pheraps this is not optimal/wrong, but that is the reasoning.
+
+Candidate keys:
+id
+departure, arrival
+
+Primary key:
+id
+
+Everything below "Route" is in BCNF with the only candidate key and primary key
+being the left side of their only functional dependency
+- - -
+
+Route:
+id -> departure, arrival, price
+departure, arrival -> price
+
+Airport:
+code -> name, country
+
+Routeprice:
+route, year -> price
+
+Flight:
+flightnumber -> seats, schedule, year
+
+Schedule:
+id, year -> departuretime, day, route
+
+Reservation:
+id -> passanger, flight
+
+Passanger:
+customer -> passport
+
+Customer:
+id -> firstname, lastname
+
+Creditcard:
+number -> customer
+
+Ticket:
+number -> passanger, booking
+
+Booking:
+id -> contact, payer, price
+
+Contact:
+customer -> phone, email

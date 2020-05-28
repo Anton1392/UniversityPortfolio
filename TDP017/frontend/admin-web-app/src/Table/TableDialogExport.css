@@ -1,0 +1,42 @@
+
+/* Modal class for dialog */
+.modal {
+    color: black;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-bottom: 30px;
+    left: 35%;
+    top: 35%;
+    width: 30%;
+    height: 30%;
+    margin: auto;
+    overflow: auto;
+    background: rgba(255, 255, 255, 0.85);
+    border: 8px solid rgb(107, 96, 96);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    color: black;
+    position: absolute;
+    left: 25%;
+    right: 25%;
+    top: 25%;
+    bottom: 25%;
+    margin: auto;
+    padding: 20px;
+    border: 2px solid #888;
+    border-radius: 20px;
+    width: 80%;
+}
+.modal-radio {
+    color: rgb(20, 20, 20);
+}
+.modal-button {
+    margin: 10px;
+}
+
+#modal-file {
+    margin-left: 5px;
+}

@@ -1,0 +1,173 @@
+TDDD12 - Lab 3 report
+antsk320
+wilut499
+
+----------------------------------------------------------------------------------------------------
+
+# Rules
+
+Axioms (Primary Rules):
+- Reflexivity
+	If Y is a subset of X, then X -> Y
+- Augmentation
+	If x -> Y, then XZ -> YZ
+- Transitivity
+	If X -> Y and Y -> Z, then X -> Z 
+
+Derived (Secondary Rules):
+- Decomposition
+	If X -> YZ, then X -> Y
+- Union
+	If X -> Y and X -> Z, then X -> YZ
+- Pseudo-transitivity
+	If X -> Y and WY -> Z, then WX -> Z 
+
+
+# Normalizing to BCNF (3.5NF)
+
+1. Pick a non-trivial FD that violates BCNF (X -> Y, where X is not a superkey)
+2. Decompose the relation into two new ones R1(XY) R2(R-Y), F of R1 = FD; F of R2 = F - FD
+3. Repeat step 1 & 2 until all new relations complies with BCNF
+
+----------------------------------------------------------------------------------------------------
+
+1) Consider the relation schema R(A, B, C, D, E, F) and the set of functional
+dependencies F = { FD1: A -> BC; FD2: C -> AD; FD3: DE -> F }. Use the
+Armstrong rules to derive each of the following two functional dependencies. In
+both cases, describe the derivation process step by step (i.e., which rule did you
+apply to which FDs).
+
+1a) C->B
+
+# Decomposition
+FD2: C -> AD, therefore C -> A
+
+# Decomposition
+FD1: A -> BC, therefore A -> B
+
+# Axiom of transitivity
+C -> A and A -> B. Therefore: C -> B
+
+1b) AE -> F
+
+# Decomposition
+FD1: A -> BC, therefore A -> C
+
+# Decomposition
+FD2: C -> AD, therefore C -> D
+
+# Axiom of transitivity
+A -> C and C -> D, therefore A -> D
+
+# Pseudo transitivity
+A -> D and DE -> F  therefore AE -> F
+
+----------------------------------------------------------------------------------------------------
+
+2. For the aforementioned relation schema with its functional dependencies, compute
+the attribute closure X+ for each of the following two sets of attributes.
+
+2a) X = {A}
+A can determine A (trivial). {A}
+A can determine B and C (FD1). {A, B, C}
+C can determine D (FD2). {A, B, C, D}
+Neither  E nor F can be determined as we need to know E.
+Answer: X+ = {A, B, C, D}
+
+2b) X = {C, E}
+C and E determine themselves (trivial). {C, E}
+C can determine A and D (FD2). {A, C, D, E}
+A can deterine B (FD1). {A, B, C, D, E}
+D and E determine F (FD3). {A, B, C, D, E, F}
+Answer: X+ = {A, B, C, D, E, F}
+
+----------------------------------------------------------------------------------------------------
+
+3) Consider the relation schema R(A, B, C, D, E, F) with the following FDs
+ FD1: AB -> CDEF
+ FD2: E -> F
+ FD3: D -> B
+
+3a) Determine the candidate key(s) for R.
+
+A is bound to be contained in the candidate keys as it cannot be determined through the functional dependencies. (just present on left side, or not at all)
+
+C and F are bound to not be contained in the candidate keys as they do not determine any other attribute, and can be determined themselves through the functional dependencies. (just present on the right side)
+
+We know the full R is a superkey (trivial).
+We never need to remove A.
+We never need to include C or F.
+
+We try to remove one attribute at a time and check if it's still a valid superkey.
+If no subset is a superkey the (super)set is a candidate key.
+If a set is not a superkey, no subset will be either.
+
+{A, B, D, E} #removed (superkey? yes)
+
+{A, D, E} #B (yes)
+{A, B, E} #D (yes)
+{A, B, D} #E (yes)
+
+{A, E} #BD (no)
+{A, D} #BE (yes) <- candidate 
+{A, B} #DE (yes) <- candidate
+
+{A} #BDE (no) ({A} is a subset of {A, E} and therefore not a superkey)
+
+
+3b) Note that R is not in BCNF. Which FD(s) violate the BCNF condition?
+FD2 and FD3. The arrows do not point from any candidate key.
+
+3c) Decompose R into a set of BCNF relations, and describe the process step by
+step (don't forget to determine the FDs and the candidate key(s) for all of the
+relation schemas along the way)
+
+Initial set of relations: S = {ABCDEF}
+
+Step 1: Pick an FD that violates BCNF, we pick FD2.
+Step 2: We make E -> F into relation EF, add it to S, and subtract F from the intial relation. S = {ABCDE, EF}
+	FDs(ABCDE) = {AB->CDE, D->B}
+	Candidate keys(ABCDE) = {AB, AD}
+	FDs(EF) = {E->F}
+	Candidate keys(EF) = {E}
+
+Step 3: Same thing as in step 1, but for FD3.
+Step 4: D -> B becomes relation DB, add to S, subtract B from initial relation. S = {ACDE, EF, DB}
+	FDs(ACDE) = {A->CDE}
+	Candidate keys(ACDE) = {A}
+	FDs(DB) = {D->B}
+	Candidate keys(DB) = {D}
+
+Answer: {ACDE, EF, DB}
+
+----------------------------------------------------------------------------------------------------
+
+4) Consider the relation schema R(A, B, C, D, E) with the following FDs
+ FD1: ABC -> DE
+ FD2: BCD -> AE
+ FD3: C -> D
+
+4a) Show that R is not in BCNF.
+
+{C}+ = {CD}
+{C}+ =/= R
+FD3's left side is not a superkey of R
+
+4b) Decompose R into a set of BCNF relations (describe the process step by step).
+
+1. Pick a non-trivial FD that violates BCNF (X -> Y, where X is not a superkey)
+2. Decompose the relation into two new ones R1(XY) R2(R-Y), F of R1 = FD; F of R2 = F - FD
+3. Repeat step 1 & 2 until all new relations complies with BCNF
+
+We pick FD3 as it's the only FD that violates BCNF (but any violating FD will do)
+We decompose R into R1 and R2 with FD3
+R1(CD) F = FD3
+R2(ABCE) F = FD1, FD2
+
+R1 is now BCNF compliant as:
+ {C}+ -> R1 (the left side of FD3 is a superkey of R1)
+R2 is now BCNF compliant as:
+ {ABC}+ -> R2 (the left side of FD1 is a superkey of R2) and
+ {BCD}+ -> R2 (the left side of FD2 is a superkey of R2)
+
+All relations now comply with BCNF and R has been decomposed to: (CD), (ABCE)
