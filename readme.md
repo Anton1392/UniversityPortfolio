@@ -32,7 +32,7 @@ A networking course. Contains solutions to the lab series, which includes a web 
 
 ## TDP015-Mathematics-Python
 
-A mathematics course with a Python-based lab series focused on mathematical problems such as implementing a naive bayes classifier.
+A mathematics course with a Python-based lab series focused on mathematical problems such as implementing a naive bayes classifier which can classify hand-drawn numbers.
 
 ## TDDI16-DatastructuresAndAlgorithms
 
@@ -48,7 +48,7 @@ An Android development course where I created an alarm app. It features login wi
 
 ## TDDD49
 
-A C# course where a peer-to-peer networked WPF chat application was developed. The application supports sending text and pictures, and keeping a log over previous chats.
+A C# course where a peer-to-peer networked WPF chat application was developed. The application supports sending text and pictures, and it keeps a log over previous chat history.
 
 ## TSIU02
 
@@ -60,11 +60,11 @@ A search engine over available workouts built for the company Zoezi. The fronten
 
 ## TDDD12
 
-A database course. Contains solutions to the lab series. Lab 4 is a larger project where the database structure of a hypothetical airline was first modelled in an EER-diagram and later implemented. 
+A database course. Contains solutions to the lab series. Lab 4 is a larger project where the database structure of a hypothetical airline is first modelled in an EER-diagram and later implemented. 
 
 ## TDIU16-Pintos
 
-An operating systems course where we were given a version of the Pintos educational operating system, with a chunk of its features removed. The task was to implement these features using our theoretical knowledge of operating systems. Tasks included handling arguments, setting up stack pointers, implementing and securing system calls, handling keyboard input, handling processes with regards to waiting for children and handling file handles, and synchronizing the different running threads using locking mechanisms.
+An operating systems course where we were given a version of the Pintos educational operating system, with a chunk of its features removed. The task was to implement these features using our theoretical knowledge of operating systems. Tasks included handling command-line arguments, setting up stack pointers, implementing and securing system calls, handling keyboard input, handling processes with regards to waiting for children and handling file handles, and synchronizing the different running threads using locking mechanisms.
 
 ## TDP017
 
@@ -80,4 +80,4 @@ A course based on game design and concepts. A game was built using the Unity gam
 
 ## TDP031-Sysadmin
 
-A course based on configuring four virtual Linux machines (two clients, one server, one router) so they can interact with one another. Configuration included setting up the package manager, setting up the local network, setting up a DNS server, setting up network shares with appropriate user permissions so that users can log in on each machine and access their files, synchronizing network time with NTP, and creating virtual storage media with different file systems. An extensive set of tests written in bash were also created to test the specifications of the system.
+A course based on configuring four virtual Linux machines (two clients, one server, one router) so they can interact with one another. Configuration included setting up the package manager, setting up the local network, setting up a DNS server, setting up auto-mounting network shares with appropriate user permissions so that users can log in on each machine and access their files, synchronizing network time with NTP, and creating virtual storage media with different file systems. An extensive set of tests written in bash were also created to test the specifications of the system.
